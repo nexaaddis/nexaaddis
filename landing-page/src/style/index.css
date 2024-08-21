@@ -269,3 +269,10 @@
   .whiteBg {
     background-color: #fff;
   }
+  /* @media only screen and (max-width: 765px) {
+    .container {
+      width: 100%;
+      max-width: 400px;
+      padding: 0 10px;
+    }
+  } */

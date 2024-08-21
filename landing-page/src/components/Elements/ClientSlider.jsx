@@ -1,8 +1,8 @@
-import React from "react";
-import Slider from "react-slick";
-import styled from "styled-components";
+import React, { useRef, useEffect, useState } from 'react';
+import Slider from 'react-slick';
+import styled from 'styled-components';
 // Assets
-import ClientLogo01 from "../../assets/img/clients/logo01.svg"
+import ClientLogo01 from "../../assets/img/clients/logo01.svg";
 import ClientLogo02 from "../../assets/img/clients/logo02.svg";
 import ClientLogo03 from "../../assets/img/clients/logo03.svg";
 import ClientLogo04 from "../../assets/img/clients/logo04.svg";
@@ -10,18 +10,22 @@ import ClientLogo05 from "../../assets/img/clients/logo05.svg";
 import ClientLogo06 from "../../assets/img/clients/logo06.svg";
 
 export default function ClientSlider() {
+  const sliderRef = useRef(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
   const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 2,
+    infinite: false, // Disable infinite scrolling for manual control
+    speed: 2000,
+    slidesToShow: 7,
+    slidesToScroll: 3,
     arrows: false,
+    autoplay: false, // Disable autoplay for manual control
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
         },
       },
       {
@@ -40,55 +44,90 @@ export default function ClientSlider() {
       },
     ],
   };
+
+  useEffect(() => {
+    let lastScrollTop = 0;
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setScrollPosition(scrollTop);
+
+      if (scrollTop > lastScrollTop) {
+        // Scroll down
+        sliderRef.current.slickNext();
+      } else {
+        // Scroll up
+        sliderRef.current.slickPrev();
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div>
-      <Slider {...settings}>
-        <LogoWrapper className="flexCenter">
+    <SliderWrapper>
+      <Slider {...settings} ref={sliderRef}>
+        <LogoWrapper>
           <ImgStyle src={ClientLogo01} alt="client logo" />
         </LogoWrapper>
-        <LogoWrapper className="flexCenter">
+        <LogoWrapper>
           <ImgStyle src={ClientLogo02} alt="client logo" />
         </LogoWrapper>
-        <LogoWrapper className="flexCenter">
+        <LogoWrapper>
           <ImgStyle src={ClientLogo03} alt="client logo" />
         </LogoWrapper>
-        <LogoWrapper className="flexCenter">
+        <LogoWrapper>
           <ImgStyle src={ClientLogo04} alt="client logo" />
         </LogoWrapper>
-        <LogoWrapper className="flexCenter">
+        <LogoWrapper>
           <ImgStyle src={ClientLogo05} alt="client logo" />
         </LogoWrapper>
-        <LogoWrapper className="flexCenter">
+        <LogoWrapper>
           <ImgStyle src={ClientLogo06} alt="client logo" />
         </LogoWrapper>
-        <LogoWrapper className="flexCenter">
+        <LogoWrapper>
           <ImgStyle src={ClientLogo03} alt="client logo" />
         </LogoWrapper>
-        <LogoWrapper className="flexCenter">
+        <LogoWrapper>
           <ImgStyle src={ClientLogo04} alt="client logo" />
         </LogoWrapper>
-        <LogoWrapper className="flexCenter">
+        <LogoWrapper>
           <ImgStyle src={ClientLogo01} alt="client logo" />
         </LogoWrapper>
-        <LogoWrapper className="flexCenter">
+        <LogoWrapper>
           <ImgStyle src={ClientLogo02} alt="client logo" />
         </LogoWrapper>
       </Slider>
-    </div>
+    </SliderWrapper>
   );
 }
 
+const SliderWrapper = styled.div`
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  padding: 20px 0;
+`;
+
 const LogoWrapper = styled.div`
   width: 100%;
-  height: 100px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  :focus-visible {
-    outline: none;
-    border: 0px;
-  }
 `;
+
 const ImgStyle = styled.img`
-  width: 100%;
-  height: 100%;
-  padding: 10%;
+  width: 100px;
+  height: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  :hover {
+    opacity: 1;
+  }
 `;
