@@ -1,29 +1,41 @@
 import React from "react";
-import styled from "styled-components";
+import Button from "@mui/material/Button";
+import { styled } from "@mui/material/styles";
 
 export default function FullButton({ title, action, border }) {
   return (
-    <Wrapper
-      className="animate pointer radius8"
+    <StyledButton
+      variant={border ? "outlined" : "contained"}
       onClick={action ? () => action() : null}
-      border={border}
+      border={border ? 1 : 0}
     >
       {title}
-    </Wrapper>
+    </StyledButton>
   );
 }
 
-const Wrapper = styled.button`
-  border: 1px solid ${(props) => (props.border ? "#707070" : "#7620ff")};
-  background-color: ${(props) => (props.border ? "transparent" : "#7620ff")};
-  width: 100%;
-  padding: 15px;
-  outline: none;
-  color: ${(props) => (props.border ? "#707070" : "#fff")};
-  :hover {
-    background-color: ${(props) => (props.border ? "transparent" : "#580cd2")};
-    border: 1px solid #7620ff;
-    color: ${(props) => (props.border ? "#7620ff" : "#fff")};
-  }
-`;
+const StyledButton = styled(Button)(({ theme, border }) => ({
+  width: "100%",
+  padding: "15px",
+  borderColor: border ? theme.palette.grey[400] : theme.palette.primary.main,
+  backgroundColor: border ? "transparent" : theme.palette.primary.main,
+  color: border ? theme.palette.grey[400] : "#fff",
+  fontSize: "16px",
+  transition: "all 0.3s ease-in-out",
+  
+  "&:hover": {
+    backgroundColor: border ? "transparent" : theme.palette.primary.dark,
+    borderColor: theme.palette.primary.main,
+    color: border ? theme.palette.primary.main : "#fff",
+  },
 
+  // Responsive Design
+  [theme.breakpoints.down("sm")]: {
+    padding: "12px",
+    fontSize: "14px",
+  },
+  [theme.breakpoints.down("xs")]: {
+    padding: "10px",
+    fontSize: "12px",
+  },
+}));
