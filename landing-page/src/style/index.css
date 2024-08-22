@@ -42,7 +42,7 @@
     color: #0B093B;
   }
   a:hover {
-    color: #7620FF;
+    color: #ffd700;
   }
   input:-webkit-autofill {
     -webkit-box-shadow:0 0 0 50px #fff inset; /* Change the color to your own background color */
@@ -50,7 +50,7 @@
     -webkit-text-fill-color: #fff;
   }
   body {
-    background: #fff;
+    background: black;
     color: #0B093B;
     font-family: 'Khula', sans-serif;
     overflow-x: hidden;
@@ -104,8 +104,8 @@
     width: 100%;
   }
   .active {
-    border-bottom: 2px solid #7620FF;
-    color: #7620FF;
+    border-bottom: 2.5px solid #ffd700;
+    color: #ffd700;
   }
   .tag {
     padding: 5px 10px;
@@ -156,7 +156,7 @@
     font-size: 0.875rem;
   }
   .font15 {
-    font-size: 0.938rem;
+    font-size: 1.1rem;
   }
   .font18 {
     font-size: 1.125rem;
@@ -246,7 +246,7 @@
   }
   /* BACKGROUNDS */
   .darkBg {
-    background-color: #000000;
+    background-color: rgb(0, 0, 0, .9);
   }
   .purpleBg {
     background-color: #7620FF;

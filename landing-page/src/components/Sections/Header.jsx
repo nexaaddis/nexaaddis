@@ -1,155 +1,123 @@
 import React from "react";
-import styled from "styled-components";
-// Components
-import FullButton from "../Buttons/FullButton";
-// Assets
+import { Box, Typography, Button, useMediaQuery, useTheme } from "@mui/material";
 import HeaderImage from "../../assets/img/header-img.png";
 import QuotesIcon from "../../assets/svg/Quotes";
 import Dots from "../../assets/svg/Dots";
 
 export default function Header() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
-    <Wrapper id="home" className="container flexSpaceCenter">
-      <LeftSide className="flexCenter">
-        <div>
-          <h1 className="extraBold font60">We are Digital Agency.</h1>
-          <HeaderP className="font13 semiBold">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-            voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-          </HeaderP>
-          <BtnWrapper>
-            <FullButton title="Get Started" />
-          </BtnWrapper>
-        </div>
-      </LeftSide>
-      <RightSide>
-        <ImageWrapper>
-          <Img className="radius8" src={HeaderImage} alt="office" style={{zIndex: 9}} />
-          <QuoteWrapper className="flexCenter darkBg radius8">
-            <QuotesWrapper>
-              <QuotesIcon />
-            </QuotesWrapper>
-            <div>
-              <p className="font15 whiteColor">
-                <em>Friends, such as we desire, are dreams and fables. Friendship demands the ability to do without it.</em>
-              </p>
-              <p className="font13 orangeColor textRight" style={{marginTop: '10px'}}>Ralph Waldo Emerson</p>
-            </div>
-          </QuoteWrapper>
-          <DotsWrapper>
-            <Dots />
-          </DotsWrapper>
-        </ImageWrapper>
-        <GreyDiv className="lightBg"></GreyDiv>
-      </RightSide>
-    </Wrapper>
+    <Box
+      id="home"
+      sx={{
+        display: 'flex',
+        flexDirection: isMobile ? 'column' : 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        pt: 10,
+        minHeight: '840px',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      <Box
+        sx={{
+          flex: 1,
+          textAlign: isMobile ? 'center' : 'left',
+          mb: isMobile ? 4 : 0,
+          px: 2,
+        }}
+      >
+        <Typography variant="h1" sx={{ fontWeight: 800, fontSize: '3rem' }}>
+          We are Digital Agency.
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{ mt: 2, mb: 4, lineHeight: 1.6, maxWidth: '470px', mx: 'auto' }}
+        >
+          We specialize in delivering innovative and efficient software solutions designed to meet diverse business and user needs. Our expertise spans web development, mobile applications, and graphic design, ensuring high-quality outcomes that combine technical excellence with a superior user experience.
+          <br />
+          <br />
+          Each project showcases our commitment to excellence, blending cutting-edge technology with creative design to achieve impactful and user-centric results.
+        </Typography>
+        <Box sx={{ textAlign: 'center' }}>
+          <Button variant="contained" color="primary" size="large">
+            Get Started
+          </Button>
+        </Box>
+      </Box>
+      <Box
+        sx={{
+          flex: 1,
+          position: 'relative',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          overflow: 'hidden',
+        }}
+      >
+        <img
+          src={HeaderImage}
+          alt="office"
+          style={{
+            width: isMobile ? '80%' : 'auto',
+            height: isMobile ? 'auto' : 'auto',
+            maxWidth: '100%',
+            position: 'relative',
+            zIndex: 9,
+          }}
+        />
+        <Box
+          sx={{
+            position: 'absolute',
+            left: isMobile ? 20 : 0,
+            bottom: isMobile ? -50 : 50,
+            maxWidth: '330px',
+            p: 3,
+            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            color: 'white',
+            borderRadius: '8px',
+            zIndex: 99,
+            textAlign: 'center',
+          }}
+        >
+          <Box sx={{ position: 'absolute', left: -20, top: -10 }}>
+            <QuotesIcon />
+          </Box>
+          <Typography variant="body1" sx={{ fontStyle: 'italic', mb: 1 }}>
+            “Friends, such as we desire, are dreams and fables. Friendship demands the ability to do without it.”
+          </Typography>
+          <Typography variant="body2" sx={{ color: 'orange' }}>
+            Ralph Waldo Emerson
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            position: 'absolute',
+            right: isMobile ? 100 : -100,
+            bottom: 100,
+            zIndex: 2,
+            display: isMobile ? 'none' : 'block',
+          }}
+        >
+          <Dots />
+        </Box>
+        {!isMobile && (
+          <Box
+            sx={{
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              width: '30%',
+              height: '700px',
+              backgroundColor: 'lightgray',
+              zIndex: 0,
+            }}
+          />
+        )}
+      </Box>
+    </Box>
   );
 }
-
-
-const Wrapper = styled.section`
-  padding-top: 80px;
-  width: 100%;
-  min-height: 840px;
-  @media (max-width: 960px) {
-    flex-direction: column;
-  }
-`;
-const LeftSide = styled.div`
-  width: 50%;
-  height: 100%;
-  @media (max-width: 960px) {
-    width: 100%;
-    order: 2;
-    margin: 50px 0;
-    text-align: center;
-  }
-  @media (max-width: 560px) {
-    margin: 80px 0 50px 0;
-  }
-`;
-const RightSide = styled.div`
-  width: 50%;
-  height: 100%;
-  @media (max-width: 960px) {
-    width: 100%;
-    order: 1;
-    margin-top: 30px;
-  }
-`;
-const HeaderP = styled.div`
-  max-width: 470px;
-  padding: 15px 0 50px 0;
-  line-height: 1.5rem;
-  @media (max-width: 960px) {
-    padding: 15px 0 50px 0;
-    text-align: center;
-    max-width: 100%;
-  }
-`;
-const BtnWrapper = styled.div`
-  max-width: 190px;
-  @media (max-width: 960px) {
-    margin: 0 auto;
-  }
-`;
-const GreyDiv = styled.div`
-  width: 30%;
-  height: 700px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 0;
-  @media (max-width: 960px) {
-    display: none;
-  }
-`;
-const ImageWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-  z-index: 9;
-  @media (max-width: 960px) {
-    width: 100%;
-    justify-content: center;
-  }
-`;
-const Img = styled.img`
-  @media (max-width: 560px) {
-    width: 80%;
-    height: auto;
-  }
-`;
-const QuoteWrapper = styled.div`
-  position: absolute;
-  left: 0;
-  bottom: 50px;
-  max-width: 330px;
-  padding: 30px;
-  z-index: 99;
-  @media (max-width: 960px) {
-    left: 20px;
-  }
-  @media (max-width: 560px) {
-    bottom: -50px;
-  }
-`;
-const QuotesWrapper = styled.div`
-  position: absolute;
-  left: -20px;
-  top: -10px;
-`;
-const DotsWrapper = styled.div`
-  position: absolute;
-  right: -100px;
-  bottom: 100px;
-  z-index: 2;
-  @media (max-width: 960px) {
-    right: 100px;
-  }
-  @media (max-width: 560px) {
-    display: none;
-  }
-`;
-
-
