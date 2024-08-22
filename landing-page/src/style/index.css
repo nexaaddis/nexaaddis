@@ -221,7 +221,7 @@
   }
   /* COLORS */
   .darkColor {
-    color: #0B093B;
+    color: #000000;
   }
   .purpleColor {
     color: #7620FF;
@@ -246,7 +246,7 @@
   }
   /* BACKGROUNDS */
   .darkBg {
-    background-color: #0B093B;
+    background-color: #000000;
   }
   .purpleBg {
     background-color: #7620FF;
