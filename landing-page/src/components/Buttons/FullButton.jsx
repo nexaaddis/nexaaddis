@@ -17,16 +17,17 @@ export default function FullButton({ title, action, border }) {
 const StyledButton = styled(Button)(({ theme, border }) => ({
   width: "100%",
   padding: "15px",
-  borderColor: border ? theme.palette.grey[400] : theme.palette.primary.main,
-  backgroundColor: border ? "transparent" : theme.palette.primary.main,
-  color: border ? theme.palette.grey[400] : "#fff",
+  borderColor: border ? "#ff5722" : "#ff5722",
+  backgroundColor: border ? "transparent" : "#ff5722",
+  color: border ? "#ff5722" : "#fff",
   fontSize: "16px",
   transition: "all 0.3s ease-in-out",
-  
+  borderRadius: "12px",
+
   "&:hover": {
-    backgroundColor: border ? "transparent" : theme.palette.primary.dark,
-    borderColor: theme.palette.primary.main,
-    color: border ? theme.palette.primary.main : "#fff",
+    backgroundColor: border ? "transparent" : "#e64a19",
+    borderColor: "#ff5722",
+    color: border ? "#ff5722" : "#fff",
   },
 
   // Responsive Design

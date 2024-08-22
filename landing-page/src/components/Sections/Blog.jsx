@@ -1,106 +1,167 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
+import Collapse from "@mui/material/Collapse";
 // Components
 import BlogBox from "../Elements/BlogBox";
 import FullButton from "../Buttons/FullButton";
 import TestimonialSlider from "../Elements/TestimonialSlider";
+import {
+  workImgOne,
+  workImgTwo,
+  workImgThree,
+  workImgFour,
+  workImgFive,
+  workImgSix,
+  workImgSeven,
+  workImgEight,
+} from "../../assets";
 
 export default function Blog() {
+  const [expanded, setExpanded] = useState(false);
+  const [visibleBlogs, setVisibleBlogs] = useState(3);
+
   const blogData = [
     {
       tag: "Company News",
       title: "New Office Opened",
       text: "We are excited to announce the opening of our new office in San Francisco.",
       author: "John Doe, 2 days ago",
-      action: () => alert("Read more about the new office."),
-    },
-    {
-      tag: "Product Update",
-      title: "Version 2.0 Released",
-      text: "Our latest version comes with several new features and improvements.",
-      author: "Jane Smith, 1 week ago",
-      action: () => alert("Explore the new features."),
+      image: workImgEight,
     },
     {
       tag: "Company News",
       title: "New Office Opened",
       text: "We are excited to announce the opening of our new office in San Francisco.",
       author: "John Doe, 2 days ago",
-      action: () => alert("Read more about the new office."),
+      image: workImgSeven,
     },
     {
       tag: "Product Update",
       title: "Version 2.0 Released",
       text: "Our latest version comes with several new features and improvements.",
       author: "Jane Smith, 1 week ago",
-      action: () => alert("Explore the new features."),
+      image: workImgFive,
+    },
+    {
+      tag: "Company News",
+      title: "New Office Opened",
+      text: "We are excited to announce the opening of our new office in San Francisco.",
+      author: "John Doe, 2 days ago",
+      image: workImgSix,
     },
     {
       tag: "Product Update",
       title: "Version 2.0 Released",
       text: "Our latest version comes with several new features and improvements.",
       author: "Jane Smith, 1 week ago",
-      action: () => alert("Explore the new features."),
+      image: workImgTwo,
+    },
+    {
+      tag: "Company News",
+      title: "New Office Opened",
+      text: "We are excited to announce the opening of our new office in San Francisco.",
+      author: "John Doe, 2 days ago",
+      image: workImgThree,
+    },
+    {
+      tag: "Product Update",
+      title: "Version 2.0 Released",
+      text: "Our latest version comes with several new features and improvements.",
+      author: "Jane Smith, 1 week ago",
+      image: workImgFour,
     },
     // Add more blog entries as needed
   ];
 
+  const handleLoadMore = () => {
+    setExpanded(!expanded);
+    setVisibleBlogs(expanded ? 3 : blogData.length);
+  };
+
   return (
-    <Wrapper id="blog">
-      <div className="whiteBg">
-        <div className="container">
-          <HeaderInfo>
-            <h1 className="font40 extraBold">Our Blog Stories</h1>
-            <p className="font13">
-              Discover the latest updates and insights from our team.
-              <br />
-              Stay tuned for exciting news and product launches.
-            </p>
-          </HeaderInfo>
-          <div className="row textCenter">
-            {blogData.map((blog, index) => (
-              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4" key={index}>
+    <Box component="section" id="blog" sx={{ width: "100%", pt: 4 }}>
+      <Box
+        sx={{
+          backgroundColor: "#121212", // Dark background
+          color: "#ffffff", // White text for contrast
+          boxShadow: "inset 0 0 10px #000000",
+          borderRadius: "20px",
+          p: 3,
+          mt: '4rem',
+        }}
+      >
+        <Box sx={{ mb: 4, textAlign: { xs: "center", md: "left" } }}>
+          <Typography
+            variant="h4"
+            component="h1"
+            gutterBottom
+            align="left"
+            sx={{ mb: 5, fontWeight: '800', color: '#f0f0f0' }}
+          >
+            Our Blog Stories
+          </Typography>
+          <Typography variant="body1" mt={2} color="#bdbdbd">
+            Discover the latest updates and insights from our team.
+            <br />
+            Stay tuned for exciting news and product launches.
+          </Typography>
+        </Box>
+        <Grid container spacing={3} justifyContent="center">
+          {blogData.slice(0, visibleBlogs).map((blog, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <Collapse in={true} timeout={500}>
                 <BlogBox
                   tag={blog.tag}
                   title={blog.title}
                   text={blog.text}
                   author={blog.author}
-                  action={blog.action}
+                  image={blog.image}
                 />
-              </div>
-            ))}
-          </div>
-          <div className="row flexCenter">
-            <div style={{ margin: "50px 0", width: "200px" }}>
-              <FullButton title="Load More" action={() => alert("Load more blogs")} />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="lightBg" style={{ padding: "50px 0" }}>
-        <div className="container">
-          <HeaderInfo>
-            <h1 className="font40 extraBold">What They Say?</h1>
-            <p className="font13">
+              </Collapse>
+            </Grid>
+          ))}
+        </Grid>
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
+          <Button
+            variant="outlined"
+            color="primary"
+            onClick={handleLoadMore}
+            sx={{
+              borderColor: "#ff5722",
+              color: "#ff5722",
+              transition: "all 0.3s ease",
+              "&:hover": {
+                backgroundColor: "#ff5722",
+                color: "#ffffff",
+                boxShadow: "0 0 10px #ff5722",
+              },
+              "&:active": {
+                transform: "scale(0.95)",
+              },
+            }}
+          >
+            {expanded ? "Show Less" : "Load More"}
+          </Button>
+        </Box>
+      </Box>
+      <Box sx={{ backgroundColor: "#1c1c1c", py: 5 }}>
+        <Box sx={{ p: 3 }}>
+          <Box sx={{ mb: 4, textAlign: { xs: "center", md: "left" } }}>
+            <Typography variant="h4" fontWeight="bold" color="#ff5722">
+              What They Say?
+            </Typography>
+            <Typography variant="body1" mt={2} color="#bdbdbd">
               Hear from our clients and partners about their experiences with our products.
               <br />
               Your feedback helps us grow and improve.
-            </p>
-          </HeaderInfo>
+            </Typography>
+          </Box>
           <TestimonialSlider />
-        </div>
-      </div>
-    </Wrapper>
+        </Box>
+      </Box>
+    </Box>
   );
 }
-
-const Wrapper = styled.section`
-  width: 100%;
-  padding-top: 20px;
-`;
-const HeaderInfo = styled.div`
-  margin-bottom: 30px;
-  @media (max-width: 860px) {
-    text-align: center;
-  }
-`;

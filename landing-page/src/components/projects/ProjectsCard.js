@@ -12,15 +12,15 @@ const ProjectsCard = ({ image, title, category }) => {
     <Card
       sx={{
         maxWidth: 345,
-        backgroundColor: 'transparent',
-        border: '1px solid #ddd',
+        backgroundColor: '#2a2a2a', // Dark background to match the dark theme
+        border: '1px solid #444', // Slightly darker border for better contrast
         borderRadius: '8px',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.5)', // Inset shadow for depth
         transition: 'transform 0.3s, box-shadow 0.3s, background-color 0.3s',
         '&:hover': {
           transform: 'scale(1.05)',
-          boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
-          backgroundColor: '#f0f0f0'
+          boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 1), 0 8px 16px rgba(0, 0, 0, 0.8)', // More pronounced shadow on hover
+          backgroundColor: '#333333', // Slightly lighter on hover for contrast
         }
       }}
     >
@@ -47,9 +47,9 @@ const ProjectsCard = ({ image, title, category }) => {
         >
           <IconButton
             sx={{
-              color: '#666',
+              color: '#888', // Slightly lighter icon color for dark theme
               transition: 'color 0.3s',
-              '&:hover': { color: 'blue' }
+              '&:hover': { color: '#1e90ff' } // Bright blue on hover
             }}
             aria-label="Live Preview"
           >
@@ -58,10 +58,18 @@ const ProjectsCard = ({ image, title, category }) => {
         </Box>
       </Box>
       <CardContent>
-        <Typography gutterBottom variant="h6" component="div" sx={{ fontWeight: 'bold' }}>
+        <Typography
+          gutterBottom
+          variant="h6"
+          component="div"
+          sx={{ fontWeight: 'bold', color: '#f0f0f0' }} // Light text for contrast
+        >
           {title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography
+          variant="body2"
+          sx={{ color: '#aaaaaa' }} // Lighter gray for secondary text
+        >
           {category}
         </Typography>
       </CardContent>

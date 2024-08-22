@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import { Box, Typography, Button } from '@mui/material';
+import FullButton from '../Buttons/FullButton';
 
 const LeftBanner = () => {
   const [text] = useTypewriter({
@@ -93,7 +94,7 @@ const LeftBanner = () => {
             {text}
           </Typography>
           <Cursor
-            cursorStyle={<strong style={{ fontSize: '2.5rem', fontWeight: '1000', color: '#ffd700' }}>|</strong>}
+            cursorStyle={<strong style={{ fontSize: '2rem', fontWeight: '1000', color: '#ffd700' }}>|</strong>}
           />
         </Box>
 
@@ -112,27 +113,11 @@ const LeftBanner = () => {
         </Typography>
 
         {/* Unique Button */}
-        <Button
-          variant="contained"
-          sx={{
-            mt: 3,
-            px: 3,
-            py: 1.5,
-            borderRadius: '50px',
-            backgroundColor: '#f76c6c',
-            color: '#ffffff',
-            fontWeight: 'bold',
-            textTransform: 'uppercase',
-            letterSpacing: 1,
-            boxShadow: 3,
-            '&:hover': {
-              backgroundColor: '#e74c3c',
-              boxShadow: 6,
-            },
-          }}
-        >
-          Get Started
-        </Button>
+        <FullButton
+          title={"Get Started"}
+          border={"none"}
+          className="custom-width"
+        />
       </Box>
     </Box>
   );

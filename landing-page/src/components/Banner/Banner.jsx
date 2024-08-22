@@ -24,7 +24,7 @@ const Banner = () => {
         overflow: 'hidden', // Ensure no overflow outside the Box
       }}
     >
-      {/* <Design /> */}
+      <Design />
       <Box
         sx={{
           position: 'relative',
