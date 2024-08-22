@@ -81,8 +81,8 @@ const Projects = () => {
           variant="outlined"
           onClick={handleToggle}
           sx={{
-            borderRadius: '20px',
-            padding: '10px 20px',
+            borderRadius: '12px',
+            padding: '8px 16px',
             borderColor: isExpanded ? '#dc3545' : '#007bff',
             color: isExpanded ? '#dc3545' : '#007bff',
             '&:hover': {

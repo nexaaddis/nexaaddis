@@ -47,9 +47,9 @@ const ProjectsCard = ({ image, title, category }) => {
         >
           <IconButton
             sx={{
-              color: '#333',
+              color: '#666',
               transition: 'color 0.3s',
-              '&:hover': { color: '#00ff00' }
+              '&:hover': { color: 'blue' }
             }}
             aria-label="Live Preview"
           >
