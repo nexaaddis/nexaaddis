@@ -1,34 +1,53 @@
 import React from "react";
-import styled from "styled-components";
+import Card from "@mui/material/Card";
+import CardActionArea from "@mui/material/CardActionArea";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import Chip from "@mui/material/Chip";
+import { styled } from "@mui/material/styles";
 
 export default function BlogBox({ tag, title, text, action, author }) {
   return (
-    <WrapperBtn className="animate pointer" onClick={action ? () => action() : null}>
-      <Wrapper className="whiteBg radius8 shadow">
-        <h3 className="font20 extraBold">{title}</h3>
-        <p className="font13" style={{ padding: "30px 0" }}>
-          {text}
-        </p>
-        <p className="font13 extraBold">{author}</p>
-        <div className="flex">
-          <p className="tag coralBg radius6 font13 extraBold">{tag}</p>
-        </div>
-      </Wrapper>
-    </WrapperBtn>
+    <StyledCard onClick={action ? () => action() : null}>
+      <CardActionArea>
+        <CardContent>
+          <Typography variant="h5" component="div" fontWeight="bold">
+            {title}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ margin: "20px 0" }}>
+            {text}
+          </Typography>
+          <Typography variant="body2" color="text.primary" fontWeight="bold">
+            {author}
+          </Typography>
+          <Chip label={tag} color="primary" size="small" sx={{ marginTop: "10px" }} />
+        </CardContent>
+      </CardActionArea>
+    </StyledCard>
   );
 }
 
-const Wrapper = styled.div`
-  width: 100%;
-  text-align: left;
-  padding: 20px 30px;
-  margin-top: 30px;
-`;
-const WrapperBtn = styled.button`
-  border: 0px;
-  outline: none;
-  background-color: transparent;
-  :hover {
-    opacity: 0.5;
-  }
-`;
+const StyledCard = styled(Card)(({ theme }) => ({
+  width: "100%",
+  marginTop: "30px",
+  padding: "20px",
+  textAlign: "left",
+  borderRadius: theme.shape.borderRadius,
+  boxShadow: theme.shadows[3],
+  transition: "all 0.3s ease-in-out",
+  "&:hover": {
+    transform: "scale(1.05)",
+    boxShadow: theme.shadows[10],
+    backgroundColor: theme.palette.action.hover,
+  },
+  "&:hover .MuiCardContent-root": {
+    backgroundColor: theme.palette.background.default,
+  },
+  "&:hover .MuiTypography-root": {
+    color: theme.palette.primary.main,
+  },
+  "&:hover .MuiChip-root": {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.common.white,
+  },
+}));

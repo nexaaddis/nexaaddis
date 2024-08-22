@@ -31,11 +31,11 @@ const StyledButton = styled(Button)(({ theme, border }) => ({
 
   // Responsive Design
   [theme.breakpoints.down("sm")]: {
-    padding: "12px",
-    fontSize: "14px",
+    padding: "9px",
+    fontSize: "12px",
   },
   [theme.breakpoints.down("xs")]: {
-    padding: "10px",
-    fontSize: "12px",
+    padding: "8px",
+    fontSize: "10px",
   },
 }));
