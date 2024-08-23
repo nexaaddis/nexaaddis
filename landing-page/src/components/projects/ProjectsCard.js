@@ -12,15 +12,15 @@ const ProjectsCard = ({ image, title, category }) => {
     <Card
       sx={{
         maxWidth: 345,
-        backgroundColor: '#2a2a2a', // Dark background to match the dark theme
-        border: '1px solid #444', // Slightly darker border for better contrast
+        backgroundColor: '#2a2a2a',
+        border: '1px solid #444',
         borderRadius: '8px',
-        boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.5)', // Inset shadow for depth
+        boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.5)',
         transition: 'transform 0.3s, box-shadow 0.3s, background-color 0.3s',
         '&:hover': {
           transform: 'scale(1.05)',
-          boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 1), 0 8px 16px rgba(0, 0, 0, 0.8)', // More pronounced shadow on hover
-          backgroundColor: '#333333', // Slightly lighter on hover for contrast
+          boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 1), 0 8px 16px rgba(0, 0, 0, 0.8)',
+          backgroundColor: '#333333'
         }
       }}
     >

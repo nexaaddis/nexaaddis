@@ -51,7 +51,7 @@
     -webkit-text-fill-color: #fff;
   }
   body {
-    background: black;
+    background: #111;
     color: #0B093B;
     font-family: 'Khula', sans-serif;
     overflow-x: hidden;
@@ -105,7 +105,7 @@
     width: 100%;
   }
   .active {
-    border-bottom: 2.5px solid #ff5722;
+    border-bottom: 2.5px solid rgb(255, 87, 34);
     color: #ff5722;
   }
   .tag {

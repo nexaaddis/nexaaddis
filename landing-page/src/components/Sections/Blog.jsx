@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
 import Collapse from "@mui/material/Collapse";
 // Components
 import BlogBox from "../Elements/BlogBox";
@@ -82,7 +83,7 @@ export default function Blog() {
   };
 
   return (
-    <Box component="section" id="blog" sx={{ width: "100%", pt: 4 }}>
+    <Container  id="blog" sx={{ width: "100%", padding: '5rem 0', border: '1px solid blue' }}>
       <Box
         sx={{
           backgroundColor: "#121212", // Dark background
@@ -90,7 +91,6 @@ export default function Blog() {
           boxShadow: "inset 0 0 10px #000000",
           borderRadius: "20px",
           p: 3,
-          mt: '4rem',
         }}
       >
         <Box sx={{ mb: 4, textAlign: { xs: "center", md: "left" } }}>
@@ -147,21 +147,6 @@ export default function Blog() {
           </Button>
         </Box>
       </Box>
-      <Box sx={{ backgroundColor: "#1c1c1c", py: 5 }}>
-        <Box sx={{ p: 3 }}>
-          <Box sx={{ mb: 4, textAlign: { xs: "center", md: "left" } }}>
-            <Typography variant="h4" fontWeight="bold" color="#ff5722">
-              What They Say?
-            </Typography>
-            <Typography variant="body1" mt={2} color="#bdbdbd">
-              Hear from our clients and partners about their experiences with our products.
-              <br />
-              Your feedback helps us grow and improve.
-            </Typography>
-          </Box>
-          <TestimonialSlider />
-        </Box>
-      </Box>
-    </Box>
+    </Container>
   );
 }

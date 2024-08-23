@@ -1,25 +1,29 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Slider from 'react-slick';
-import styled from 'styled-components';
-// Assets
-import ClientLogo01 from "../../assets/img/clients/logo01.svg";
-import ClientLogo02 from "../../assets/img/clients/logo02.svg";
-import ClientLogo03 from "../../assets/img/clients/logo03.svg";
-import ClientLogo04 from "../../assets/img/clients/logo04.svg";
-import ClientLogo05 from "../../assets/img/clients/logo05.svg";
-import ClientLogo06 from "../../assets/img/clients/logo06.svg";
+import { Box, styled } from '@mui/material';
+import {
+  blackEagle,
+  freeFoodDelivery,
+  greenFactory,
+  moon,
+  realEstate,
+  sLetter,
+  vFLetter,
+  xLetter,
+  mechanic,
+} from '../../assets';
 
 export default function ClientSlider() {
   const sliderRef = useRef(null);
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const settings = {
-    infinite: false, // Disable infinite scrolling for manual control
+    infinite: false,
     speed: 2000,
     slidesToShow: 7,
     slidesToScroll: 3,
     arrows: false,
-    autoplay: false, // Disable autoplay for manual control
+    autoplay: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -52,13 +56,11 @@ export default function ClientSlider() {
       setScrollPosition(scrollTop);
 
       if (scrollTop > lastScrollTop) {
-        // Scroll down
         sliderRef.current.slickNext();
       } else {
-        // Scroll up
         sliderRef.current.slickPrev();
       }
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -69,65 +71,72 @@ export default function ClientSlider() {
   }, []);
 
   return (
-    <SliderWrapper>
+    <StyledSliderContainer>
       <Slider {...settings} ref={sliderRef}>
         <LogoWrapper>
-          <ImgStyle src={ClientLogo01} alt="client logo" />
+          <ImgStyle src={blackEagle} alt="client logo" />
         </LogoWrapper>
         <LogoWrapper>
-          <ImgStyle src={ClientLogo02} alt="client logo" />
+          <ImgStyle src={greenFactory} alt="client logo" />
         </LogoWrapper>
         <LogoWrapper>
-          <ImgStyle src={ClientLogo03} alt="client logo" />
+          <ImgStyle src={freeFoodDelivery} alt="client logo" />
         </LogoWrapper>
         <LogoWrapper>
-          <ImgStyle src={ClientLogo04} alt="client logo" />
+          <ImgStyle src={vFLetter} alt="client logo" />
         </LogoWrapper>
         <LogoWrapper>
-          <ImgStyle src={ClientLogo05} alt="client logo" />
+          <ImgStyle src={mechanic} alt="client logo" />
         </LogoWrapper>
         <LogoWrapper>
-          <ImgStyle src={ClientLogo06} alt="client logo" />
+          <ImgStyle src={xLetter} alt="client logo" />
         </LogoWrapper>
         <LogoWrapper>
-          <ImgStyle src={ClientLogo03} alt="client logo" />
+          <ImgStyle src={moon} alt="client logo" />
         </LogoWrapper>
         <LogoWrapper>
-          <ImgStyle src={ClientLogo04} alt="client logo" />
+          <ImgStyle src={sLetter} alt="client logo" />
         </LogoWrapper>
         <LogoWrapper>
-          <ImgStyle src={ClientLogo01} alt="client logo" />
-        </LogoWrapper>
-        <LogoWrapper>
-          <ImgStyle src={ClientLogo02} alt="client logo" />
+          <ImgStyle src={realEstate} alt="client logo" />
         </LogoWrapper>
       </Slider>
-    </SliderWrapper>
+    </StyledSliderContainer>
   );
 }
 
-const SliderWrapper = styled.div`
-  position: relative;
-  overflow: hidden;
-  background: transparent;
-  padding: 20px 0;
-`;
+const StyledSliderContainer = styled(Box)({
+  position: 'relative',
+  overflow: 'hidden',
+  backgroundColor: 'rgba(0, 0, 0, 0.2)', // Dark contrasting background
+  padding: '20px 0',
+  zIndex: 1,
+  boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 0.5)', // Inset shadow for business card effect
+  borderRadius: '12px', // Rounded corners for card effect
+});
 
-const LogoWrapper = styled.div`
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-`;
+const LogoWrapper = styled(Box)({
+  width: '100%',
+  height: '100px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  cursor: 'pointer',
+  // backgroundColor: 'rgba(255, 255, 255, 0.1)',
+  // borderRadius: '8px',
+  padding: '10px',
+  transition: 'transform 0.3s ease',
+  ':hover': {
+    transform: 'scale(1.05)',
+  },
+});
 
-const ImgStyle = styled.img`
-  width: 100px;
-  height: auto;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-  :hover {
-    opacity: 1;
-  }
-`;
+const ImgStyle = styled('img')({
+  width: '100px',
+  height: 'auto',
+  opacity: 0.9,
+  transition: 'opacity 0.3s ease',
+  ':hover': {
+    opacity: 1,
+  },
+});

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import { Box, Typography, Button } from '@mui/material';
-import FullButton from '../Buttons/FullButton';
 
 const LeftBanner = () => {
   const [text] = useTypewriter({
@@ -66,7 +65,7 @@ const LeftBanner = () => {
           }}
         >
           Welcome to{' '}
-          <span style={{ color: '#f76c6c' }}>Innovative Solutions</span>
+          <span style={{ color: '#ff5722' }}>Innovative Solutions</span>
         </Typography>
 
         {/* Typewriting Text */}
@@ -77,8 +76,8 @@ const LeftBanner = () => {
             position: 'relative',
             overflow: 'hidden',
             whiteSpace: 'nowrap',
-            width: '99%', // Adjust width to fit text
-            maxWidth: '99%', // Ensures text doesn't overflow
+            width: '99%',
+            maxWidth: '99%',
           }}
         >
           <Typography
@@ -86,7 +85,7 @@ const LeftBanner = () => {
             sx={{
               fontWeight: '700',
               fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2rem', lg: '2.5rem' },
-              color: '#ffd700', // Cool color for typewriter effect
+              color: '#ffd700',
               lineHeight: 1.2,
               display: 'inline',
             }}
@@ -103,7 +102,7 @@ const LeftBanner = () => {
           variant="body1"
           sx={{
             fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem', lg: '1.25rem' },
-            color: '#e0e0e0', // Softer text color for readability
+            color: '#e0e0e0',
             lineHeight: 1.6,
             maxWidth: '600px',
             mx: 'auto',
@@ -113,11 +112,26 @@ const LeftBanner = () => {
         </Typography>
 
         {/* Unique Button */}
-        <FullButton
-          title={"Get Started"}
-          border={"none"}
-          className="custom-width"
-        />
+        <Button
+          sx={{
+            mt: '2rem',
+            border: '1px solid #ff5722',
+            outline: 'none',
+            width: { xs: '40%', sm: '35%', lg: '30%' },
+            padding: '15px',
+            fontWeight: '700',
+            fontSize: { xs: '.7rem', sm: '.6rem', md: '.8rem', lg: '1rem' },
+            color: '#ff5722',
+            lineHeight: 1.2,
+
+            "&:hover": {
+              backgroundColor: 'rgb(255, 87, 34, .3)',
+              color: "#eee",
+            }
+          }}
+        >
+          Get Started
+        </Button>
       </Box>
     </Box>
   );

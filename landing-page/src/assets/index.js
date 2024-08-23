@@ -7,6 +7,17 @@ import workImgSix from "./work/workImgSix.jpg"
 import workImgSeven from "./work/workImgSeven.jpg"
 import workImgEight from "./work/workImgEight.jpg"
 
+// Logos
+import blackEagle from "./logos/blackEagle.png"
+import freeFoodDelivery from "./logos/freeFoodDelivery.png"
+import greenFactory from "./logos/greenFactory.png"
+import moon from "./logos/moon.png"
+import realEstate from "./logos/realEstate.png"
+import sLetter from "./logos/sLetter.png"
+import vFLetter from "./logos/vFLetter.png"
+import xLetter from "./logos/xLetter.png"
+import mechanic from "./logos/mechanic.png"
+
 
 export { 
     workImgOne,
@@ -17,4 +28,15 @@ export {
     workImgSix,
     workImgSeven,
     workImgEight,
+
+    // logos
+    blackEagle,
+    freeFoodDelivery,
+    greenFactory,
+    moon,
+    realEstate,
+    sLetter,
+    vFLetter,
+    xLetter,
+    mechanic,
 };
