@@ -106,13 +106,12 @@ export default function ClientSlider() {
 }
 
 const StyledSliderContainer = styled(Box)({
-  position: 'relative',
   overflow: 'hidden',
-  backgroundColor: 'rgba(0, 0, 0, 0.2)', // Dark contrasting background
+  backgroundColor: '#666',
   padding: '20px 0',
   zIndex: 1,
-  boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 0.5)', // Inset shadow for business card effect
-  borderRadius: '12px', // Rounded corners for card effect
+  // boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 0.5)',
+  borderRadius: '10px',
 });
 
 const LogoWrapper = styled(Box)({

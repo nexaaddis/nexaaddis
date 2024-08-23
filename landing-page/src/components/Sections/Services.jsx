@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
 // Components
 import ClientSlider from "../Elements/ClientSlider";
 import ServiceBox from "../Elements/ServiceBox";
@@ -12,78 +14,79 @@ import AddImage3 from "../../assets/img/add/3.png";
 export default function Services() {
   return (
     <Wrapper id="services">
-      <Section className="darkBg">
-        <Container>
+      <Container
+        maxWidth="lg"
+        sx={{
+          position: 'absolute',
+          top: '-3.4%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          zIndex: '1000',
+        }}
+      >
           <ClientSlider />
-        </Container>
-      </Section>
-      <Section>
-        <Container>
+      </Container>
+      <Section sx={{
+        pt: '10rem',
+      }}>
+        <Container maxWidth="lg">
           <HeaderInfo>
             <h1 className="font40 extraBold">Our Awesome Services</h1>
             <p className="font13">
-              At Expert Handyman Services, we offer a diverse range of services tailored to meet your needs. Whether you're looking for creative designs, web solutions, or top-quality printing, we've got you covered.
+              At our Software and Designing Company, we offer a wide range of services to meet your creative and technical needs. Whether you require innovative software solutions, stunning designs, or cutting-edge web development, we are here to make your vision a reality.
             </p>
           </HeaderInfo>
-          <ServiceBoxRow className="flex">
+          <ServiceBoxRow>
             <ServiceBoxWrapper>
               <ServiceBox
                 icon="roller"
                 title="Graphic Design"
-                subtitle="We turn your ideas into stunning visual designs that capture attention and resonate with your audience."
+                subtitle="Transforming your ideas into captivating visual designs that resonate with your audience."
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
               <ServiceBox
                 icon="monitor"
                 title="Web Design"
-                subtitle="Creating responsive and engaging websites that showcase your brand and keep your visitors coming back."
+                subtitle="Crafting responsive and engaging websites that effectively represent your brand."
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
               <ServiceBox
                 icon="browser"
-                title="Development"
-                subtitle="Building custom development solutions to bring your vision to life with cutting-edge technology."
+                title="Software Development"
+                subtitle="Developing custom software solutions to drive your business forward with innovation."
               />
             </ServiceBoxWrapper>
           </ServiceBoxRow>
         </Container>
       </Section>
       <Section>
-        <Container>
-          <Advertising className="flexSpaceCenter">
+        <Container maxWidth="lg">
+          <Advertising>
             <AddLeft>
               <h4 className="font15 semiBold">About Us</h4>
-              <h2 className="font40 extraBold">Expert Handyman Services</h2>
+              <h2 className="font40 extraBold">Software & Designing Company</h2>
               <p className="font12">
-                Expert Handyman Services is your go-to solution for all creative and technical needs. Our team is dedicated to providing exceptional service, ensuring your projects are handled with care and expertise.
+                We are a team of creative professionals committed to delivering high-quality software and design solutions. Our mission is to empower businesses through innovative technology and exceptional design.
               </p>
-              <ButtonsRow className="flexNullCenter" style={{ margin: "30px 0" }}>
-                <div style={{ width: "190px" }}>
-                  <FullButton title="Get Started" action={() => alert("Get Started clicked")} />
-                </div>
-                <div style={{ width: "190px", marginLeft: "15px" }}>
-                  <FullButton title="Contact Us" action={() => alert("Contact Us clicked")} border />
-                </div>
+              <ButtonsRow>
+                <FullButton title="Get Started" action={() => alert("Get Started clicked")} />
+                <FullButton title="Contact Us" action={() => alert("Contact Us clicked")} border />
               </ButtonsRow>
             </AddLeft>
             <AddRight>
               <AddRightInner>
-                <div className="flexNullCenter">
-                  <AddImgWrapp1 className="flexCenter">
-                    <img src={AddImage1} alt="office" />
-                  </AddImgWrapp1>
-                  <AddImgWrapp2>
-                    <img src={AddImage2} alt="office" />
-                  </AddImgWrapp2>
-                </div>
-                <div className="flexNullCenter">
-                  <AddImgWrapp3>
-                    <img src={AddImage3} alt="office" />
-                  </AddImgWrapp3>
-                </div>
+                <AddImgWrapp1>
+                  <img src={AddImage1} alt="office" />
+                </AddImgWrapp1>
+                <AddImgWrapp2>
+                  <img src={AddImage2} alt="office" />
+                </AddImgWrapp2>
               </AddRightInner>
+              <AddImgWrapp3>
+                <img src={AddImage3} alt="office" />
+              </AddImgWrapp3>
             </AddRight>
           </Advertising>
         </Container>
@@ -92,129 +95,136 @@ export default function Services() {
   );
 }
 
-const Wrapper = styled.section`
-  width: 100%;
-  background: linear-gradient(180deg, #f0f0f0, #e0e0e0);
+const Wrapper = styled(Box)`
+  position: relative;
+  background: linear-gradient(180deg, #222, #333);
   color: white;
+  // padding: 60px 0;
 `;
 
-const Section = styled.div`
+const Section = styled(Box)`
   padding: 60px 0;
-  background: #f5f5f5;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-
   &:nth-child(odd) {
-    background: #e0e0e0;
+    background-color: #2c2c2c;
+  }
+  &:nth-child(even) {
+    background-color: #3a3a3a;
   }
 `;
 
-const Container = styled.div`
-  width: 85%;
-  margin: 0 auto;
+const HeaderInfo = styled(Box)`
   text-align: center;
-`;
-
-const HeaderInfo = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 
   h1 {
-    color: #333;
+    color: #eee;
   }
 
   p {
-    color: #555;
+    color: #bdbdbd;
+    font-size: .9rem;
   }
 `;
 
-const ServiceBoxRow = styled.div`
+const ServiceBoxRow = styled(Box)`
   display: flex;
   justify-content: space-around;
-
-  @media (max-width: 860px) {
-    flex-direction: column;
-  }
+  flex-wrap: wrap;
 `;
 
-const ServiceBoxWrapper = styled.div`
+const ServiceBoxWrapper = styled(Box)`
   width: 30%;
-  padding: 40px 20px;
-  background: #fff;
+  padding: 20px;
+  background-color: #444;
   border-radius: 8px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
 
   @media (max-width: 860px) {
     width: 100%;
-    margin-bottom: 20px;
   }
 `;
 
-const Advertising = styled.div`
+const Advertising = styled(Box)`
+  display: flex;
+  justify-content: space-between;
   margin: 80px 0;
   padding: 100px 0;
-  position: relative;
-`;
-
-const ButtonsRow = styled.div`
-  display: flex;
-  justify-content: center;
+  color: #ccc;
 
   @media (max-width: 860px) {
     flex-direction: column;
-    align-items: center;
+    text-align: center;
   }
 `;
 
-const AddLeft = styled.div`
-  width: 50%;
-  padding-right: 20px;
-  color: #333;
+const ButtonsRow = styled(Box)`
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 
-  h2 {
-    color: #222;
+  & > div {
+    margin: 0 10px;
   }
 
   @media (max-width: 860px) {
+    flex-direction: column;
+
+    & > div {
+      margin: 10px 0;
+    }
+  }
+`;
+
+const AddLeft = styled(Box)`
+  width: 50%;
+
+  @media (max-width: 860px) {
     width: 100%;
-    text-align: center;
-    padding-right: 0;
     margin-bottom: 40px;
   }
 `;
 
-const AddRight = styled.div`
+const AddRight = styled(Box)`
   width: 50%;
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
 
   @media (max-width: 860px) {
     width: 100%;
   }
 `;
 
-const AddRightInner = styled.div`
+const AddRightInner = styled(Box)`
   display: flex;
-  justify-content: space-around;
-`;
-
-const AddImgWrapp1 = styled.div`
-  width: 48%;
-  img {
-    width: 100%;
-    height: auto;
-  }
-`;
-
-const AddImgWrapp2 = styled.div`
-  width: 48%;
-  img {
-    width: 100%;
-    height: auto;
-  }
-`;
-
-const AddImgWrapp3 = styled.div`
   width: 100%;
+  justify-content: space-between;
+`;
+
+const AddImgWrapp1 = styled(Box)`
+  width: 48%;
+
   img {
     width: 100%;
-    height: auto;
+    border-radius: 8px;
+  }
+`;
+
+const AddImgWrapp2 = styled(Box)`
+  width: 48%;
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+  }
+`;
+
+const AddImgWrapp3 = styled(Box)`
+  width: 100%;
+  margin-top: 20px;
+
+  img {
+    width: 100%;
+    border-radius: 8px;
   }
 `;

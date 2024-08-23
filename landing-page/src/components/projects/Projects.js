@@ -106,7 +106,7 @@ const Projects = () => {
               }
             }}
           >
-            title={isExpanded ? 'Show Less' : 'Show More'}
+            {isExpanded ? 'Show Less' : 'Show More'}
           </Button>
         </Box>
       </Container >

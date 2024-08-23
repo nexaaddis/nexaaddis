@@ -11,7 +11,8 @@ const ProjectsCard = ({ image, title, category }) => {
   return (
     <Card
       sx={{
-        maxWidth: 345,
+        width: '100%',
+        maxWidth: '600px',
         backgroundColor: '#2a2a2a',
         border: '1px solid #444',
         borderRadius: '8px',
