@@ -1,3 +1,32 @@
+:root {
+  /* Primary Colors */
+  --primary-color: #fb8122;
+  --secondary-color: #1d2228;
+  --accent-color: #e1e2e2;
+
+  /* Background Colors */
+  --bg-color: var(--secondary-color);
+  --bg-hover-color: #2a2f35;
+  --bg-muted-color: #3a3f45;
+
+  /* Text Colors */
+  --text-color: var(--accent-color);
+  --text-muted-color: #b0b0b0;
+  --text-title-color: var(--primary-color);
+  --text-subtitle-color: #d4d4d4;
+
+  /* Border and Shadow Colors */
+  --border-color: #444;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+
+  /* Hover Colors */
+  --hover-primary-color: #e6731a;
+  --hover-secondary-color: #2a2f35;
+  --hover-accent-color: #d1d2d2;
+}
+
+
+ 
  html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -16,8 +45,8 @@
     border: 0;
     vertical-align: baseline;
     box-sizing: border-box;
-    /* background-color: linear-gradient(45deg, #070707, #0d0c0c, #121212); */
   }
+
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure, 
   footer, header, hgroup, menu, nav, section {

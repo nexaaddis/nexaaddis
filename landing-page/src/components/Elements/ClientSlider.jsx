@@ -18,12 +18,13 @@ export default function ClientSlider() {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const settings = {
-    infinite: false,
+    infinite: true,
     speed: 2000,
     slidesToShow: 7,
     slidesToScroll: 3,
     arrows: false,
-    autoplay: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1024,
@@ -105,37 +106,35 @@ export default function ClientSlider() {
   );
 }
 
-const StyledSliderContainer = styled(Box)({
+const StyledSliderContainer = styled(Box)(({ theme }) => ({
   overflow: 'hidden',
-  backgroundColor: '#666',
-  padding: '20px 0',
-  zIndex: 1,
-  // boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 0.5)',
+  background: 'linear-gradient(135deg, #111, #222)',
+  padding: '15px 0',
   borderRadius: '10px',
-});
+  boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',
+  zIndex: 1,
+}));
 
-const LogoWrapper = styled(Box)({
+const LogoWrapper = styled(Box)(({ theme }) => ({
   width: '100%',
-  height: '100px',
+  height: '70px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   cursor: 'pointer',
-  // backgroundColor: 'rgba(255, 255, 255, 0.1)',
-  // borderRadius: '8px',
-  padding: '10px',
+  padding: 'auto 0',
   transition: 'transform 0.3s ease',
-  ':hover': {
-    transform: 'scale(1.05)',
-  },
-});
+  outline: 'none'
+}));
 
-const ImgStyle = styled('img')({
-  width: '100px',
+const ImgStyle = styled('img')(({ theme }) => ({
+  border: 'none',
+  width: '80px',
   height: 'auto',
-  opacity: 0.9,
-  transition: 'opacity 0.3s ease',
+  filter: 'grayscale(100%)', // Black and white effect
+  transition: 'filter 0.3s ease',
   ':hover': {
-    opacity: 1,
+    filter: 'grayscale(0%)', // Show actual color on hover
+    border: 'none',
   },
-});
+}));

@@ -5,9 +5,11 @@ import { Box, Typography, Button } from '@mui/material';
 const LeftBanner = () => {
   const [text] = useTypewriter({
     words: [
-      "Building Innovative Websites.",
-      "Designing Engaging UI / UX.",
-      "Enhancing Your Online Presence.",
+      "Boost Your Online Presence.",
+      "Elevate Your Brand Identity.",
+      "Enhance Customer Engagement.",
+      "Maximize Efficiency and Growth.",
+      "Achieve Seamless Integration.",
     ],
     loop: true,
     typeSpeed: 50,
@@ -21,118 +23,118 @@ const LeftBanner = () => {
         width: '100%',
         height: '100%',
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center',
         flexDirection: 'column',
-        gap: 4,
+        gap: 2,
         padding: { xs: 2, md: 4 },
-        color: 'white',
-        textAlign: 'center',
+        color: 'var(--text-color)',
+        textAlign: 'left',
         mt: 2,
+        fontFamily: 'Arial, sans-serif',
       }}
     >
-      <Box
+      <Typography
+        variant="subtitle2"
         sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 4,
-          alignItems: 'center',
-          justifyContent: 'center',
+          fontSize: { xs: '0.75rem', sm: '0.85rem', md: '1rem' },
+          color: 'var(--text-muted-color)',
+          textTransform: 'uppercase',
+          letterSpacing: 1.5,
+          fontFamily: 'Roboto, sans-serif',
         }}
       >
-        {/* Small Text */}
-        <Typography
-          variant="subtitle2"
-          sx={{
-            fontSize: { xs: '0.75rem', sm: '0.85rem', md: '1rem' },
-            color: 'grey', // Cool color
-            textTransform: 'capitalize',
-            letterSpacing: 1.5,
-          }}
-        >
-          NEXA ADDIS
-        </Typography>
+        NEXA ADDIS
+      </Typography>
 
-        {/* Main Heading */}
+      <Typography
+        variant="h3"
+        sx={{
+          fontWeight: '900',
+          fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem', lg: '3.6rem' },
+          color: 'var(--text-color)',
+          lineHeight: 1.2,
+          fontFamily: 'Roboto, sans-serif',
+          position: 'relative',
+          '&:before': {
+            content: "''",
+            position: 'absolute',
+            width: '50%',
+            height: '4px',
+            bottom: '-10px',
+            left: '0',
+            backgroundColor: 'var(--primary-color)',
+          },
+        }}
+      >
+        Shaping the Future with{' '}<br></br>
+        <span style={{ color: 'var(--text-muted-color)' }}>Innovative Solutions</span>
+      </Typography>
+
+      <Box
+        sx={{
+          textAlign: 'left',
+          display: 'inline-block',
+          position: 'relative',
+          overflow: 'hidden',
+          whiteSpace: 'nowrap',
+          width: '100%',
+          maxWidth: '100%',
+        }}
+      >
         <Typography
-          variant="h3"
+          variant="h4"
           sx={{
             fontWeight: '700',
-            fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem', lg: '3.6rem' },
-            color: '#ffffff',
-            lineHeight: 1,
-            // letterSpacing: 1,
-          }}
-        >
-          Welcome to{' '}
-          <span style={{ color: '#ff5722' }}>Innovative Solutions</span>
-        </Typography>
-
-        {/* Typewriting Text */}
-        <Box
-          sx={{
-            textAlign: 'center',
-            display: 'inline-block',
-            position: 'relative',
-            overflow: 'hidden',
-            whiteSpace: 'nowrap',
-            width: '99%',
-            maxWidth: '99%',
-          }}
-        >
-          <Typography
-            variant="h4"
-            sx={{
-              fontWeight: '700',
-              fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2rem', lg: '2.5rem' },
-              color: '#ffd700',
-              lineHeight: 1.2,
-              display: 'inline',
-            }}
-          >
-            {text}
-          </Typography>
-          <Cursor
-            cursorStyle={<strong style={{ fontSize: '2rem', fontWeight: '1000', color: '#ffd700' }}>|</strong>}
-          />
-        </Box>
-
-        {/* Description */}
-        <Typography
-          variant="body1"
-          sx={{
-            fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem', lg: '1.25rem' },
-            color: '#e0e0e0',
-            lineHeight: 1.6,
-            maxWidth: '600px',
-            mx: 'auto',
-          }}
-        >
-          At Innovative Solutions, we specialize in creating exceptional digital experiences. Our dedicated team designs and develops cutting-edge websites that captivate audiences and drive business success.
-        </Typography>
-
-        {/* Unique Button */}
-        <Button
-          sx={{
-            mt: '2rem',
-            border: '1px solid #ff5722',
-            outline: 'none',
-            width: { xs: '40%', sm: '35%', lg: '30%' },
-            padding: '15px',
-            fontWeight: '700',
-            fontSize: { xs: '.7rem', sm: '.6rem', md: '.8rem', lg: '1rem' },
-            color: '#ff5722',
+            fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2rem', lg: '2.5rem' },
+            color: 'var(--primary-color)',
             lineHeight: 1.2,
-
-            "&:hover": {
-              backgroundColor: 'rgb(255, 87, 34, .3)',
-              color: "#eee",
-            }
+            display: 'inline',
+            fontFamily: 'Courier New, monospace',
           }}
         >
-          Get Started
-        </Button>
+          {text}
+        </Typography>
+        <Cursor
+          cursorStyle={<strong style={{ fontSize: '2rem', fontWeight: '1000', color: 'var(--primary-color)' }}>|</strong>}
+        />
       </Box>
+
+      <Typography
+        variant="body1"
+        sx={{
+          fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem', lg: '1.25rem' },
+          color: 'var(--text-subtitle-color)',
+          lineHeight: 1.6,
+          maxWidth: '600px',
+          textAlign: 'left',
+          m: '2rem 0',
+          fontFamily: 'Verdana, sans-serif',
+        }}
+      >
+        Delivering top-tier software and design services in Ethiopia.
+      </Typography>
+
+      {/* Unique Button */}
+      <Button
+        sx={{
+          mt: '2rem',
+          backgroundColor: 'var(--primary-color)',
+          outline: 'none',
+          width: { xs: '40%', sm: '35%', lg: '30%' },
+          padding: '15px',
+          fontWeight: '700',
+          fontSize: { xs: '.7rem', sm: '.6rem', md: '.8rem', lg: '1rem' },
+          color: '#ffffff',
+          lineHeight: 1.2,
+          "&:hover": {
+            backgroundColor: 'var(--hover-primary-color)',
+            color: "#eee",
+          }
+        }}
+      >
+        Get Started
+      </Button>
     </Box>
   );
 };

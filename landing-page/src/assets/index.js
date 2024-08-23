@@ -18,8 +18,12 @@ import vFLetter from "./logos/vFLetter.png"
 import xLetter from "./logos/xLetter.png"
 import mechanic from "./logos/mechanic.png"
 
+// gif
+import designTheamGif from "./gif/designTheamGif.gif"
+
 // bg
 import bg1 from './bg/bg1.jpg'
+import designSvg from  './bg/designSvg.svg'
 export { 
     workImgOne,
     workImgTwo,
@@ -43,4 +47,9 @@ export {
 
     // bg
     bg1,
+    designSvg,
+
+    // gif
+    designTheamGif,
+
 };

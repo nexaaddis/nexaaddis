@@ -40,6 +40,8 @@ const Banner = () => {
 
       <Box
         sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', lg: 'row' },
           position: 'relative',
           zIndex: 1,
           display: 'flex',

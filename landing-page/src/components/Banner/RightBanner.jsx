@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, CardMedia } from '@mui/material';
-
+import { designSvg } from '../../assets'
 const RightBanner = () => {
   return (
     <Box
@@ -50,7 +50,7 @@ const RightBanner = () => {
           borderRadius: '10px',
           boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.3)',
         }}
-        image="https://via.placeholder.com/500x680.png?text=Your+Image+Here" // Replace with a valid image URL
+        image={designSvg}
         alt="Banner Image"
       />
 
