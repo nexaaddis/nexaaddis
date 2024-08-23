@@ -83,14 +83,14 @@ export default function Blog() {
   };
 
   return (
-    <Container  id="blog" sx={{ width: "100%", padding: '5rem 0', border: '1px solid blue' }}>
+    <Container  id="blog" sx={{ width: "100%", padding: '5rem 0' }}>
       <Box
         sx={{
-          backgroundColor: "#121212", // Dark background
-          color: "#ffffff", // White text for contrast
+          backgroundColor: "#121212",
+          color: "#ffffff",
           boxShadow: "inset 0 0 10px #000000",
           borderRadius: "20px",
-          p: 3,
+
         }}
       >
         <Box sx={{ mb: 4, textAlign: { xs: "center", md: "left" } }}>
@@ -127,20 +127,21 @@ export default function Blog() {
         <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
           <Button
             variant="outlined"
-            color="primary"
             onClick={handleLoadMore}
             sx={{
-              borderColor: "#ff5722",
-              color: "#ff5722",
-              transition: "all 0.3s ease",
-              "&:hover": {
-                backgroundColor: "#ff5722",
-                color: "#ffffff",
-                boxShadow: "0 0 10px #ff5722",
+              borderRadius: '12px',
+              padding: '8px 16px',
+              borderColor: expanded ? '#dc3545' : '#007bff',
+              color: expanded ? '#dc3545' : '#007bff',
+              '&:hover': {
+                borderColor: expanded ? '#c82333' : '#0056b3',
+                color: expanded ? '#c82333' : '#0056b3',
+                boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 0.6)'  // Add inset shadow on hover
               },
-              "&:active": {
-                transform: "scale(0.95)",
-              },
+              backgroundColor: '#2a2a2a',  // Button background for contrast
+              '&:hover': {
+                backgroundColor: '#333333'  // Darker on hover
+              }
             }}
           >
             {expanded ? "Show Less" : "Load More"}

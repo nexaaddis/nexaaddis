@@ -32,16 +32,16 @@ export default function BlogBox({ tag, title, text, author, image }) {
           />
         </Box>
         <CardContent>
-          <Typography variant="h6" component="div" fontWeight="bold" color="#ff5722">
+          <Typography variant="h6" component="div" fontWeight="bold" color="#f0f0f0">
             {title}
           </Typography>
           <Typography variant="body2" color="#bdbdbd" sx={{ margin: "20px 0" }}>
             {truncatedText}
           </Typography>
-          <Typography variant="body2" color="#ffffff" fontWeight="bold">
+          <Typography variant="body2" color="#eee" fontWeight="bold">
             {author}
           </Typography>
-          <Chip label={tag} size="small" sx={{ marginTop: "10px", color: "#ffffff", backgroundColor: "#ff5722" }} />
+          <Chip label={tag} size="small" sx={{ marginTop: "10px", color: "#ffffff", backgroundColor: "rgb(255, 0, 0, .5)" }} />
           {text.length > 100 && (
             <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
               <Button

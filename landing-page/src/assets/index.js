@@ -18,7 +18,8 @@ import vFLetter from "./logos/vFLetter.png"
 import xLetter from "./logos/xLetter.png"
 import mechanic from "./logos/mechanic.png"
 
-
+// bg
+import bg1 from './bg/bg1.jpg'
 export { 
     workImgOne,
     workImgTwo,
@@ -39,4 +40,7 @@ export {
     vFLetter,
     xLetter,
     mechanic,
+
+    // bg
+    bg1,
 };

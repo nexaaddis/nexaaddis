@@ -47,7 +47,7 @@ const Projects = () => {
     <div activeClass="active" style={{ backgroundColor: '#222', display: 'flex', justifyContent: 'center' }}>
       <Container
         id="projects"
-        sx={{ border: "1px solid blue", color: '#f0f0f0', width: "99%", padding: '5rem auto', border: '1px solid blue', m: '3rem 0' }}
+        sx={{ color: '#f0f0f0', width: "99%", padding: '5rem auto', m: '3rem 0' }}
       >
         <Typography
           variant="h4"
@@ -106,7 +106,7 @@ const Projects = () => {
               }
             }}
           >
-            {isExpanded ? 'Show Less' : 'Show More'}
+            title={isExpanded ? 'Show Less' : 'Show More'}
           </Button>
         </Box>
       </Container >
