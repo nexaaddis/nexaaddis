@@ -51,7 +51,7 @@ const LeftBanner = () => {
         variant="h3"
         sx={{
           fontWeight: '900',
-          fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem', lg: '3.6rem' },
+          fontSize: { xs: '2rem', sm: '2.5rem', md: '2.8rem', lg: '3.1rem' },
           color: 'var(--text-color)',
           lineHeight: 1.2,
           fontFamily: 'Roboto, sans-serif',
@@ -103,12 +103,12 @@ const LeftBanner = () => {
       <Typography
         variant="body1"
         sx={{
-          fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem', lg: '1.25rem' },
+          fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem', lg: '1.1rem' },
           color: 'var(--text-subtitle-color)',
           lineHeight: 1.6,
           maxWidth: '600px',
           textAlign: 'left',
-          m: '2rem 0',
+          mt: '2rem',
           fontFamily: 'Verdana, sans-serif',
         }}
       >
@@ -118,7 +118,7 @@ const LeftBanner = () => {
       {/* Unique Button */}
       <Button
         sx={{
-          mt: '2rem',
+          mt: '1rem',
           borderRadius: '36px',
           backgroundColor: 'var(--primary-color)',
           outline: 'none',
