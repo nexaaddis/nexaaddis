@@ -108,7 +108,7 @@ export default function ClientSlider() {
 
 const StyledSliderContainer = styled(Box)(({ theme }) => ({
   overflow: 'hidden',
-  background: 'linear-gradient(135deg, #111, #222)',
+  background: 'linear-gradient(135deg, #111, #1d2228)',
   padding: '15px 0',
   borderRadius: '10px',
   boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',

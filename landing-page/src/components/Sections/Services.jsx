@@ -11,14 +11,31 @@ import AddImage1 from "../../assets/img/add/1.png";
 import AddImage2 from "../../assets/img/add/2.png";
 import AddImage3 from "../../assets/img/add/3.png";
 
+import { bg1 } from '../../assets';
+
 export default function Services() {
   return (
     <Wrapper id="services">
+      {/* bg img */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          background: `url(${bg1}) no-repeat center center/cover`,
+          filter: 'brightness(0.8)',
+          zIndex: -1,
+        }}
+      />
+      
+      {/* Slider */}
       <Container
         maxWidth="lg"
         sx={{
           position: 'absolute',
-          top: '-3.4%',
+          top: '-58px',
           left: '50%',
           transform: 'translateX(-50%)',
           zIndex: '1000',
@@ -26,6 +43,8 @@ export default function Services() {
       >
           <ClientSlider />
       </Container>
+
+      {/* Service section */}
       <Section sx={{
         pt: '10rem',
       }}>
@@ -61,6 +80,8 @@ export default function Services() {
           </ServiceBoxRow>
         </Container>
       </Section>
+
+      {/* About Us */}
       <Section>
         <Container maxWidth="lg">
           <Advertising>
@@ -97,7 +118,7 @@ export default function Services() {
 
 const Wrapper = styled(Box)`
   position: relative;
-  background: linear-gradient(180deg, #222, #333);
+  // background: linear-gradient(180deg, #222, #333);
   color: white;
   // padding: 60px 0;
 `;
@@ -105,10 +126,10 @@ const Wrapper = styled(Box)`
 const Section = styled(Box)`
   padding: 60px 0;
   &:nth-child(odd) {
-    background-color: #2c2c2c;
+    // background-color: #2c2c2c;
   }
   &:nth-child(even) {
-    background-color: #3a3a3a;
+    // background-color: #3a3a3a;
   }
 `;
 

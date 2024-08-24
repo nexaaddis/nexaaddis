@@ -119,9 +119,10 @@ const LeftBanner = () => {
       <Button
         sx={{
           mt: '2rem',
+          borderRadius: '36px',
           backgroundColor: 'var(--primary-color)',
           outline: 'none',
-          width: { xs: '40%', sm: '35%', lg: '30%' },
+          width: { xs: '40%', sm: '35%', lg: '180px' },
           padding: '15px',
           fontWeight: '700',
           fontSize: { xs: '.7rem', sm: '.6rem', md: '.8rem', lg: '1rem' },
