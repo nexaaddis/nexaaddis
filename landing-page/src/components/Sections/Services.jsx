@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Container from "@mui/material/Container";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 // Components
 import ClientSlider from "../Elements/ClientSlider";
 import ServiceBox from "../Elements/ServiceBox";
@@ -10,6 +10,7 @@ import FullButton from "../Buttons/FullButton";
 import AddImage1 from "../../assets/img/add/1.png";
 import AddImage2 from "../../assets/img/add/2.png";
 import AddImage3 from "../../assets/img/add/3.png";
+
 
 import { bg1 } from '../../assets';
 
@@ -25,8 +26,8 @@ export default function Services() {
           width: '100%',
           height: '100%',
           // background: `url(${bg1}) no-repeat center center/cover`,
-          bgcolor: 'var(--secondary-color)',
-          filter: 'brightness(0.8)',
+          bgcolor: '#eee',
+          // filter: 'brightness(0)',
           zIndex: -1,
         }}
       />
@@ -45,29 +46,31 @@ export default function Services() {
         <ClientSlider />
       </Container>
 
-      {/* Service section */}
-      <Section sx={{
-        pt: '10rem',
-      }}>
+      {/* Service */}
+      <Box
+        sx={{
+          pt: '10rem',
+        }}
+      >
         <Container maxWidth="lg">
           <Box
             sx={{
               mb: '1rem',
-              textAlign: { xs: "center", md: "left" },
+              textAlign: { xs: 'center', md: 'left' },
               p: { xs: 2, md: 3 },
-              color: "var(--text-color)",
+              color: 'var(--text-color)',
             }}
           >
             {/* Title */}
             <Typography
               variant="body1"
               fontWeight="bold"
-              letterSpacing="1.5" 
+              letterSpacing="1.5"
               sx={{
-                fontSize: { xs: "0.75rem", sm: "0.875rem", md: "1.2rem" },
-                marginBottom: "0.5rem",
-                color: "var(--primary-color)",
-                textTransform: "uppercase",
+                fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1.2rem' },
+                marginBottom: '0.5rem',
+                color: 'var(--primary-color)',
+                textTransform: 'uppercase',
               }}
             >
               Leading Software Solutions
@@ -77,11 +80,11 @@ export default function Services() {
             <Typography
               variant="h2"
               sx={{
-                fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
-                fontWeight: "bold",
-                color: "var(--accent-color)",
-                marginBottom: "0.5rem",
-                maxWidth: "60%",
+                fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
+                fontWeight: 'bold',
+                color: 'var(--secondary-color)',
+                marginBottom: '0.5rem',
+                maxWidth: { xs: '100%', md: '60%' },
               }}
             >
               Turning Ideas into Reality
@@ -91,38 +94,41 @@ export default function Services() {
             <Typography
               variant="body2"
               sx={{
-                fontSize: { xs: "0.625rem", sm: "0.75rem", md: "0.875rem" },
-                color: "var(--text-muted-color)",
+                fontSize: { xs: '0.625rem', sm: '0.75rem', md: '0.875rem' },
+                color: 'var(--bg-muted-color)',
               }}
             >
               We build innovative software tailored to your needs, helping your business thrive in the digital age.
             </Typography>
           </Box>
-          <ServiceBoxRow>
-            <ServiceBoxWrapper>
+
+          {/* Service Boxes */}
+          <Grid container spacing={3}>
+            <Grid item xs={12} sm={6} md={4}>
               <ServiceBox
                 icon="roller"
-                title="Graphic Design"
-                subtitle="Transforming your ideas into captivating visual designs that resonate with your audience."
+                title="Design"
+                subtitle="We create impactful visual designs that clearly communicate your brand’s message and connect with your target audience."
               />
-            </ServiceBoxWrapper>
-            <ServiceBoxWrapper>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
               <ServiceBox
                 icon="monitor"
-                title="Web Design"
-                subtitle="Crafting responsive and engaging websites that effectively represent your brand."
+                title="Web Development"
+                subtitle="Our team builds responsive and user-friendly websites that enhance your online presence and effectively showcase your business."
               />
-            </ServiceBoxWrapper>
-            <ServiceBoxWrapper>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
               <ServiceBox
                 icon="browser"
-                title="Software Development"
-                subtitle="Developing custom software solutions to drive your business forward with innovation."
+                title="Mobile Development"
+                subtitle="We develop robust mobile applications that bring your services to your customers' fingertips, ensuring a seamless experience."
               />
-            </ServiceBoxWrapper>
-          </ServiceBoxRow>
+            </Grid>
+          </Grid>
+
         </Container>
-      </Section>
+      </Box>
 
       {/* About Us */}
       <Section>

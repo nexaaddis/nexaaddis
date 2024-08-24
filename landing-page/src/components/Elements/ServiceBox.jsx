@@ -1,24 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import Box from "@mui/material/Box";
-// Assets
-// import RollerGif from "../../assets/gifs/Services/RollerGif.gif";
-// import MonitorGif from "../../assets/gifs/Services/MonitorGif.gif";
-// import designTheamGif from "../../assets/gif/designTheamGif.gif";
-import { designTheamGif } from "../../assets"
+// assets
+import { designTheamGif } from "../../assets";
+import designerPen from "../../assets/svg/Services/designerPen.svg";
+import mobile from "../../assets/svg/Services/mobile.svg";
+import website from "../../assets/svg/Services/website.svg";
 
 export default function ServiceBox({ icon, title, subtitle }) {
   let getIcon;
 
   switch (icon) {
     case "roller":
-      getIcon = <Icon src={designTheamGif} alt="Roller Icon" />;
+      getIcon = <Icon src={designerPen} alt="Roller Icon" />;
       break;
     case "monitor":
-      getIcon = <Icon src={designTheamGif} alt="Monitor Icon" />;
+      getIcon = <Icon src={website} alt="Monitor Icon" />;
       break;
     case "browser":
-      getIcon = <Icon src={designTheamGif} alt="Browser Icon" />;
+      getIcon = <Icon src={mobile} alt="Browser Icon" />;
       break;
     default:
       getIcon = <Icon src={designTheamGif} alt="Default Icon" />;
@@ -39,14 +39,18 @@ const Wrapper = styled(Box)`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #333; /* Darker background */
+  background-color: #f5f5f5; /* Light background color */
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Soft box shadow */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
   &:hover {
-    background-color: #444; /* Slightly lighter on hover */
-    transform: scale(1.05);
+    background-color: #e0e0e0; /* Slightly darker on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+    transform: none; /* No scaling */
   }
 `;
 
@@ -63,12 +67,13 @@ const Icon = styled.img`
 
 const Title = styled(Box)`
   margin-bottom: 10px;
-  color: #fff;
+  color: #333;
   font-size: 20px;
   font-weight: bold;
 `;
 
 const Subtitle = styled(Box)`
-  color: #aaa;
+  color: #555;
   font-size: 13px;
 `;
+
