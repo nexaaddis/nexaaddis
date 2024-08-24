@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
+import { Box, Typography } from "@mui/material";
 // Components
 import ClientSlider from "../Elements/ClientSlider";
 import ServiceBox from "../Elements/ServiceBox";
@@ -24,24 +24,25 @@ export default function Services() {
           left: 0,
           width: '100%',
           height: '100%',
-          background: `url(${bg1}) no-repeat center center/cover`,
+          // background: `url(${bg1}) no-repeat center center/cover`,
+          bgcolor: 'var(--secondary-color)',
           filter: 'brightness(0.8)',
           zIndex: -1,
         }}
       />
-      
+
       {/* Slider */}
       <Container
         maxWidth="lg"
         sx={{
           position: 'absolute',
-          top: '-58px',
+          top: '-60px',
           left: '50%',
           transform: 'translateX(-50%)',
           zIndex: '1000',
         }}
       >
-          <ClientSlider />
+        <ClientSlider />
       </Container>
 
       {/* Service section */}
@@ -49,12 +50,54 @@ export default function Services() {
         pt: '10rem',
       }}>
         <Container maxWidth="lg">
-          <HeaderInfo>
-            <h1 className="font40 extraBold">Our Awesome Services</h1>
-            <p className="font13">
-              At our Software and Designing Company, we offer a wide range of services to meet your creative and technical needs. Whether you require innovative software solutions, stunning designs, or cutting-edge web development, we are here to make your vision a reality.
-            </p>
-          </HeaderInfo>
+          <Box
+            sx={{
+              mb: '1rem',
+              textAlign: { xs: "center", md: "left" },
+              p: { xs: 2, md: 3 },
+              color: "var(--text-color)",
+            }}
+          >
+            {/* Title */}
+            <Typography
+              variant="body1"
+              fontWeight="bold"
+              letterSpacing="1.5" 
+              sx={{
+                fontSize: { xs: "0.75rem", sm: "0.875rem", md: "1.2rem" },
+                marginBottom: "0.5rem",
+                color: "var(--primary-color)",
+                textTransform: "uppercase",
+              }}
+            >
+              Leading Software Solutions
+            </Typography>
+
+            {/* Main Heading */}
+            <Typography
+              variant="h2"
+              sx={{
+                fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+                fontWeight: "bold",
+                color: "var(--accent-color)",
+                marginBottom: "0.5rem",
+                maxWidth: "60%",
+              }}
+            >
+              Turning Ideas into Reality
+            </Typography>
+
+            {/* Additional Muted Text */}
+            <Typography
+              variant="body2"
+              sx={{
+                fontSize: { xs: "0.625rem", sm: "0.75rem", md: "0.875rem" },
+                color: "var(--text-muted-color)",
+              }}
+            >
+              We build innovative software tailored to your needs, helping your business thrive in the digital age.
+            </Typography>
+          </Box>
           <ServiceBoxRow>
             <ServiceBoxWrapper>
               <ServiceBox
@@ -134,7 +177,7 @@ const Section = styled(Box)`
 `;
 
 const HeaderInfo = styled(Box)`
-  text-align: center;
+  text-align: left;
   margin-bottom: 60px;
 
   h1 {
