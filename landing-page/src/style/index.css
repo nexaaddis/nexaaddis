@@ -1,8 +1,9 @@
 :root {
   /* Primary Colors */
   --primary-color: #fb8122;
-  --secondary-color: #1d2228;
+  --secondary-color: #1c2229;
   --accent-color: #e1e2e2;
+  color: #f1f1f1;
 
   /* Background Colors */
   --bg-color: var(--secondary-color);
@@ -158,10 +159,6 @@ a {
   color: #0B093B;
 }
 
-a:hover {
-  color: #fb8122;
-}
-
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 50px #fff inset;
   /* Change the color to your own background color */
@@ -170,7 +167,8 @@ input:-webkit-autofill {
 }
 
 body {
-  background: #111;
+  background: #fff;
+  padding: 0 !important;
   color: #0B093B;
   font-family: 'Khula', sans-serif;
   overflow-x: hidden;
@@ -235,43 +233,50 @@ body {
 .x100 {
   width: 100%;
 }
-
-/* Active class */
-.active {
+/* GENERAL NAVBAR LINK STYLES */
+.nav-link a {
   position: relative;
-  color: #fb8122;
-  border-bottom: 3px solid #fb8122;
-  animation: borderExpand 0.6s ease-in-out forwards;
-}
-
-@keyframes borderExpand {
-  0% {
-    border-bottom-width: 0px;
-  }
-  100% {
-    border-bottom-width: 2.5px;
-  }
-}
-
-.active {
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
   transition: color 0.3s ease-in-out;
-  animation: colorFade 0.3s ease-in-out;
+  padding: 10px 15px;
 }
 
-@keyframes colorFade {
-  0% {
-    color: #000;
-  }
-  100% {
-    color: #fb8122;
-  }
+/* Hover Effect */
+.nav-link a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -3px;
+  left: 0;
+  background-color: #ca6314;
+  transition: width 0.3s ease-in-out;
 }
 
-/* End of Active class */
+.nav-link a:hover::before {
+  width: 100%;
+}
+
+.nav-link a:hover {
+  color: #ca6314;
+}
+
+/* Active State */
+.nav-link a.active {
+  color: #fb8122;
+}
+
+.nav-link a.active::before {
+  width: 100%;
+  background-color: #fb8122;
+}
 .tag {
   padding: 5px 10px;
   margin: 10px 0;
 }
+/* END OF NAVBAR */
 
 .shadow {
   box-shadow: 0 0 11px rgba(237, 232, 237, 0.5);

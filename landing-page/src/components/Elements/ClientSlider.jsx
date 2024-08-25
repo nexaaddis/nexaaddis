@@ -19,12 +19,13 @@ export default function ClientSlider() {
 
   const settings = {
     infinite: true,
-    speed: 2000,
-    slidesToShow: 7,
-    slidesToScroll: 3,
+    speed: 1500,
+    slidesToShow: 6,
+    slidesToScroll: 2,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -108,33 +109,45 @@ export default function ClientSlider() {
 
 const StyledSliderContainer = styled(Box)(({ theme }) => ({
   overflow: 'hidden',
-  background: '#eee',
+  backgroundColor: '#e7e7e7',
   padding: '15px 0',
   borderRadius: '10px',
-  boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',
+  boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
   zIndex: 1,
+  [theme.breakpoints.down('md')]: {
+    padding: '10px 0',
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '8px 0',
+  },
 }));
 
 const LogoWrapper = styled(Box)(({ theme }) => ({
   width: '100%',
-  height: '100px',
+  height: '80px', // Adjust height for better responsiveness
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   cursor: 'pointer',
-  padding: 'auto 0',
   transition: 'transform 0.3s ease',
-  outline: 'none'
+  outline: 'none',
+  padding: '0 10px', // Adjust padding for consistent spacing
+  [theme.breakpoints.down('md')]: {
+    height: '70px',
+  },
+  [theme.breakpoints.down('sm')]: {
+    height: '60px',
+  },
 }));
 
 const ImgStyle = styled('img')(({ theme }) => ({
   border: 'none',
-  width: '80px',
-  height: 'auto',
+  width: 'auto',
+  maxHeight: '100%', // Ensure image scales well
   filter: 'grayscale(100%)', // Black and white effect
   transition: 'filter 0.3s ease',
   ':hover': {
     filter: 'grayscale(0%)', // Show actual color on hover
-    border: 'none',
+    transform: 'scale(1.05)', // Slight scale-up on hover
   },
 }));

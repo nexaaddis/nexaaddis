@@ -1,7 +1,5 @@
 import React from "react";
 import { Avatar, Box, Typography } from "@mui/material";
-// Assets
-import QuoteIcon from "../../assets/svg/Quotes";
 
 export default function TestimonialBox({ text, author, imgSrc }) {
   return (
@@ -9,62 +7,54 @@ export default function TestimonialBox({ text, author, imgSrc }) {
       sx={{
         width: "100%",
         minWidth: "300px",
-        minHeight: "200px",
-        padding: "20px",
+        minHeight: "250px",
+        padding: "30px",
         marginTop: "30px",
         marginBottom: "30px",
         position: "relative",
-        background: "linear-gradient(135deg, #333, #111)",
+        backgroundColor: "#eee",
         borderRadius: "12px",
-        boxShadow: "inset 0 0 15px rgba(0, 0, 0, 0.7), 0 8px 16px rgba(0, 0, 0, 0.6), 0 0 10px rgba(255, 165, 0, 0.8)", // Glowing border contrast
+        boxShadow: "0 6px 12px rgba(0, 0, 0, 0.15)",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between",
-        color: "#bdbdbd",
+        justifyContent: "flex-start",
+        color: "var(--bg-hover-color)",
         "@media (max-width: 600px)": {
-          padding: "15px",
+          padding: "20px",
           marginTop: "20px",
+          minHeight: "220px",
         },
       }}
     >
       <Box
         sx={{
-          position: "absolute",
-          top: "-35px",
-          left: "-17px",
-          color: "#FFA500",
-          fontSize: "2.5rem",
-          "@media (max-width: 600px)": {
-            fontSize: "3rem",
-          },
+          display: "flex",
+          alignItems: "flex-start",
+          marginBottom: "20px",
         }}
       >
-        <QuoteIcon />
-      </Box>
-
-      <Box sx={{ zIndex: 1, paddingBottom: "1.5rem" }}>
-        <Typography
-          variant="body1"
+        <Avatar
+          alt={author}
+          src={imgSrc}
           sx={{
-            paddingBottom: "20px",
-            color: "#bdbdbd",
-            fontSize: "0.9rem",
+            width: "80px",
+            height: "80px",
+            marginRight: "20px",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
             "@media (max-width: 600px)": {
-              marginTop: "20px",
-              fontSize: "0.9rem",
+              width: "60px",
+              height: "60px",
             },
           }}
-        >
-          {text}
-        </Typography>
+        />
         <Typography
           variant="subtitle2"
           sx={{
-            color: "#FFA500",
-            alignSelf: "flex-end",
-            fontSize: "0.85rem",
+            color: "var(--hover-primary-color)",
+            alignSelf: "center",
+            fontSize: "1rem",
             "@media (max-width: 600px)": {
-              fontSize: "0.75rem",
+              fontSize: "0.9rem",
             },
           }}
         >
@@ -72,30 +62,18 @@ export default function TestimonialBox({ text, author, imgSrc }) {
         </Typography>
       </Box>
 
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: "10px",
-          right: "10px",
-          "@media (max-width: 600px)": {
-            bottom: "5px",
-            right: "5px",
-          },
-        }}
-      >
-        <Avatar
-          alt={author}
-          src={imgSrc}
+      <Box sx={{ zIndex: 1 }}>
+        <Typography
+          variant="body1"
           sx={{
-            width: "60px",
-            height: "60px",
-            boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
+            fontSize: "1rem",
             "@media (max-width: 600px)": {
-              width: "50px",
-              height: "50px",
+              fontSize: "0.9rem",
             },
           }}
-        />
+        >
+          {text}
+        </Typography>
       </Box>
     </Box>
   );

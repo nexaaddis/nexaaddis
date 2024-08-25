@@ -2,10 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 import styled from "styled-components";
 import { Link } from "react-scroll";
-// Components
 import Sidebar from "./Sidebar";
 import Backdrop from "../Elements/Backdrop";
-// Assets
 import LogoIcon from "../../assets/svg/Logo";
 import BurgerIcon from "../../assets/svg/BurgerIcon";
 
@@ -14,85 +12,67 @@ export default function TopNavbar() {
   const [sidebarOpen, toggleSidebar] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => setY(window.scrollY));
-    return () => {
-      window.removeEventListener("scroll", () => setY(window.scrollY));
-    };
+    const handleScroll = () => setY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [y]);
-
 
   return (
     <>
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
       {sidebarOpen && <Backdrop toggleSidebar={toggleSidebar} />}
-      <Wrapper className="flexCenter animate lightBg" style={y > 100 ? { height: "75px" } : { height: "85px" }}>
+      <Wrapper className="flexCenter animate lightBg" style={y > 100 ? { height: "65px" } : { height: "75px" }}>
         <NavInner className="container flexSpaceCenter">
-          <Link className="pointer flexNullCenter" to="home" smooth={true}>
+          <LinkWrapper to="home" smooth={true}>
             <LogoIcon />
             <h1 style={{ marginLeft: "15px" }} className="font20 extraBold darkColor">
               NexaAddis
             </h1>
-          </Link>
+          </LinkWrapper>
           <BurderWrapper className="pointer" onClick={() => toggleSidebar(!sidebarOpen)}>
             <BurgerIcon />
           </BurderWrapper>
           <UlWrapper className="flexNullCenter">
-            <li className="semiBold font15 pointer">
-              <Link className="darkColor" activeClass="active" style={{ padding: "10px 15px" }} to="home" spy={true} smooth={true} offset={-80}>
-                Home
-              </Link>
-            </li>
-            <li className="semiBold font15 pointer">
-              <Link className="darkColor" activeClass="active" style={{ padding: "10px 15px" }} to="services" spy={true} smooth={true} offset={-80}>
-                Services
-              </Link>
-            </li>
-            <li className="semiBold font15 pointer">
-              <Link className="darkColor" activeClass="active" style={{ padding: "10px 15px" }} to="projects" spy={true} smooth={true} offset={-80}>
-                Projects
-              </Link>
-            </li>
-            <li className="semiBold font15 pointer">
-              <Link className="darkColor" activeClass="active" style={{ padding: "10px 15px" }} to="blog" spy={true} smooth={true} offset={-80}>
-                Blog
-              </Link>
-            </li>
-            <li className="semiBold font15 pointer">
-              <Link className="darkColor" activeClass="active" style={{ padding: "10px 15px" }} to="pricing" spy={true} smooth={true} offset={-80}>
-                Pricing
-              </Link>
-            </li>
-            <li className="semiBold font15 pointer">
-              <Link className="darkColor" activeClass="active" style={{ padding: "10px 15px" }} to="contact" spy={true} smooth={true} offset={-80}>
-                Contact
-              </Link>
-            </li>
+            {["home", "services", "projects", "blog", "pricing", "contact"].map((section) => (
+              <li key={section} className="semiBold font15 pointer nav-link">
+                <StyledLink
+                  activeClass="active"
+                  to={section}
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                >
+                  {section}
+                </StyledLink>
+              </li>
+            ))}
           </UlWrapper>
           <UlWrapperRight className="flexNullCenter">
             <li className="semiBold font15 pointer">
-              <a className="darkColor" href="/" style={{ padding: "10px 30px 10px 0" }}>
+              <a className="darkColor nav-link" href="/" style={{ padding: "10px 30px 10px 0" }}>
                 Log in
               </a>
             </li>
             <Button
               sx={{
                 margin: '0 auto',
-                borderRadius: '12px',
+                borderRadius: '10px',
                 backgroundColor: 'var(--primary-color)',
                 outline: 'none',
-                width: { xs: '100', sm: '120px', lg: '150px' },
-                padding: '10px',
-                fontWeight: '600',
-                fontSize: { xs: '.6rem', sm: '.6rem', md: '.8rem', lg: '1rem' },
+                width: { xs: '100px', lg: '130px' },
+                padding: { xs: '4px auto', lg: '5px auto' },
+                fontWeight: '500',
+                fontSize: { xs: '0.8rem', sm: '0.9rem', lg: '1rem' },
                 color: '#ffffff',
-                lineHeight: 1.2,
+                textTransform: 'capitalize',
                 "&:hover": {
                   backgroundColor: 'transparent',
-                  color: 'var(--primary-color)',
-                }
+                  color: '#fb8122',
+                },
               }}
             >
-              Get Started
+              Contact Us
             </Button>
           </UlWrapperRight>
         </NavInner>
@@ -109,10 +89,12 @@ const Wrapper = styled.nav`
   left: 0;
   z-index: 10000;
 `;
+
 const NavInner = styled.div`
   position: relative;
   height: 100%;
-`
+`;
+
 const BurderWrapper = styled.button`
   outline: none;
   border: 0px;
@@ -124,18 +106,56 @@ const BurderWrapper = styled.button`
     display: block;
   }
 `;
+
 const UlWrapper = styled.ul`
   display: flex;
   @media (max-width: 1000px) {
     display: none;
   }
 `;
+
 const UlWrapperRight = styled.ul`
   display: flex;
-  align-item: center;
+  align-items: center;
   @media (max-width: 1000px) {
     display: none;
   }
 `;
 
+const LinkWrapper = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+`;
 
+const StyledLink = styled(Link)`
+  position: relative;
+  color: #000;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: color 0.3s ease-in-out;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #ca6314;
+    transition: width 0.3s ease-in-out;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+
+  &.active {
+    color: #fb8122;
+    &::before {
+      width: 100%;
+      background-color: #fb8122;
+    }
+  }
+`;

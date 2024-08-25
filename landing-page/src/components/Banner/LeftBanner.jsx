@@ -119,23 +119,24 @@ const LeftBanner = () => {
       <Button
         sx={{
           mt: '1rem',
-          borderRadius: '36px',
+          borderRadius: '20px',
           backgroundColor: 'var(--primary-color)',
           outline: 'none',
-          width: { xs: '40%', sm: '35%', lg: '180px' },
-          padding: '15px',
-          fontWeight: '700',
-          fontSize: { xs: '.7rem', sm: '.6rem', md: '.8rem', lg: '1rem' },
+          width: { xs: '100px', sm: '150px', lg: '170px' },
+          padding: { xs: '6px 12px', sm: '8px 16px', lg: '8px auto' },
+          fontWeight: 'bold',
+          fontSize: { xs: '0.8rem', sm: '0.9rem', lg: '1.1rem' },
           color: '#ffffff',
-          lineHeight: 1.2,
+          textTransform: 'capitalize',
           "&:hover": {
-            backgroundColor: 'var(--hover-primary-color)',
-            color: "#eee",
+            backgroundColor: 'var(--bg-muted-color)',
+            color: 'var(--accent-color)',
           }
         }}
       >
-        Get Started
+        Get In Touch
       </Button>
+
     </Box>
   );
 };

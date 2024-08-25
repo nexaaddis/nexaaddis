@@ -7,12 +7,9 @@ import Container from "@mui/material/Container";
 import Collapse from "@mui/material/Collapse";
 // Components
 import BlogBox from "../Elements/BlogBox";
-import FullButton from "../Buttons/FullButton";
-import TestimonialSlider from "../Elements/TestimonialSlider";
 import {
-  workImgOne,
   workImgTwo,
-  workImgThree,
+  workImgOne,
   workImgFour,
   workImgFive,
   workImgSix,
@@ -65,7 +62,7 @@ export default function Blog() {
       title: "New Office Opened",
       text: "We are excited to announce the opening of our new office in San Francisco.",
       author: "John Doe, 2 days ago",
-      image: workImgThree,
+      image: workImgOne,
     },
     {
       tag: "Product Update",
@@ -83,29 +80,39 @@ export default function Blog() {
   };
 
   return (
-    <div activeClass="active">
-      <Container id="blog" sx={{ width: "100%", padding: '5rem 0' }}>
+    <div style={{ margin: "0 !important" }} activeClass="active">
+      <Container id="blog" sx={{ width: "100%", padding: '5rem 0', bgcolor: '#fff' }}>
         <Box
           sx={{
             px: 2,
-            // backgroundColor: "#121212",
             color: "#ffffff",
-            // boxShadow: "inset 0 0 10px #000000",
             borderRadius: "20px",
-
           }}
         >
           <Box sx={{ mb: 4, textAlign: { xs: "center", md: "left" } }}>
+            <Typography
+              variant="body1"
+              fontWeight="bold"
+              letterSpacing="1.5"
+              sx={{
+                fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1.2rem' },
+                mb: '0.5rem',
+                color: 'var(--primary-color)',
+                textTransform: 'uppercase',
+              }}
+            >
+              Blogs
+            </Typography>
             <Typography
               variant="h4"
               component="h1"
               gutterBottom
               align="left"
-              sx={{ mb: 5, fontWeight: '800', color: '#f0f0f0' }}
+              sx={{ fontWeight: '800', color: '#1c2229' }}
             >
               Our Blog Stories
             </Typography>
-            <Typography variant="body1" mt={2} color="#bdbdbd">
+            <Typography variant="body1" mt={1} color="#3a3f45">
               Discover the latest updates and insights from our team.
               <br />
               Stay tuned for exciting news and product launches.
@@ -131,23 +138,18 @@ export default function Blog() {
               variant="outlined"
               onClick={handleLoadMore}
               sx={{
-                borderRadius: '12px',
-                padding: '8px 16px',
-                borderColor: expanded ? '#dc3545' : '#007bff',
-                color: expanded ? '#dc3545' : '#007bff',
-                '&:hover': {
-                  borderColor: expanded ? '#c82333' : '#0056b3',
-                  color: expanded ? '#c82333' : '#0056b3',
-                  boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 0.6)'  // Add inset shadow on hover
+                borderRadius: "12px",
+                padding: "8px 16px",
+                borderColor: expanded ? "var(--hover-primary-color)" : "var(--primary-color)",
+                color: expanded ? "var(--hover-primary-color)" : "var(--primary-color)",
+                "&:hover": {
+                  borderColor: "var(--hover-primary-color)",
                 },
-                backgroundColor: '#2a2a2a',  // Button background for contrast
-                '&:hover': {
-                  backgroundColor: '#333333'  // Darker on hover
-                }
               }}
             >
-              {expanded ? "Show Less" : "Load More"}
+              {expanded ? "Show Less" : "Show More"}
             </Button>
+
           </Box>
         </Box>
       </Container>

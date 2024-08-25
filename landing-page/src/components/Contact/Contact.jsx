@@ -1,166 +1,214 @@
 import React, { useState } from 'react';
-import ContactLeft from './ContactLeft';
-import { TextField, Button, Typography, Box, Paper } from '@mui/material';
+import { Grid, Typography, Box } from '@mui/material';
+import TextField from '@mui/material/TextField';
+import Alert from '@mui/material/Alert';
+import TextareaAutosize from '@mui/material/TextareaAutosize';
+import { MuiTelInput } from 'mui-tel-input';
+import './contact.css';
 
-const Contact = () => {
-  const [username, setUsername] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
-  const [errMsg, setErrMsg] = useState("");
-  const [successMsg, setSuccessMsg] = useState("");
+const initialValues = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  companyName: '',
+  phone: '',
+  projectDescription: '',
+};
 
-  const emailValidation = () => {
-    return String(email)
-      .toLocaleLowerCase()
-      .match(/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/);
+const ContactUsForm = () => {
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({});
+
+  const validate = (values) => {
+    const errors = {};
+    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    const internationalPhoneRegex = /^\+2519\d{8}$/;
+
+    if (!values.firstName) {
+      errors.firstName = 'First name is required!';
+    }
+    if (!values.lastName) {
+      errors.lastName = 'Last name is required!';
+    }
+    if (!values.email) {
+      errors.email = 'Email is required!';
+    } else if (!emailRegex.test(values.email)) {
+      errors.email = 'Invalid email format!';
+    }
+    if (!values.phone) {
+      errors.phone = 'Phone number is required!';
+    } else if (!internationalPhoneRegex.test(values.phone)) {
+      errors.phone = 'Invalid phone number format (+251)';
+    }
+
+    setFormErrors(errors);
+    return Object.keys.formErrors === 0;
   };
 
-  const handleSend = (e) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({
+      ...formValues,
+      [name]: value,
+    });
+    if (formErrors[name]) formErrors[name] = '';
+  };
+
+  const handlePhoneChange = (value) => {
+    const sanitizedValue = value.replace(/\s+/g, '');
+    setFormValues({ ...formValues, phone: sanitizedValue });
+    if (formErrors.phone) formErrors.phone = '';
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (username === "") {
-      setErrMsg("Username is required!");
-    } else if (phoneNumber === "") {
-      setErrMsg("Phone number is required!");
-    } else if (email === "") {
-      setErrMsg("Please give your Email!");
-    } else if (!emailValidation(email)) {
-      setErrMsg("Give a valid Email!");
-    } else if (subject === "") {
-      setErrMsg("Please give your Subject!");
-    } else if (message === "") {
-      setErrMsg("Message is required!");
+    const isValid = validate(formValues);
+    if (isValid) {
+      console.log("Form submitted successfully", formValues);
     } else {
-      setSuccessMsg(
-        `Thank you dear ${username}, Your Messages have been sent Successfully!`
-      );
-      setErrMsg("");
-      setUsername("");
-      setPhoneNumber("");
-      setEmail("");
-      setSubject("");
-      setMessage("");
+      console.log("Validation failed", formErrors);
     }
   };
 
   return (
-    <section id="contact">
-      <Box
-        sx={{
-          py: 10,
-          borderBottom: '1px solid #000',
-        }}
-      >
-        <Box textAlign="center">
-          <Typography variant='h2' textAlign="center" mb={2}>
-            CONTACT
-          </Typography>
-          <Typography variant='body2' textAlign="center" mb={2}>
-            Contact With Me
-          </Typography>
-        </Box>
-        <Box display="flex" flexDirection="column" alignItems="center">
-          <Box
-            display="flex"
-            flexDirection={{ xs: 'column', lg: 'row' }}
-            justifyContent="space-between"
-            width="100%"
-            mt={4}
-          >
-            <ContactLeft />
-            <Paper
-              sx={{
-                width: '100%',
-                lg: '60%',
-                mt: { xs: 4, lg: 0 },
-                p: 3,
-                background: 'linear-gradient(45deg, #1e2024, #23272b)',
-                boxShadow: 'inset 0 0 10px #000',
-                color: '#fff',
-              }}
-            >
-              <form onSubmit={handleSend}>
-                {errMsg && (
-                  <Typography color="error" textAlign="center" mb={2}>
-                    {errMsg}
-                  </Typography>
-                )}
-                {successMsg && (
-                  <Typography color="success.main" textAlign="center" mb={2}>
-                    {successMsg}
-                  </Typography>
-                )}
-                <Box display="flex" flexDirection={{ xs: 'column', lg: 'row' }} gap={2}>
-                  <TextField
-                    label="Your Name"
-                    variant="outlined"
-                    fullWidth
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    error={errMsg === "Username is required!"}
-                  />
-                  <TextField
-                    label="Phone Number"
-                    variant="outlined"
-                    fullWidth
-                    value={phoneNumber}
-                    onChange={(e) => setPhoneNumber(e.target.value)}
-                    error={errMsg === "Phone number is required!"}
-                  />
-                </Box>
-                <TextField
-                  label="Email"
-                  variant="outlined"
-                  fullWidth
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  error={errMsg === "Please give your Email!"}
-                  sx={{ mt: 2 }}
-                />
-                <TextField
-                  label="Subject"
-                  variant="outlined"
-                  fullWidth
-                  value={subject}
-                  onChange={(e) => setSubject(e.target.value)}
-                  error={errMsg === "Please give your Subject!"}
-                  sx={{ mt: 2 }}
-                />
-                <TextField
-                  label="Message"
-                  variant="outlined"
-                  fullWidth
-                  multiline
-                  rows={4}
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  error={errMsg === "Message is required!"}
-                  sx={{ mt: 2 }}
-                />
-                <Button
-                  type="submit"
-                  variant="contained"
-                  fullWidth
-                  sx={{
-                    mt: 3,
-                    background: '#141518',
-                    color: 'gray',
-                    '&:hover': {
-                      color: '#fff',
-                      borderColor: 'designColor',
-                    },
-                  }}
-                >
-                  Send Message
-                </Button>
-              </form>
-            </Paper>
-          </Box>
-        </Box>
+    <div className="contact-form-container" id='contact'>
+      <Box sx={{ mb: 4, textAlign: { xs: "center", md: "left" } }}>
+        <Typography
+          variant="body1"
+          fontWeight="bold"
+          letterSpacing="1.5"
+          textAlign="left"
+          sx={{
+            fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' },
+            mb: '0.5rem',
+            color: 'var(--primary-color)',
+            textTransform: 'uppercase',
+          }}
+        >
+          Reach out to us
+        </Typography>
+        <Typography
+          variant="h4"
+          component="h1"
+          gutterBottom
+          align="left"
+          sx={{ fontWeight: '800', color: '#1c2229' }}
+        >
+          Let's get in touch!
+        </Typography>
       </Box>
-    </section>
+      <Grid container spacing={3} component="form" onSubmit={handleSubmit}>
+        <Grid item xs={12} md={6}>
+          <TextField
+            label="First Name"
+            id="firstName"
+            name="firstName"
+            type="text"
+            value={formValues.firstName}
+            onChange={handleChange}
+            required
+            size="small"
+            fullWidth
+          />
+          {formErrors.firstName && (
+            <Alert className='p__error' severity="error">
+              {formErrors.firstName}
+            </Alert>
+          )}
+        </Grid>
+
+        <Grid item xs={12} md={6}>
+          <TextField
+            label="Last Name"
+            id="lastName"
+            name="lastName"
+            type="text"
+            value={formValues.lastName}
+            onChange={handleChange}
+            required
+            size="small"
+            fullWidth
+          />
+          {formErrors.lastName && (
+            <Alert className='p__error' severity="error">
+              {formErrors.lastName}
+            </Alert>
+          )}
+        </Grid>
+
+        <Grid item xs={12} md={6}>
+          <TextField
+            label="Business Email"
+            id="email"
+            name="email"
+            type="email"
+            placeholder="example@gmail.com"
+            value={formValues.email}
+            onChange={handleChange}
+            required
+            size="small"
+            fullWidth
+          />
+          {formErrors.email && (
+            <Alert className='p__error' severity="error">
+              {formErrors.email}
+            </Alert>
+          )}
+        </Grid>
+
+        <Grid item xs={12} md={6}>
+          <TextField
+            label="Company Name"
+            id="companyName"
+            name="companyName"
+            type="text"
+            value={formValues.companyName}
+            onChange={handleChange}
+            size="small"
+            fullWidth
+          />
+          {formErrors.companyName && (
+            <Alert className='p__error' severity="error">
+              {formErrors.companyName}
+            </Alert>
+          )}
+        </Grid>
+
+        <Grid item xs={12}>
+          <MuiTelInput
+            label="Phone Number"
+            id="phone"
+            name="phone"
+            placeholder="Enter phone number"
+            value={formValues.phone}
+            onChange={handlePhoneChange}
+            defaultCountry="ET"
+          />
+          {formErrors.phone && (
+            <Alert className='p__error' severity="error">
+              {formErrors.phone}
+            </Alert>
+          )}
+        </Grid>
+
+        <Grid item xs={12}>
+          <TextareaAutosize
+            id="projectDescription"
+            name="projectDescription"
+            minRows={4}
+            placeholder="Describe your project (optional)"
+            className="textarea-autosize"
+            value={formValues.projectDescription}
+            onChange={(e) => setFormValues({ ...formValues, projectDescription: e.target.value })}
+          />
+        </Grid>
+
+        <Grid item xs={12}>
+          <button type="submit" className="submit-button">Submit</button>
+        </Grid>
+      </Grid>
+    </div>
   );
 };
 
-export default Contact;
+export default ContactUsForm;

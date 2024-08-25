@@ -1,7 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
-import { Container, Box, Typography } from "@mui/material";
+import { Container, Box, Typography, IconButton } from "@mui/material";
+import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 // Components
 import TestimonialBox from "./TestimonialBox";
 import {
@@ -11,27 +12,23 @@ import {
   workImgFour,
   workImgFive,
   workImgSix,
-  workImgSeven,
   workImgEight,
 } from "../../assets";
 
 export default function TestimonialSlider() {
+  const sliderRef = React.useRef(null);
+
   const settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: false, // Disable default arrows
+    autoplay: true, // Auto-slide
+    autoplaySpeed: 3000, // Interval for auto-slide
     responsive: [
       {
         breakpoint: 800,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -79,38 +76,83 @@ export default function TestimonialSlider() {
   ];
 
   return (
-    <Container sx={{ m: {lg: '3rem auto'}, p: '2rem 0', width: '100%' }}>
+    <Container sx={{ m: 0, p: "4rem 0", width: "100%", overflow: "hidden", bgcolor: '#fff7f1' }}>
       <Box sx={{ mb: 8, textAlign: { xs: "center", md: "left" } }}>
-        <Typography variant="h4" sx={{ mb: 5, fontWeight: '800', color: '#f0f0f0' }}>
+        <Typography
+          variant="body1"
+          fontWeight="bold"
+          letterSpacing="1.5"
+          sx={{
+            fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1.2rem' },
+            mb: '0.5rem',
+            color: 'var(--primary-color)',
+            textTransform: 'uppercase',
+          }}
+        >
+          Testimonials
+        </Typography>
+        <Typography
+          variant="h4"
+          sx={{ mb: 5, fontWeight: "800", color: "#2a2f35" }}
+        >
           What They Say?
         </Typography>
-        <Typography variant="body1" mb={4} color="#bdbdbd">
-          Hear from our clients and partners about their experiences with our products.
+        <Typography variant="body1" mb={4} color="#3a3f45">
+          Hear from our clients and partners about their experiences with our
+          products.
           <br />
           Your feedback helps us grow and improve.
         </Typography>
       </Box>
-      <Slider {...settings}>
-        {testimonials.map((testimonial, index) => (
-          <LogoWrapper key={index} className="flexCenter">
-            <TestimonialBox
-              text={testimonial.text}
-              author={testimonial.author}
-              imgSrc={testimonial.imgSrc}
-            />
-          </LogoWrapper>
-        ))}
-      </Slider>
+      <SliderWrapper>
+        <Slider ref={sliderRef} {...settings}>
+          {testimonials.map((testimonial, index) => (
+            <LogoWrapper key={index} className="flexCenter">
+              <TestimonialBox
+                text={testimonial.text}
+                author={testimonial.author}
+                imgSrc={testimonial.imgSrc}
+              />
+            </LogoWrapper>
+          ))}
+        </Slider>
+        <ArrowWrapper>
+          <IconButton
+            onClick={() => sliderRef.current.slickPrev()}
+            sx={{
+              color: "var(--primary-color)",
+              marginRight: "10px",
+            }}
+          >
+            <ArrowBackIos />
+          </IconButton>
+          <IconButton
+            onClick={() => sliderRef.current.slickNext()}
+            sx={{ color: "var(--primary-color)" }}
+          >
+            <ArrowForwardIos />
+          </IconButton>
+        </ArrowWrapper>
+      </SliderWrapper>
     </Container>
   );
 }
 
+const SliderWrapper = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
 const LogoWrapper = styled.div`
-  width: 90%;
+  width: 100%;
   padding: 0 5%;
-  cursor: pointer;
-  :focus-visible {
-    outline: none;
-    border: 0px;
-  }
+`;
+
+const ArrowWrapper = styled.div`
+  position: absolute;
+  bottom: -30px;  /* Positioned at the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
 `;

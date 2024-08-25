@@ -13,48 +13,62 @@ export default function BlogBox({ tag, title, text, author, image }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const handleToggle = () => setIsExpanded(!isExpanded);
 
-  const truncatedText = text.length > 100 && !isExpanded ? `${text.substring(0, 100)}...` : text;
+  const truncatedText =
+    text.length > 100 && !isExpanded ? `${text.substring(0, 100)}...` : text;
 
   return (
     <StyledCard>
       <CardActionArea onClick={handleToggle}>
-        <Box sx={{ position: "relative" }}>
+        <Box sx={{ position: "relative", overflow: "hidden" }}>
           <CardMedia
             component="img"
-            height="200"
             image={image}
             alt={title}
             sx={{
-              filter: "brightness(0.7)",
-              transition: "filter 0.3s, transform 0.3s",
-              "&:hover": { filter: "brightness(1)", transform: "scale(1.05)" },
+              width: "100%",
+              height: "200px",
+              objectFit: "cover",
             }}
           />
         </Box>
         <CardContent>
-          <Typography variant="h6" component="div" fontWeight="bold" color="#f0f0f0">
+          <Typography
+            variant="h6"
+            component="div"
+            fontWeight="bold"
+            sx={{ color: "#1c2229" }}
+          >
             {title}
           </Typography>
-          <Typography variant="body2" color="#bdbdbd" sx={{ margin: "20px 0" }}>
+          <Typography
+            variant="body2"
+            sx={{ margin: "20px 0", color: "#3a3f45" }}
+          >
             {truncatedText}
           </Typography>
-          <Typography variant="body2" color="#eee" fontWeight="bold">
+          <Typography variant="body2" sx={{ color: "#3a3f45" }} fontWeight="bold">
             {author}
           </Typography>
-          <Chip label={tag} size="small" sx={{ marginTop: "10px", color: "#ffffff", backgroundColor: "rgb(255, 0, 0, .5)" }} />
+          <Chip
+            label={tag}
+            size="small"
+            sx={{
+              marginTop: "10px",
+              color: "#ffffff",
+              backgroundColor: "#ca6314",
+            }}
+          />
           {text.length > 100 && (
             <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
               <Button
-                variant="outlined"
+                variant="contained"
                 sx={{
                   borderRadius: "12px",
                   padding: "8px 16px",
-                  borderColor: "#ff5722",
-                  color: "#ff5722",
-                  transition: "all 0.3s ease",
+                  backgroundColor: "#fb8122",
+                  color: "#ffffff",
                   "&:hover": {
-                    backgroundColor: "#ff5722",
-                    color: "#ffffff",
+                    backgroundColor: "#fb8122",
                   },
                 }}
               >
@@ -70,15 +84,15 @@ export default function BlogBox({ tag, title, text, author, image }) {
 
 const StyledCard = styled(Card)(({ theme }) => ({
   width: "100%",
-  backgroundColor: "#1c1c1c",
+  backgroundColor: "#ffffff",
   marginTop: "30px",
-  padding: "20px",
+  padding: "0px",
   textAlign: "left",
   borderRadius: "15px",
-  boxShadow: "inset 0 0 10px #000000",
+  boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
   transition: "all 0.3s ease-in-out",
-  "&:hover": {
-    transform: "scale(1.05)",
-    boxShadow: "inset 0 0 15px #000000",
+  // Removed hover effect for a more professional look
+  [theme.breakpoints.up("sm")]: {
+    padding: "0px",
   },
 }));

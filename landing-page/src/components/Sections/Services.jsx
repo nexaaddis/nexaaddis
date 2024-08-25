@@ -1,23 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import Container from "@mui/material/Container";
-import { Box, Typography, Grid } from "@mui/material";
+import { Container, Box, Typography, Button, Grid } from "@mui/material";
+
 // Components
 import ClientSlider from "../Elements/ClientSlider";
 import ServiceBox from "../Elements/ServiceBox";
-import FullButton from "../Buttons/FullButton";
+
 // Assets
-import AddImage1 from "../../assets/img/add/1.png";
-import AddImage2 from "../../assets/img/add/2.png";
-import AddImage3 from "../../assets/img/add/3.png";
-
-
-import { bg1 } from '../../assets';
+import { aboutus1, aboutus3 } from "../../assets";
+const smallImage = "https://via.placeholder.com/400x300";
+// import { bg1 } from '../../assets';
 
 export default function Services() {
   return (
     <Wrapper id="services">
-      {/* bg img */}
+      {/* Background Image */}
       <Box
         sx={{
           position: 'absolute',
@@ -25,9 +22,7 @@ export default function Services() {
           left: 0,
           width: '100%',
           height: '100%',
-          // background: `url(${bg1}) no-repeat center center/cover`,
           bgcolor: '#eee',
-          // filter: 'brightness(0)',
           zIndex: -1,
         }}
       />
@@ -40,18 +35,14 @@ export default function Services() {
           top: '-60px',
           left: '50%',
           transform: 'translateX(-50%)',
-          zIndex: '1000',
+          zIndex: 1000,
         }}
       >
         <ClientSlider />
       </Container>
 
-      {/* Service */}
-      <Box
-        sx={{
-          pt: '10rem',
-        }}
-      >
+      {/* Service Section */}
+      <Section sx={{ pt: '10rem', pb: '5rem' }}>
         <Container maxWidth="lg">
           <Box
             sx={{
@@ -61,14 +52,13 @@ export default function Services() {
               color: 'var(--text-color)',
             }}
           >
-            {/* Title */}
             <Typography
               variant="body1"
               fontWeight="bold"
               letterSpacing="1.5"
               sx={{
                 fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1.2rem' },
-                marginBottom: '0.5rem',
+                mb: '0.5rem',
                 color: 'var(--primary-color)',
                 textTransform: 'uppercase',
               }}
@@ -76,21 +66,19 @@ export default function Services() {
               Leading Software Solutions
             </Typography>
 
-            {/* Main Heading */}
             <Typography
               variant="h2"
               sx={{
                 fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
                 fontWeight: 'bold',
                 color: 'var(--secondary-color)',
-                marginBottom: '0.5rem',
+                mb: '0.5rem',
                 maxWidth: { xs: '100%', md: '60%' },
               }}
             >
               Turning Ideas into Reality
             </Typography>
 
-            {/* Additional Muted Text */}
             <Typography
               variant="body2"
               sx={{
@@ -102,7 +90,6 @@ export default function Services() {
             </Typography>
           </Box>
 
-          {/* Service Boxes */}
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={4}>
               <ServiceBox
@@ -126,39 +113,142 @@ export default function Services() {
               />
             </Grid>
           </Grid>
-
         </Container>
-      </Box>
+      </Section>
 
-      {/* About Us */}
-      <Section>
+      {/* About Us Section */}
+      <Section sx={{ py: '5rem', bgcolor: '#e7e7e7', }}>
         <Container maxWidth="lg">
-          <Advertising>
-            <AddLeft>
-              <h4 className="font15 semiBold">About Us</h4>
-              <h2 className="font40 extraBold">Software & Designing Company</h2>
-              <p className="font12">
-                We are a team of creative professionals committed to delivering high-quality software and design solutions. Our mission is to empower businesses through innovative technology and exceptional design.
-              </p>
-              <ButtonsRow>
-                <FullButton title="Get Started" action={() => alert("Get Started clicked")} />
-                <FullButton title="Contact Us" action={() => alert("Contact Us clicked")} border />
-              </ButtonsRow>
-            </AddLeft>
-            <AddRight>
-              <AddRightInner>
-                <AddImgWrapp1>
-                  <img src={AddImage1} alt="office" />
-                </AddImgWrapp1>
-                <AddImgWrapp2>
-                  <img src={AddImage2} alt="office" />
-                </AddImgWrapp2>
-              </AddRightInner>
-              <AddImgWrapp3>
-                <img src={AddImage3} alt="office" />
-              </AddImgWrapp3>
-            </AddRight>
-          </Advertising>
+          <Grid container spacing={4} alignItems="center">
+            {/* Left Content */}
+            <Grid item xs={12} md={6}>
+              <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
+                <Typography
+                  variant="body1"
+                  fontWeight="bold"
+                  letterSpacing="1.5"
+                  sx={{
+                    fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1.2rem' },
+                    mb: '0.5rem',
+                    color: 'var(--primary-color)',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  About us
+                </Typography>
+                <Typography
+                  variant="h2"
+                  sx={{
+                    fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+                    fontWeight: "bold",
+                    color: "var(--secondary-color)",
+                    mb: "1.5rem",
+                  }}
+                >
+                  Software & Designing Firm
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    fontSize: { xs: "0.875rem", sm: "1rem", md: "1.125rem" },
+                    color: "var(--bg-muted-color)",
+                    mb: "4rem",
+                    mt: "2rem"
+                  }}
+                >
+                  We are a team of creative professionals committed to delivering high-quality software and design solutions. Our mission is to empower businesses through innovative technology and exceptional design, turning your ideas into reality.
+                </Typography>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: { xs: "center", md: "flex-start", mt: '2rem' },
+                    gap: "1rem",
+                  }}
+                >
+                  <Button
+                    // variant="contained"
+                    sx={{
+                      textTransform: "uppercase",
+                      border: "1px solid var(--primary-color)",
+                      fontWeight: "bold",
+                      p: "0.75rem 1.5rem",
+                      backgroundColor: "var(--primary-color)",
+                      color: "white",
+                      "&:hover": {
+                        backgroundColor: "transparent",
+                        color: "var(--primary-color)",
+                      },
+                    }}
+                    onClick={() => alert("Get Started clicked")}
+                  >
+                    Get Started
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    sx={{
+                      textTransform: "uppercase",
+                      fontWeight: "bold",
+                      p: "0.75rem 1.5rem",
+                      borderColor: "var(--primary-color)",
+                      color: "var(--primary-color)",
+                      "&:hover": {
+                        backgroundColor: "var(--primary-color)",
+                        color: "white",
+                        borderColor: "var(--primary-color)",
+                      },
+                    }}
+                    onClick={() => alert("Contact Us clicked")}
+                  >
+                    Contact Us
+                  </Button>
+                </Box>
+              </Box>
+            </Grid>
+
+            {/* Right Image */}
+            <Grid item xs={12} md={6}>
+              <Box
+                sx={{
+                  position: "relative",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: 2,
+                }}
+              >
+                {/* Large Image */}
+                <Box
+                  component="img"
+                  src={aboutus1}
+                  alt="Large Office"
+                  sx={{
+                    width: "100%",
+                    height: "auto",
+                    borderRadius: "8px",
+                    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
+                    zIndex: 1,
+                  }}
+                />
+                {/* Small Image */}
+                <Box
+                  component="img"
+                  src={aboutus3}
+                  alt="Small Office"
+                  sx={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    width: "70%",
+                    height: "auto",
+                    borderRadius: "8px",
+                    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
+                    zIndex: 2,
+                  }}
+                />
+              </Box>
+            </Grid>
+          </Grid>
         </Container>
       </Section>
     </Wrapper>
@@ -167,134 +257,11 @@ export default function Services() {
 
 const Wrapper = styled(Box)`
   position: relative;
-  // background: linear-gradient(180deg, #222, #333);
-  color: white;
-  // padding: 60px 0;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Section = styled(Box)`
-  padding: 60px 0;
-  &:nth-child(odd) {
-    // background-color: #2c2c2c;
-  }
-  &:nth-child(even) {
-    // background-color: #3a3a3a;
-  }
+  padding: 4rem 0;
 `;
 
-const HeaderInfo = styled(Box)`
-  text-align: left;
-  margin-bottom: 60px;
-
-  h1 {
-    color: #eee;
-  }
-
-  p {
-    color: #bdbdbd;
-    font-size: .9rem;
-  }
-`;
-
-const ServiceBoxRow = styled(Box)`
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-`;
-
-const ServiceBoxWrapper = styled(Box)`
-  width: 30%;
-  padding: 20px;
-  background-color: #444;
-  border-radius: 8px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-  margin-bottom: 20px;
-
-  @media (max-width: 860px) {
-    width: 100%;
-  }
-`;
-
-const Advertising = styled(Box)`
-  display: flex;
-  justify-content: space-between;
-  margin: 80px 0;
-  padding: 100px 0;
-  color: #ccc;
-
-  @media (max-width: 860px) {
-    flex-direction: column;
-    text-align: center;
-  }
-`;
-
-const ButtonsRow = styled(Box)`
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-
-  & > div {
-    margin: 0 10px;
-  }
-
-  @media (max-width: 860px) {
-    flex-direction: column;
-
-    & > div {
-      margin: 10px 0;
-    }
-  }
-`;
-
-const AddLeft = styled(Box)`
-  width: 50%;
-
-  @media (max-width: 860px) {
-    width: 100%;
-    margin-bottom: 40px;
-  }
-`;
-
-const AddRight = styled(Box)`
-  width: 50%;
-  display: flex;
-  flex-wrap: wrap;
-
-  @media (max-width: 860px) {
-    width: 100%;
-  }
-`;
-
-const AddRightInner = styled(Box)`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-`;
-
-const AddImgWrapp1 = styled(Box)`
-  width: 48%;
-
-  img {
-    width: 100%;
-    border-radius: 8px;
-  }
-`;
-
-const AddImgWrapp2 = styled(Box)`
-  width: 48%;
-
-  img {
-    width: 100%;
-    border-radius: 8px;
-  }
-`;
-
-const AddImgWrapp3 = styled(Box)`
-  width: 100%;
-  margin-top: 20px;
-
-  img {
-    width: 100%;
-    border-radius: 8px;
-  }
-`;

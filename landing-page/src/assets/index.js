@@ -24,6 +24,11 @@ import designTheamGif from "./gif/designTheamGif.gif"
 // bg
 import bg1 from './bg/bg1.jpg'
 import designSvg from  './bg/designSvg.svg'
+
+import aboutus1 from './img/aboutus/aboutus1.jpg'
+import aboutus2 from './img/aboutus/aboutus2.jpg'
+import aboutus3 from './img/aboutus/aboutus3.jpg'
+
 export { 
     workImgOne,
     workImgTwo,
@@ -48,6 +53,9 @@ export {
     // bg
     bg1,
     designSvg,
+    aboutus1,
+    aboutus2,
+    aboutus3,
 
     // gif
     designTheamGif,
