@@ -233,6 +233,7 @@ body {
 .x100 {
   width: 100%;
 }
+
 /* GENERAL NAVBAR LINK STYLES */
 .nav-link a {
   position: relative;
@@ -272,10 +273,12 @@ body {
   width: 100%;
   background-color: #fb8122;
 }
+
 .tag {
   padding: 5px 10px;
   margin: 10px 0;
 }
+
 /* END OF NAVBAR */
 
 .shadow {
@@ -506,3 +509,11 @@ body {
   align-items: center;
   gap: 3.2rem;
 }
+
+/* Slider Testimonial */
+/* @media screen and (max-width: 430px) {
+  #testimonial .slick-track{
+    width: 300px !important;
+    margin: auto 0 !important;
+  }
+} */

@@ -12,17 +12,16 @@ const ProjectsCard = ({ image, title, category }) => {
     <Card
       sx={{
         width: '100%',
-        maxWidth: '600px',
-        backgroundColor: '#2a2a2a',
-        border: '1px solid #444',
+        backgroundColor: '#ffffff', // White background
+        border: '1px solid #ddd', // Light gray border
         borderRadius: '8px',
-        boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.5)',
-        transition: 'transform 0.3s, box-shadow 0.3s, background-color 0.3s',
+        transition: 'transform 0.3s, box-shadow 0.3s',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Soft shadow for contrast
         '&:hover': {
-          transform: 'scale(1.05)',
-          boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 1), 0 8px 16px rgba(0, 0, 0, 0.8)',
-          backgroundColor: '#333333'
-        }
+          transform: 'scale(1.03)',
+          boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)', // Darker shadow on hover
+          backgroundColor: '#f7f7f7', // Slightly darker on hover
+        },
       }}
     >
       <Box sx={{ position: 'relative' }}>
@@ -33,7 +32,9 @@ const ProjectsCard = ({ image, title, category }) => {
           image={image}
           sx={{
             transition: 'opacity 0.3s',
-            '&:hover': { opacity: 0.8 }
+            '&:hover': { opacity: 0.8 },
+            objectFit: 'cover',
+            height: { xs: '140px', sm: '180px', md: '200px' }
           }}
         />
         <Box
@@ -48,9 +49,9 @@ const ProjectsCard = ({ image, title, category }) => {
         >
           <IconButton
             sx={{
-              color: '#888', // Slightly lighter icon color for dark theme
+              color: '#fb8122', // Icon color for theme consistency
               transition: 'color 0.3s',
-              '&:hover': { color: '#1e90ff' } // Bright blue on hover
+              '&:hover': { color: '#ff6347' } // Different hover color for better UX
             }}
             aria-label="Live Preview"
           >
@@ -63,13 +64,13 @@ const ProjectsCard = ({ image, title, category }) => {
           gutterBottom
           variant="h6"
           component="div"
-          sx={{ fontWeight: 'bold', color: '#f0f0f0' }} // Light text for contrast
+          sx={{ fontWeight: 'bold', color: '#333333' }} // Dark text for contrast
         >
           {title}
         </Typography>
         <Typography
           variant="body2"
-          sx={{ color: '#aaaaaa' }} // Lighter gray for secondary text
+          sx={{ color: '#666666' }} // Gray text for secondary info
         >
           {category}
         </Typography>

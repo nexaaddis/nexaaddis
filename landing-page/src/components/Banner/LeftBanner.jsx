@@ -12,9 +12,9 @@ const LeftBanner = () => {
       "Achieve Seamless Integration.",
     ],
     loop: true,
-    typeSpeed: 50,
-    deleteSpeed: 25,
-    delaySpeed: 2500,
+    typeSpeed: 20,
+    deleteSpeed: 10,
+    delaySpeed: 2000,
   });
 
   return (
@@ -23,13 +23,13 @@ const LeftBanner = () => {
         width: '100%',
         height: '100%',
         display: 'flex',
-        alignItems: 'flex-start',
+        alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'column',
         gap: 2,
         padding: { xs: 2, md: 4 },
         color: 'var(--text-color)',
-        textAlign: 'left',
+        textAlign: 'center',
         mt: 2,
         fontFamily: 'Arial, sans-serif',
       }}
@@ -44,36 +44,27 @@ const LeftBanner = () => {
           fontFamily: 'Roboto, sans-serif',
         }}
       >
-        NEXA ADDIS
+        NEXAADDIS
       </Typography>
 
       <Typography
         variant="h3"
         sx={{
           fontWeight: '900',
-          fontSize: { xs: '2rem', sm: '2.5rem', md: '2.8rem', lg: '3.1rem' },
+          fontSize: { xs: '1.6rem', sm: '2.2rem', md: '3rem', lg: '3.5rem' },
           color: 'var(--text-color)',
           lineHeight: 1.2,
           fontFamily: 'Roboto, sans-serif',
           position: 'relative',
-          '&:before': {
-            content: "''",
-            position: 'absolute',
-            width: '50%',
-            height: '4px',
-            bottom: '-10px',
-            left: '0',
-            backgroundColor: 'var(--primary-color)',
-          },
         }}
-      >
-        Shaping the Future with{' '}<br></br>
-        <span style={{ color: 'var(--text-muted-color)' }}>Innovative Solutions</span>
+      > 
+        Shaping the Future{' '}<br></br>
+        <span style={{ color: 'var(--text-muted-color)' }}>with Innovative Solutions</span>
       </Typography>
 
       <Box
         sx={{
-          textAlign: 'left',
+          textAlign: 'center',
           display: 'inline-block',
           position: 'relative',
           overflow: 'hidden',
@@ -83,21 +74,23 @@ const LeftBanner = () => {
         }}
       >
         <Typography
-          variant="h4"
+          variant="h1"
           sx={{
             fontWeight: '700',
             fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2rem', lg: '2.5rem' },
             color: 'var(--primary-color)',
             lineHeight: 1.2,
             display: 'inline',
-            fontFamily: 'Courier New, monospace',
+            fontFamily: 'Roboto, sans-serif',
           }}
         >
           {text}
+          <Cursor
+            cursorBlinking="false"
+            cursorStyle="|"
+            cursorColor="var(--primary-color)"
+          />
         </Typography>
-        <Cursor
-          cursorStyle={<strong style={{ fontSize: '2rem', fontWeight: '1000', color: 'var(--primary-color)' }}>|</strong>}
-        />
       </Box>
 
       <Typography
@@ -106,8 +99,8 @@ const LeftBanner = () => {
           fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem', lg: '1.1rem' },
           color: 'var(--text-subtitle-color)',
           lineHeight: 1.6,
-          maxWidth: '600px',
-          textAlign: 'left',
+          maxWidth: '80%',
+          textAlign: 'center',
           mt: '2rem',
           fontFamily: 'Verdana, sans-serif',
         }}
@@ -122,19 +115,19 @@ const LeftBanner = () => {
           borderRadius: '20px',
           backgroundColor: 'var(--primary-color)',
           outline: 'none',
-          width: { xs: '100px', sm: '150px', lg: '170px' },
-          padding: { xs: '6px 12px', sm: '8px 16px', lg: '8px auto' },
+          width: { xs: '120px', sm: '150px', lg: '170px' },
+          padding: { xs: '7px 14px', sm: '8px 16px', lg: '8px auto' },
           fontWeight: 'bold',
-          fontSize: { xs: '0.8rem', sm: '0.9rem', lg: '1.1rem' },
+          fontSize: { xs: '1rem', sm: '1rem', lg: '1.2rem' },
           color: '#ffffff',
           textTransform: 'capitalize',
           "&:hover": {
-            backgroundColor: 'var(--bg-muted-color)',
+            backgroundColor: '#25282c',
             color: 'var(--accent-color)',
           }
         }}
       >
-        Get In Touch
+        Contact Us
       </Button>
 
     </Box>

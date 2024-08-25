@@ -20,12 +20,12 @@ export default function TestimonialSlider() {
 
   const settings = {
     infinite: true,
-    speed: 500,
+    speed: 3000,
     slidesToShow: 2,
     slidesToScroll: 1,
-    arrows: false, // Disable default arrows
-    autoplay: true, // Auto-slide
-    autoplaySpeed: 3000, // Interval for auto-slide
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 6000,
     responsive: [
       {
         breakpoint: 800,
@@ -76,71 +76,75 @@ export default function TestimonialSlider() {
   ];
 
   return (
-    <Container sx={{ m: 0, p: "4rem 0", width: "100%", overflow: "hidden", bgcolor: '#fff7f1' }}>
-      <Box sx={{ mb: 8, textAlign: { xs: "center", md: "left" } }}>
-        <Typography
-          variant="body1"
-          fontWeight="bold"
-          letterSpacing="1.5"
-          sx={{
-            fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1.2rem' },
-            mb: '0.5rem',
-            color: 'var(--primary-color)',
-            textTransform: 'uppercase',
-          }}
-        >
-          Testimonials
-        </Typography>
-        <Typography
-          variant="h4"
-          sx={{ mb: 5, fontWeight: "800", color: "#2a2f35" }}
-        >
-          What They Say?
-        </Typography>
-        <Typography variant="body1" mb={4} color="#3a3f45">
-          Hear from our clients and partners about their experiences with our
-          products.
-          <br />
-          Your feedback helps us grow and improve.
-        </Typography>
-      </Box>
-      <SliderWrapper>
-        <Slider ref={sliderRef} {...settings}>
-          {testimonials.map((testimonial, index) => (
-            <LogoWrapper key={index} className="flexCenter">
-              <TestimonialBox
-                text={testimonial.text}
-                author={testimonial.author}
-                imgSrc={testimonial.imgSrc}
-              />
-            </LogoWrapper>
-          ))}
-        </Slider>
-        <ArrowWrapper>
-          <IconButton
-            onClick={() => sliderRef.current.slickPrev()}
+    <div id="testimonial" style={{ padding: '4rem 0 4rem 0', width: "100%", backgroundColor: '#fff7f1' }}>
+      <Container>
+        <Box sx={{ mb: '1rem', textAlign: { xs: "center", md: "left" } }}>
+          <Typography
+            variant="body1"
+            fontWeight="bold"
+            letterSpacing="1.5"
             sx={{
-              color: "var(--primary-color)",
-              marginRight: "10px",
+              fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1.2rem' },
+              mb: '0.5rem',
+              color: 'var(--primary-color)',
+              textTransform: 'uppercase',
             }}
           >
-            <ArrowBackIos />
-          </IconButton>
-          <IconButton
-            onClick={() => sliderRef.current.slickNext()}
-            sx={{ color: "var(--primary-color)" }}
+            Testimonials
+          </Typography>
+          <Typography
+            variant="h4"
+            sx={{ mb: 5, fontWeight: "800", color: "#2a2f35" }}
           >
-            <ArrowForwardIos />
-          </IconButton>
-        </ArrowWrapper>
-      </SliderWrapper>
-    </Container>
+            What They Say?
+          </Typography>
+          <Typography variant="body1" mb={4} color="#3a3f45">
+            Hear from our clients and partners about their experiences with our
+            products.
+            <br />
+            Your feedback helps us grow and improve.
+          </Typography>
+        </Box>
+        <SliderWrapper>
+          <Slider ref={sliderRef} {...settings}>
+            {testimonials.map((testimonial, index) => (
+              <LogoWrapper key={index} className="flexCenter">
+                <TestimonialBox
+                  text={testimonial.text}
+                  author={testimonial.author}
+                  imgSrc={testimonial.imgSrc}
+                />
+              </LogoWrapper>
+            ))}
+          </Slider>
+          <ArrowWrapper>
+            <IconButton
+              onClick={() => sliderRef.current.slickPrev()}
+              sx={{
+                color: "var(--primary-color)",
+                marginRight: "20px",
+              }}
+            >
+              <ArrowBackIos />
+            </IconButton>
+            <IconButton
+              onClick={() => sliderRef.current.slickNext()}
+              sx={{ color: "var(--primary-color)" }}
+            >
+              <ArrowForwardIos />
+            </IconButton>
+          </ArrowWrapper>
+        </SliderWrapper>
+      </Container>
+    </div>
   );
 }
 
 const SliderWrapper = styled.div`
   position: relative;
   width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
 `;
 
 const LogoWrapper = styled.div`

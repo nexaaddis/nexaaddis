@@ -107,7 +107,6 @@ export default function Blog() {
               variant="h4"
               component="h1"
               gutterBottom
-              align="left"
               sx={{ fontWeight: '800', color: '#1c2229' }}
             >
               Our Blog Stories

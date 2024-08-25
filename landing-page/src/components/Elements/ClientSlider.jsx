@@ -19,32 +19,32 @@ export default function ClientSlider() {
 
   const settings = {
     infinite: true,
-    speed: 1500,
-    slidesToShow: 6,
+    speed: 3000,
+    slidesToShow: 7,
     slidesToScroll: 2,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 5000,
     pauseOnHover: true,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 5,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
@@ -102,6 +102,15 @@ export default function ClientSlider() {
         <LogoWrapper>
           <ImgStyle src={realEstate} alt="client logo" />
         </LogoWrapper>
+        <LogoWrapper>
+          <ImgStyle src={moon} alt="client logo" />
+        </LogoWrapper>
+        <LogoWrapper>
+          <ImgStyle src={sLetter} alt="client logo" />
+        </LogoWrapper>
+        <LogoWrapper>
+          <ImgStyle src={realEstate} alt="client logo" />
+        </LogoWrapper>
       </Slider>
     </StyledSliderContainer>
   );
@@ -124,14 +133,14 @@ const StyledSliderContainer = styled(Box)(({ theme }) => ({
 
 const LogoWrapper = styled(Box)(({ theme }) => ({
   width: '100%',
-  height: '80px', // Adjust height for better responsiveness
+  height: '80px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   cursor: 'pointer',
   transition: 'transform 0.3s ease',
   outline: 'none',
-  padding: '0 10px', // Adjust padding for consistent spacing
+  padding: '0 10px',
   [theme.breakpoints.down('md')]: {
     height: '70px',
   },
@@ -148,6 +157,6 @@ const ImgStyle = styled('img')(({ theme }) => ({
   transition: 'filter 0.3s ease',
   ':hover': {
     filter: 'grayscale(0%)', // Show actual color on hover
-    transform: 'scale(1.05)', // Slight scale-up on hover
+    // transform: 'scale(1.05)',
   },
 }));

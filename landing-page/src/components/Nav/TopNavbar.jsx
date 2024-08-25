@@ -33,7 +33,7 @@ export default function TopNavbar() {
             <BurgerIcon />
           </BurderWrapper>
           <UlWrapper className="flexNullCenter">
-            {["home", "services", "projects", "blog", "pricing", "contact"].map((section) => (
+            {["home", "services", "projects", "blog", "testimonial", "contact"].map((section) => (
               <li key={section} className="semiBold font15 pointer nav-link">
                 <StyledLink
                   activeClass="active"
@@ -49,11 +49,6 @@ export default function TopNavbar() {
             ))}
           </UlWrapper>
           <UlWrapperRight className="flexNullCenter">
-            <li className="semiBold font15 pointer">
-              <a className="darkColor nav-link" href="/" style={{ padding: "10px 30px 10px 0" }}>
-                Log in
-              </a>
-            </li>
             <Button
               sx={{
                 margin: '0 auto',

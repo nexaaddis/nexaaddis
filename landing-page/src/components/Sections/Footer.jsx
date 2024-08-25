@@ -134,27 +134,33 @@ export default function Contact() {
 
         <Box
           sx={{
+            display: 'flex',
             textAlign: 'center',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            gap: 1,
             mt: 4,
           }}
         >
-          <Typography variant="body2" sx={{ mb: 2, mt: 2 }}>
+          <Typography variant="body2">
             © {getCurrentYear()} NexaAddis, LLC
           </Typography>
-          <Link
-            href="/privacy-policy"
-            sx={{
-              textDecoration: 'none',
-              color: '#fb8122',
-              fontSize: { xs: '0.75rem', sm: '0.875rem' },
-              '&:hover': {
-                color: '#fb8122',
-              },
-              scrollBehavior: 'smooth',
-            }}
-          >
-            Privacy Policy
-          </Link>
+          <Typography variant="body2">
+            <Link
+              href="/privacy-policy"
+              sx={{
+                textDecoration: 'none',
+                color: '#b0b0b0',
+                fontSize: { xs: '0.9rem', sm: '.9rem' },
+                '&:hover': {
+                  color: '#ca6314',
+                },
+                scrollBehavior: 'smooth',
+              }}
+            >
+              Privacy Policy
+            </Link>
+          </Typography>
         </Box>
 
         <IconButton

@@ -7,7 +7,7 @@ import ClientSlider from "../Elements/ClientSlider";
 import ServiceBox from "../Elements/ServiceBox";
 
 // Assets
-import { aboutus1, aboutus3 } from "../../assets";
+import { aboutus1 } from "../../assets";
 const smallImage = "https://via.placeholder.com/400x300";
 // import { bg1 } from '../../assets';
 
@@ -27,31 +27,23 @@ export default function Services() {
         }}
       />
 
-      {/* Slider */}
-      <Container
-        maxWidth="lg"
-        sx={{
-          position: 'absolute',
-          top: '-60px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          zIndex: 1000,
-        }}
-      >
-        <ClientSlider />
-      </Container>
-
       {/* Service Section */}
-      <Section sx={{ pt: '10rem', pb: '5rem' }}>
+      <Section sx={{ p: '4rem 1rem 15rem 1rem', position: 'relative' }}>
+        {/* Slider */}
+        <Container
+          maxWidth="lg"
+          sx={{
+            position: 'absolute',
+            bottom: '1rem',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 1000,
+          }}
+        >
+          <ClientSlider />
+        </Container>
         <Container maxWidth="lg">
-          <Box
-            sx={{
-              mb: '1rem',
-              textAlign: { xs: 'center', md: 'left' },
-              p: { xs: 2, md: 3 },
-              color: 'var(--text-color)',
-            }}
-          >
+          <Box sx={{ mb: 4, textAlign: { xs: "center", md: "center", lg: 'left' } }}>
             <Typography
               variant="body1"
               fontWeight="bold"
@@ -65,28 +57,16 @@ export default function Services() {
             >
               Leading Software Solutions
             </Typography>
-
             <Typography
-              variant="h2"
-              sx={{
-                fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
-                fontWeight: 'bold',
-                color: 'var(--secondary-color)',
-                mb: '0.5rem',
-                maxWidth: { xs: '100%', md: '60%' },
-              }}
+              variant="h4"
+              component="h1"
+              gutterBottom
+              sx={{ fontWeight: '800', color: '#1c2229' }}
             >
               Turning Ideas into Reality
             </Typography>
-
-            <Typography
-              variant="body2"
-              sx={{
-                fontSize: { xs: '0.625rem', sm: '0.75rem', md: '0.875rem' },
-                color: 'var(--bg-muted-color)',
-              }}
-            >
-              We build innovative software tailored to your needs, helping your business thrive in the digital age.
+            <Typography variant="body1" mt={1} color="#3a3f45">
+            We build innovative software tailored to your needs, helping your business thrive in the digital age.
             </Typography>
           </Box>
 
@@ -94,7 +74,7 @@ export default function Services() {
             <Grid item xs={12} sm={6} md={4}>
               <ServiceBox
                 icon="roller"
-                title="Design"
+                title="Designing"
                 subtitle="We create impactful visual designs that clearly communicate your brand’s message and connect with your target audience."
               />
             </Grid>
@@ -221,16 +201,17 @@ export default function Services() {
                   component="img"
                   src={aboutus1}
                   alt="Large Office"
+                  objectFit='cover'
                   sx={{
                     width: "100%",
-                    height: "auto",
+                    height: "500px",
                     borderRadius: "8px",
                     boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
                     zIndex: 1,
                   }}
                 />
                 {/* Small Image */}
-                <Box
+                {/* <Box
                   component="img"
                   src={aboutus3}
                   alt="Small Office"
@@ -245,7 +226,7 @@ export default function Services() {
                     boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
                     zIndex: 2,
                   }}
-                />
+                /> */}
               </Box>
             </Grid>
           </Grid>
