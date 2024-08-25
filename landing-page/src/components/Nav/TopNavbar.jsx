@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 import styled from "styled-components";
-import { Link } from "react-scroll";
+import { HashLink as Link } from "react-router-hash-link"; // Use HashLink for smooth scrolling between routes
 import Sidebar from "./Sidebar";
 import Backdrop from "../Elements/Backdrop";
 import LogoIcon from "../../assets/svg/Logo";
 import BurgerIcon from "../../assets/svg/BurgerIcon";
 import { useNavigate } from "react-router-dom";
-
 
 export default function TopNavbar() {
   const [y, setY] = useState(window.scrollY);
@@ -19,16 +18,15 @@ export default function TopNavbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [y]);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
-
     <>
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
       {sidebarOpen && <Backdrop toggleSidebar={toggleSidebar} />}
       <Wrapper className="flexCenter animate lightBg" style={y > 100 ? { height: "65px" } : { height: "75px" }}>
         <NavInner className="container flexSpaceCenter">
-          <LinkWrapper to="#home" smooth={true} onClick={() => navigate('/home')}>
+          <LinkWrapper to="/#home" smooth onClick={() => navigate('/#home')}>
             <LogoIcon />
             <h1 style={{ marginLeft: "15px" }} className="font20 extraBold darkColor">
               NexaAddis
@@ -41,10 +39,9 @@ export default function TopNavbar() {
             {["home", "services", "about", "projects", "blog", "testimonial"].map((section) => (
               <li key={section} className="semiBold font15 pointer nav-link">
                 <StyledLink
-                  activeClass="active"
-                  to={section}
+                  smooth
+                  to={`/#${section}`} // Navigate to specific section on the home page
                   spy={true}
-                  smooth={true}
                   offset={-80}
                   duration={500}
                 >
@@ -71,6 +68,7 @@ export default function TopNavbar() {
                   color: '#fb8122',
                 },
               }}
+              onClick={() => navigate('/contact')}
             >
               Contact Us
             </Button>
