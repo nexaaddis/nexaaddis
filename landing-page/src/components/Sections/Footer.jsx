@@ -163,7 +163,7 @@ export default function Contact() {
           </Typography>
         </Box>
 
-        <IconButton
+        {/* <IconButton
           href="#home"
           sx={{
             position: 'absolute',
@@ -179,7 +179,7 @@ export default function Contact() {
           }}
         >
           <ArrowUpwardIcon />
-        </IconButton>
+        </IconButton> */}
       </Container>
     </Box>
   );

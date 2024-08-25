@@ -57,11 +57,14 @@ export default function ClientSlider() {
       const scrollTop = window.scrollY;
       setScrollPosition(scrollTop);
 
-      if (scrollTop > lastScrollTop) {
-        sliderRef.current.slickNext();
-      } else {
-        sliderRef.current.slickPrev();
+      if (sliderRef.current) {
+        if (scrollTop > lastScrollTop) {
+          sliderRef.current.slickNext();
+        } else {
+          sliderRef.current.slickPrev();
+        }
       }
+
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     };
 

@@ -1,6 +1,5 @@
 import workImgOne from "./work/workImgOne.jpg"
 import workImgTwo from "./work/workImgTwo.jpg"
-import workImgThree from "./work/workImgThree.jpg"
 import workImgFour from "./work/workImgFour.jpg"
 import workImgFive from "./work/workImgFive.jpg"
 import workImgSix from "./work/workImgSix.jpg"
@@ -18,21 +17,15 @@ import vFLetter from "./logos/vFLetter.png"
 import xLetter from "./logos/xLetter.png"
 import mechanic from "./logos/mechanic.png"
 
-// gif
-import designTheamGif from "./gif/designTheamGif.gif"
-
 // bg
 import bg1 from './bg/bg1.jpg'
 import designSvg from  './bg/designSvg.svg'
+import aboutusBg from './bg/aboutusBg.jpg'
+import aboutusBg2 from './bg/aboutusBg2.jpg'
 
-import aboutus1 from './img/aboutus/aboutus1.jpg'
-import aboutus2 from './img/aboutus/aboutus2.jpg'
-import aboutus3 from './img/aboutus/aboutus3.jpg'
-
-export { 
+export {
     workImgOne,
     workImgTwo,
-    workImgThree,
     workImgFour,
     workImgFive,
     workImgSix,
@@ -53,11 +46,7 @@ export {
     // bg
     bg1,
     designSvg,
-    aboutus1,
-    aboutus2,
-    aboutus3,
-
-    // gif
-    designTheamGif,
+    aboutusBg,
+    aboutusBg2,
 
 };

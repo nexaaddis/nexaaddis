@@ -6,6 +6,8 @@ import Sidebar from "./Sidebar";
 import Backdrop from "../Elements/Backdrop";
 import LogoIcon from "../../assets/svg/Logo";
 import BurgerIcon from "../../assets/svg/BurgerIcon";
+import { useNavigate } from "react-router-dom";
+
 
 export default function TopNavbar() {
   const [y, setY] = useState(window.scrollY);
@@ -17,13 +19,16 @@ export default function TopNavbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [y]);
 
+  const navigate = useNavigate()
+
   return (
+
     <>
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
       {sidebarOpen && <Backdrop toggleSidebar={toggleSidebar} />}
       <Wrapper className="flexCenter animate lightBg" style={y > 100 ? { height: "65px" } : { height: "75px" }}>
         <NavInner className="container flexSpaceCenter">
-          <LinkWrapper to="home" smooth={true}>
+          <LinkWrapper to="#home" smooth={true} onClick={() => navigate('/home')}>
             <LogoIcon />
             <h1 style={{ marginLeft: "15px" }} className="font20 extraBold darkColor">
               NexaAddis
@@ -33,7 +38,7 @@ export default function TopNavbar() {
             <BurgerIcon />
           </BurderWrapper>
           <UlWrapper className="flexNullCenter">
-            {["home", "services", "projects", "blog", "testimonial", "contact"].map((section) => (
+            {["home", "services", "about", "projects", "blog", "testimonial"].map((section) => (
               <li key={section} className="semiBold font15 pointer nav-link">
                 <StyledLink
                   activeClass="active"

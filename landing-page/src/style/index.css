@@ -131,6 +131,10 @@ section {
   display: block;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ol,
 ul {
   list-style: none;

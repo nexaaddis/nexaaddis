@@ -8,7 +8,6 @@ import TestimonialBox from "./TestimonialBox";
 import {
   workImgOne,
   workImgTwo,
-  workImgThree,
   workImgFour,
   workImgFive,
   workImgSix,
@@ -51,7 +50,7 @@ export default function TestimonialSlider() {
     {
       text: "Do not go where the path may lead, go instead where there is no path and leave a trail.",
       author: "Ralph Waldo Emerson",
-      imgSrc: workImgThree,
+      imgSrc: workImgTwo,
     },
     {
       text: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",

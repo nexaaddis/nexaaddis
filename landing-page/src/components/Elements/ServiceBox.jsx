@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Box from "@mui/material/Box";
 // assets
-import { designTheamGif } from "../../assets";
 import designerPen from "../../assets/svg/Services/designerPen.svg";
 import mobile from "../../assets/svg/Services/mobile.svg";
 import website from "../../assets/svg/Services/website.svg";
@@ -21,7 +20,7 @@ export default function ServiceBox({ icon, title, subtitle }) {
       getIcon = <Icon src={mobile} alt="Browser Icon" />;
       break;
     default:
-      getIcon = <Icon src={designTheamGif} alt="Default Icon" />;
+      getIcon = <Icon src={mobile} alt="Default Icon" />;
       break;
   }
 
