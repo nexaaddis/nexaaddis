@@ -70,11 +70,11 @@ const AboutUsSection = () => {
                       color: "var(--primary-color)",
                     },
                   }}
-                  onClick={() => navigate('/aboutus')}
+                  onClick={() => navigate('/about')}
                 >
                   see more
                 </Button>
-                <Button
+                {/* <Button
                   variant="outlined"
                   sx={{
                     textTransform: "uppercase",
@@ -91,7 +91,7 @@ const AboutUsSection = () => {
                   onClick={() => alert("Contact Us clicked")}
                 >
                   Contact Us
-                </Button>
+                </Button> */}
               </Box>
             </Box>
           </Grid>

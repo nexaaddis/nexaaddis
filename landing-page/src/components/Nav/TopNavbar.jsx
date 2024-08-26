@@ -40,7 +40,7 @@ export default function TopNavbar() {
               <li key={section} className="semiBold font15 pointer nav-link">
                 <StyledLink
                   smooth
-                  to={`/#${section}`} // Navigate to specific section on the home page
+                  to= { section === "about" ? `/${section}` : `/#${section}`}
                   spy={true}
                   offset={-80}
                   duration={500}

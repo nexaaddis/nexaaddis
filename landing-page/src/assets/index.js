@@ -22,6 +22,13 @@ import bg1 from './bg/bg1.jpg'
 import designSvg from  './bg/designSvg.svg'
 import aboutusBg from './bg/aboutusBg.jpg'
 import aboutusBg2 from './bg/aboutusBg2.jpg'
+import contactBg from './bg/contactBg.jpg'
+
+// svg
+import lockIcon from './svg/lockIcon.svg'
+
+// svg
+import padlock from './gif/padlock.gif'
 
 export {
     workImgOne,
@@ -48,5 +55,11 @@ export {
     designSvg,
     aboutusBg,
     aboutusBg2,
+    contactBg,
 
+    // svg
+    lockIcon,
+
+    // gif
+    padlock,
 };

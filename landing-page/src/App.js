@@ -6,6 +6,7 @@ import Landing from "./pages/Home/Landing.jsx";
 import Aboutus from "./pages/aboutus/Aboutus.jsx";
 import TopNavbar from "./components/Nav/TopNavbar";
 import ScrollToTop from "./components/Elements/ScrollToTop.jsx";
+import Contact from "./pages/Contact/Contact.jsx";
 
 export default function App() {
   return (
@@ -20,7 +21,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Landing />} />
-        <Route path="/aboutus" element={<Aboutus />} />
+        <Route path="/about" element={<Aboutus />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );

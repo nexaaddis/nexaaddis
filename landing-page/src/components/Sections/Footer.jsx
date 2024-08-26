@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Container, Typography, Grid, Link, Divider, IconButton } from "@mui/material";
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+// import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 // Assets
 import LogoImg from "../../assets/svg/Logo";
 
