@@ -9,7 +9,6 @@ const AboutUsContent = () => {
         width: "100%",
         py: { xs: 4, md: 8 },
       }}
-      id="about"
     >
       <Container
         maxWidth="lg"

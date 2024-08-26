@@ -26,6 +26,7 @@ import contactBg from './bg/contactBg.jpg'
 
 // svg
 import lockIcon from './svg/lockIcon.svg'
+import contactBg2 from './svg/contactBg2.svg'
 
 // svg
 import padlock from './gif/padlock.gif'
@@ -59,6 +60,7 @@ export {
 
     // svg
     lockIcon,
+    contactBg2,
 
     // gif
     padlock,

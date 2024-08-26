@@ -16,7 +16,7 @@ export default function App() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Khula:wght@400;600;800&display=swap" rel="stylesheet" />
       </Helmet>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <TopNavbar />
       <Routes>
         <Route path="/" element={<Landing />} />

@@ -1,44 +1,25 @@
-.contact-form-container {
-  width: 100%;
-  background-color: #ffffff;
-  padding: 4rem 2rem;
-  /* border-radius: 8px; */
-}
-
-.page-title {
-  font-size: 24px;
-  margin-bottom: 16px;
-  color: #333333;
-}
-
-.form-title {
-  font-size: 20px;
-  margin-bottom: 24px;
-  color: #555555;
-}
-
-textarea.textarea-autosize {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #cccccc;
+.textarea-autosize {
+  padding: 10px;
   border-radius: 4px;
-  box-sizing: border-box;
+  border: 1px solid #c4c4c4;
+  outline: none;
+  resize: vertical;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  width: 100%;
 }
 
-.submit-button {
-  background-color: #fb8122;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
+.textarea-autosize:focus {
+  border-color: #fb8122;
 }
 
-.submit-button:hover {
-  background-color: #ca6314;
+
+/* ALERT STYLE */
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded {
+  margin: -5px 0 !important;
+  padding: 0 !important;
 }
 
-.p__error {
-  margin-top: 8px;
+.MuiAlert-icon.css-1ytlwq5-MuiAlert-icon {
+  margin-right: 5px !important;
 }

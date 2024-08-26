@@ -3,6 +3,7 @@
   border-radius: 4px;
   border: 1px solid #c4c4c4;
   outline: none;
+  resize: vertical;
   font-family: Roboto, sans-serif;
   font-size: 14px;
   width: 100%;
@@ -10,4 +11,15 @@
 
 .textarea-autosize:focus {
   border-color: #fb8122;
+}
+
+
+/* ALERT STYLE */
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded {
+  margin: -5px 0 !important;
+  padding: 0 !important;
+}
+
+.MuiAlert-icon.css-1ytlwq5-MuiAlert-icon {
+  margin-right: 5px !important;
 }

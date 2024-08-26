@@ -30,6 +30,9 @@ const ContactUsSection = () => {
     if (!values.lastName) {
       errors.lastName = 'Last name is required!';
     }
+    if (!values.companyName) {
+      errors.companyName = 'Company name is required!';
+    }
     if (!values.email) {
       errors.email = 'Email is required!';
     } else if (!emailRegex.test(values.email)) {
@@ -108,7 +111,6 @@ const ContactUsSection = () => {
                   type="text"
                   value={formValues.firstName}
                   onChange={handleChange}
-                  required
                   size="small"
                   fullWidth
                   InputLabelProps={{ sx: { color: '#3a3f45' } }}
@@ -134,7 +136,6 @@ const ContactUsSection = () => {
                   type="text"
                   value={formValues.lastName}
                   onChange={handleChange}
-                  required
                   size="small"
                   fullWidth
                   InputLabelProps={{ sx: { color: '#3a3f45' } }}
@@ -161,7 +162,6 @@ const ContactUsSection = () => {
                   placeholder="example@gmail.com"
                   value={formValues.email}
                   onChange={handleChange}
-                  required
                   size="small"
                   fullWidth
                   InputLabelProps={{ sx: { color: '#3a3f45' } }}
@@ -213,11 +213,17 @@ const ContactUsSection = () => {
                   value={formValues.phone}
                   onChange={handlePhoneChange}
                   defaultCountry="ET"
-                  InputLabelProps={{ sx: { color: '#3a3f45' } }}
                   InputProps={{
                     sx: {
                       '&::placeholder': { color: '#a0a0a0' },
-                      '&.Mui-focused fieldset': { borderColor: '#fb8122' },
+                      '& .MuiTextField-root': {
+                        '& fieldset': {
+                          borderColor: formErrors.phone ? '#f44336 !important' : 'default' ,
+                        },
+                        '&.Mui-focused fieldset': {
+                          borderColor: formErrors.phone ? '#f44336' : '#fb8122',
+                        },
+                      },
                     },
                   }}
                   fullWidth
@@ -229,12 +235,13 @@ const ContactUsSection = () => {
                 )}
               </Grid>
 
+
               <Grid item xs={12}>
                 <TextareaAutosize
                   id="projectDescription"
                   name="projectDescription"
                   minRows={4}
-                  placeholder="Describe your project (optional)"
+                  placeholder="Describe your project..."
                   className="textarea-autosize"
                   value={formValues.projectDescription}
                   onChange={(e) => setFormValues({ ...formValues, projectDescription: e.target.value })}
@@ -250,7 +257,7 @@ const ContactUsSection = () => {
                 />
               </Grid>
 
-              <Grid item xs={12} textAlign="right">
+              <Grid item xs={12} sx={{ textAlign: {xs: 'left', md: 'right'} }}>
                 <Button
                   type="submit"
                   variant="contained"
@@ -286,17 +293,17 @@ const ContactUsSection = () => {
                 mt: "5rem",
                 mb: '2rem',
                 p: 3,
-                maxWidth: '700px',
+                maxWidth: '800px',
                 borderRadius: '12px',
                 position: 'relative',
                 paddingBottom: '40px',
               }}
             >
               <Typography
-                variant='h2'
+                variant='h1'
                 sx={{
-                  fontSize: { xs: '1.3rem', sm: '1.6rem', md: '2rem' },
-                  fontWeight: '600',
+                  fontSize: { xs: '2rem', sm: '2.2rem', md: '2.5rem' },
+                  fontWeight: '700',
                   mb: 2,
                   lineHeight: 1.7,
                 }}
