@@ -82,12 +82,12 @@ const ContactUsSection = () => {
             <Box
               position="absolute"
               top="20%"
-              right="45%"
+              right="50%"
               component="img"
               src={contactBg2}
               alt="Contact Us"
               sx={{
-                width: '30%',
+                width: '40%',
                 height: 'auto',
                 display: { xs: 'none', md: 'block' },
                 filter: 'grayscale(100%)',
