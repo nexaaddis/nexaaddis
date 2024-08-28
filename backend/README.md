@@ -18,7 +18,7 @@ To get started, install Django using pip:
 
 ````bash
 pip install django
-```
+
 
 ### 2. Install Django rest framework
 
@@ -50,4 +50,19 @@ django-admin start project <name of the project>
 ```bash
 python manage.py startapp <the name of the app>
 ````
+
+
+### Register the installed app and library in the setting.py installed app section
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'rest_framework',
+    'corsheaders',
+    'EmployeeApp.apps.EmployeeappConfig'
+]
 
