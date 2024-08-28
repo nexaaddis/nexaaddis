@@ -18,24 +18,36 @@ To get started, install Django using pip:
 
 ````bash
 pip install django
+```
 
 ### 2. Install Django rest framework
 
 To create rest APIs we need to install Django rest framework:
 
-```bash
+````bash
 pip install djangorestframework
+```
 
 
 ### 3. install Django CORS headers module.
 
 By default, the Django project comes with a security that blocks requests coming from different domains. To disable this, lets install Django CORS headers module.
 
-```bash
+````bash
 pip install djangorestframework
+````
 
 ## To create a Django project
 - Open the command prompt in the desired folder and type the command.
 
 ```Bash
 django-admin start project <name of the project>
+```
+
+## A project may have multiple apps
+### To create an app, we need to type this command.
+
+```bash
+python manage.py startapp <the name of the app>
+````
+
