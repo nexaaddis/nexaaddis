@@ -10,7 +10,7 @@ def is_valid_object_id(id):
     try:
         ObjectId(id)
         return True
-    except:
+    except Exception:
         return False
 
 class ContactInfoView(views.APIView):
@@ -65,6 +65,7 @@ class ContactInfoView(views.APIView):
         """
         if not is_valid_object_id(pk):
             raise ValidationError("Invalid ID format.")
+        
         try:
             contact_info = ContactInfo.objects.get(pk=ObjectId(pk))
             contact_info.delete()
