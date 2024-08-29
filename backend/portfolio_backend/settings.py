@@ -22,8 +22,11 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DEBUG') == 'True'
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+# for development
+# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
+# for production
+ALLOWED_HOSTS = ['.vercel.app']
 
 # Application definition
 
