@@ -2,44 +2,55 @@ from rest_framework import serializers
 from .models import ContactInfo, NewsletterSubscriber
 from bson import ObjectId
 
+
+class ObjectIdField(serializers.Field):
+    """
+    Custom serializer field to handle MongoDB ObjectIds.
+    """
+    def to_representation(self, value):
+        return str(value)
+
+    def to_internal_value(self, data):
+        try:
+            return ObjectId(data)
+        except Exception as e:
+            raise serializers.ValidationError("Invalid ObjectId")
+
+
 class ContactInfoSerializer(serializers.Serializer):
-    mongo_id = serializers.SerializerMethodField()  # MongoDB _id field
-    name = serializers.CharField(max_length=100)
+    id = ObjectIdField(read_only=True)  # MongoDB _id field
+    first_name = serializers.CharField(max_length=100)
+    last_name = serializers.CharField(max_length=100)
+    business_name = serializers.CharField(max_length=200, required=False)
     email = serializers.EmailField()
     phone = serializers.CharField(max_length=15, required=False)
-    message = serializers.CharField()
-
-    def get_mongo_id(self, obj):
-        return str(obj.pk)
+    message = serializers.CharField(required=False)
 
     def create(self, validated_data):
-        return ContactInfo.objects.create(**validated_data)
+        return ContactInfo(**validated_data).save()
 
     def update(self, instance, validated_data):
         """
         Update an existing ContactInfo instance with new data.
         """
-        instance.name = validated_data.get('name', instance.name)
-        instance.email = validated_data.get('email', instance.email)
-        instance.phone = validated_data.get('phone', instance.phone)
-        instance.message = validated_data.get('message', instance.message)
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
         instance.save()
         return instance
 
+
 class NewsletterSubscriberSerializer(serializers.Serializer):
-    mongo_id = serializers.SerializerMethodField()  # MongoDB _id field
+    id = ObjectIdField(read_only=True)  # MongoDB _id field
     email = serializers.EmailField()
 
-    def get_mongo_id(self, obj):
-        return str(obj.pk)
-
     def create(self, validated_data):
-        return NewsletterSubscriber.objects.create(**validated_data)
+        return NewsletterSubscriber(**validated_data).save()
 
     def update(self, instance, validated_data):
         """
         Update an existing NewsletterSubscriber instance with new data.
         """
-        instance.email = validated_data.get('email', instance.email)
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
         instance.save()
         return instance
