@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import mongoengine
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,12 +24,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'f2obkdu@%y85d1_!izb^ninck(29tb(%8u1e3ate!a=znlqbk='
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG') == 'True'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
 
 # Application definition
@@ -86,9 +89,11 @@ WSGI_APPLICATION = 'portfolio_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-MONGO_URI="mongodb+srv://abdurehimked:MG2nk7WcJa3zMHb9@nexaaddis.avnyn.mongodb.net/?retryWrites=true&w=majority&appName=nexaAddis"
+DB_NAME= os.getenv('DB_NAME')
+MONGO_URI= os.getenv('MONGODB_CONNECTION_STRING')
+# MONGO_URI="mongodb+srv://abdurehimked:MG2nk7WcJa3zMHb9@nexaaddis.avnyn.mongodb.net/?retryWrites=true&w=majority&appName=nexaAddis"
 mongoengine.connect(
-    db='mynexa',
+    db=DB_NAME,
     host=MONGO_URI
 )
 
