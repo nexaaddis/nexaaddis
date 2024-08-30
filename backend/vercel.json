@@ -1,22 +1,15 @@
 {
-    "builds": [{
-        "src": "backend/portfolio_backend/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "runtime": "python3.12" }
-    }],
+    "builds": [
+        {
+            "src": "backend/portfolio_backend/wsgi.py",
+            "use": "@vercel/python",
+            "config": { "runtime": "python3.12" }
+        }
+    ],
     "routes": [
         {
             "src": "/(.*)",
             "dest": "backend/portfolio_backend/wsgi.py"
         }
-    ],
-    "functions": {
-        "backend/portfolio_backend/wsgi.py": {
-            "runtime": "python3.12",
-            "handler": "portfolio_backend.wsgi:application"
-        }
-    },
-    "scripts": {
-        "start": "gunicorn --bind 0.0.0.0:8000 portfolio_backend.wsgi:application"
-    }
+    ]
 }
