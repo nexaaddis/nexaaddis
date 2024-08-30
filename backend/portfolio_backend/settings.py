@@ -12,6 +12,12 @@ load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Static files (CSS, JavaScript, Images)
+
+STATICFILES_DIRS = [BASE_DIR/'static',]
+STATIC_ROOT = BASE_DIR/'staticfiles'
+
+
 # SECURITY WARNING: keep the secret key used in production secret!
 
 APPEND_SLASH = False
@@ -128,7 +134,3 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-
-STATIC_URL = '/static/'
