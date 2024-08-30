@@ -1,10 +1,12 @@
 #!/bin/bash
 
+# Ensure pip3 is available and up-to-date
+pip3 install --upgrade pip
+
 # Install dependencies
-pip install --upgrade pip
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 # Collect static files if Django is configured
-# if [ -f "manage.py" ]; then
-#   python manage.py collectstatic --noinput
-# fi
+if [ -f "manage.py" ]; then
+  python3 manage.py collectstatic --noinput
+fi
