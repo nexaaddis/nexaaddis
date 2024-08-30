@@ -25,7 +25,7 @@ DEBUG = os.getenv('DEBUG') == 'True'
 
 # ALLOWED_HOSTS Configuration
 
-ALLOWED_HOSTS = ['nexabackend.vercel.app', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', 'localhost']
 
 # vercel_url = os.environ.get('VERCEL_URL')
 # if vercel_url:
@@ -89,9 +89,10 @@ WSGI_APPLICATION = 'portfolio_backend.wsgi.application'
 
 
 # Database
+DB_NAME = os.getenv('DB_NAME')
+MONGO_URI = os.getenv('MONGODB_CONNECTION_STRING')
 
-DB_NAME= os.getenv('DB_NAME')
-MONGO_URI= os.getenv('MONGODB_CONNECTION_STRING')
+# MongoDB connection
 mongoengine.connect(
     db=DB_NAME,
     host=MONGO_URI

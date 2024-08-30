@@ -9,5 +9,14 @@
             "src": "/(.*)",
             "dest": "backend/portfolio_backend/wsgi.py"
         }
-    ]
+    ],
+    "functions": {
+        "backend/portfolio_backend/wsgi.py": {
+            "runtime": "python3.12",
+            "handler": "portfolio_backend.wsgi:application"
+        }
+    },
+    "scripts": {
+        "start": "gunicorn --bind 0.0.0.0:8000 portfolio_backend.wsgi:application"
+    }
 }
