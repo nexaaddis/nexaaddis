@@ -1,10 +1,14 @@
 #!/bin/bash
 
-# Upgrade pip and install dependencies using Python 3.8
-python3.8 -m pip install --upgrade pip
-python3.8 -m pip install -r requirements.txt
+# Check for default Python version available
+python3 --version
+pip3 --version
 
-# Collect static files if needed
+# Install dependencies
+pip3 install --upgrade pip
+pip3 install -r requirements.txt
+
+# Collect static files if Django is configured
 if [ -f "manage.py" ]; then
-  python3.8 manage.py collectstatic --noinput
+  python3 manage.py collectstatic --noinput
 fi
