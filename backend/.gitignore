@@ -37,3 +37,4 @@ migrations/
 
 # Ignore specific configuration or secret files
 # config.py
+.vercel
