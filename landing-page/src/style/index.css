@@ -514,10 +514,18 @@ body {
   gap: 3.2rem;
 }
 
-/* Slider Testimonial */
-/* @media screen and (max-width: 430px) {
-  #testimonial .slick-track{
-    width: 300px !important;
-    margin: auto 0 !important;
-  }
-} */
+.custom-swal-button {
+  background-color: #fb8122 !important; 
+  color: #fff !important;
+  border: none !important;
+  outline: none !important;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.custom-swal-button:hover {
+  background-color: #f77b2e !important;
+}

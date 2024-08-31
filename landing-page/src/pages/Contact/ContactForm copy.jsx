@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Grid, Typography, Box, Container, TextField, Alert, Button, CircularProgress } from '@mui/material';
+import { Grid, Typography, Box, Container, TextField, Alert, Button, Snackbar } from '@mui/material';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import { MuiTelInput } from 'mui-tel-input';
-import Swal from 'sweetalert2';
-import emailjs from '@emailjs/browser';
 import './contact.css';
+import sendEmail from '../../components/Elements/SendEmail';
 
-import { padlock, contactBg } from '../../assets';
+import { lockIcon, padlock, contactBg } from '../../assets';
+
 
 const initialValues = {
   firstName: '',
@@ -20,8 +20,9 @@ const initialValues = {
 const ContactUsSection = () => {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const validate = (values) => {
     const errors = {};
@@ -70,54 +71,22 @@ const ContactUsSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const isValid = validate(formValues);
-
     if (isValid) {
       try {
-        setIsSubmitting(true);
-
-        const serviceId = process.env.REACT_APP_SERVICE_ID;
-        const templateId = process.env.REACT_APP_TEMPLATE_ID;
-        const publicKey = process.env.REACT_APP_PUBLIC_KEY;
-
-        const templateParams = {
-          recipient_name: 'Nexa Addis',
-          from_email: formValues.email,
-          first_name: formValues.firstName,
-          last_name: formValues.lastName,
-          company_name: formValues.companyName,
-          phone_number: formValues.phone,
-          message: formValues.projectDescription,
-        };
-
-        // Sending the email
-        const response = await emailjs.send(serviceId, templateId, templateParams, publicKey);
-
-        // Display success message
-        Swal.fire({
-          title: 'Good job!',
-          text: 'Thank you for reaching out! We will contact you soon.',
-          icon: 'success',
-          confirmButtonColor: '#fb8122',
-          background: '#f7f7f7',
-        });
-
-        console.log('Email successfully sent:', response);
+        await sendEmail(formValues); // Your email sending function
+        setSuccessMessage('Thank you for reaching out! We will contact you soon.');
+        setOpenSnackbar(true);
+        setFormValues(initialValues); // Reset the form
       } catch (error) {
-        console.error('Error occurred while submitting the form:', error);
-
-        // Display error message
-        Swal.fire({
-          title: 'Error!',
-          text: 'Something went wrong, please try again later.',
-          icon: 'error',
-          confirmButtonColor: '#fb8122',
-        });
-      } finally {
-        setIsSubmitting(false);
+        setErrorMessage('Something went wrong. Please try again later.');
+        setOpenSnackbar(true);
       }
     }
   };
 
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
+  };
 
   return (
     <Box sx={{ backgroundColor: '#fff', p: "8rem 0", position: 'relative' }}>
@@ -148,7 +117,6 @@ const ContactUsSection = () => {
                 Let's get <span style={{ color: '#fb8122' }}>in touch!</span>
               </Typography>
             </Box>
-
             <Grid container spacing={3} component="form" onSubmit={handleSubmit}>
               <Grid item xs={12} md={6}>
                 <TextField
@@ -290,109 +258,106 @@ const ContactUsSection = () => {
                   placeholder="Describe your project..."
                   className="textarea-autosize"
                   value={formValues.projectDescription}
-                  onChange={(e) => setFormValues({ ...formValues, projectDescription: e.target.value })}
-                  style={{
-                    width: '100%',
-                    padding: '10px',
-                    borderRadius: '4px',
-                    borderColor: '#c4c4c4',
-                    outlineColor: '#fb8122',
-                    fontFamily: 'Roboto, sans-serif',
-                    fontSize: '14px',
+                  onChange={handleChange}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <Button
+                  variant="contained"
+                  type="submit"
+                  fullWidth
+                  sx={{
+                    height: '56px',
+                    backgroundColor: '#fb8122',
+                    '&:hover': { backgroundColor: '#fb8122' },
+                  }}
+                >
+                  Send Message
+                </Button>
+              </Grid>
+
+              {/* Security and Confidentiality Section */}
+              <Grid item xs={12}
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: "center",
+                  gap: '3rem'
+                }}
+              >
+                <Box
+                  sx={{
+                    textAlign: 'center',
+                    mt: "5rem",
+                    mb: '2rem',
+                    p: 3,
+                    maxWidth: '800px',
+                    borderRadius: '12px',
+                    position: 'relative',
+                    paddingBottom: '40px',
+                  }}
+                >
+                  <Typography
+                    variant='h1'
+                    sx={{
+                      fontSize: { xs: '2rem', sm: '2.2rem', md: '2.5rem' },
+                      fontWeight: '700',
+                      mb: 2,
+                      lineHeight: 1.7,
+                    }}
+
+                  >
+                    No worries! With us, your information is secure and confidential.
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1.1rem' },
+                      fontWeight: '400',
+                      mb: 2,
+                      lineHeight: 1.7,
+                    }}
+                  >
+                    We have written millions of lines of code that are worth millions of Birr. Whether you are a startup or a publicly traded company, we implement strict security measures to ensure the confidentiality of all your intellectual property, code, and data.              </Typography>
+                </Box>
+
+                {/* Lock Icon at the Bottom Center */}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    bottom: '4rem',
+                    left: "50%",
+                    transform: 'translateX(-50%)',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: "center",
+                    width: '90px',
+                    height: '90px',
+                    backgroundImage: `url(${padlock})`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
                   }}
                 />
               </Grid>
 
-              <Grid item xs={12} sx={{ textAlign: { xs: 'left', md: 'right' } }}>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  sx={{
-                    mt: 2,
-                    py: 1,
-                    px: 4,
-                    backgroundColor: '#fb8122',
-                    '&:hover': { backgroundColor: '#f77b2e' },
-                    borderRadius: '25px',
-                    textTransform: 'none',
-                  }}
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? (
-                    <CircularProgress size={24} color="inherit" />
-                  ) : (
-                    'Submit'
-                  )}
-                </Button>
-              </Grid>
+              {/* Snackbar for feedback */}
+              <Snackbar
+                open={openSnackbar}
+                autoHideDuration={6000}
+                onClose={handleCloseSnackbar}
+                message={successMessage || errorMessage}
+                action={
+                  <Button color="inherit" size="small" onClick={handleCloseSnackbar}>
+                    Close
+                  </Button>
+                }
+                severity={successMessage ? 'success' : 'error'}
+                anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+              />
             </Grid>
           </Grid>
-
-          {/* Security and Confidentiality Section */}
-          <Grid item xs={12}
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: "center",
-              gap: '3rem'
-            }}
-          >
-            <Box
-              sx={{
-                textAlign: 'center',
-                mt: "5rem",
-                mb: '2rem',
-                p: 3,
-                maxWidth: '800px',
-                borderRadius: '12px',
-                position: 'relative',
-                paddingBottom: '40px',
-              }}
-            >
-              <Typography
-                variant='h1'
-                sx={{
-                  fontSize: { xs: '2rem', sm: '2.2rem', md: '2.5rem' },
-                  fontWeight: '700',
-                  mb: 2,
-                  lineHeight: 1.7,
-                }}
-
-              >
-                No worries! With us, your information is secure and confidential.
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{
-                  fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1.1rem' },
-                  fontWeight: '400',
-                  mb: 2,
-                  lineHeight: 1.7,
-                }}
-              >
-                We have written millions of lines of code that are worth millions of Birr. Whether you are a startup or a publicly traded company, we implement strict security measures to ensure the confidentiality of all your intellectual property, code, and data.              </Typography>
-            </Box>
-
-            {/* Lock Icon at the Bottom Center */}
-            <Box
-              sx={{
-                position: 'absolute',
-                bottom: '4rem',
-                left: "50%",
-                transform: 'translateX(-50%)',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: "center",
-                width: '90px',
-                height: '90px',
-                backgroundImage: `url(${padlock})`,
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-              }}
-            />
-          </Grid>
-
         </Grid>
       </Container>
     </Box>
