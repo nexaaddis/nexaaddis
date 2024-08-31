@@ -283,7 +283,7 @@ const ContactUsSection = () => {
               </Grid>
 
               <Grid item xs={12}>
-                <TextareaAutosize
+                {/* <TextareaAutosize
                   id="projectDescription"
                   name="projectDescription"
                   minRows={4}
@@ -291,16 +291,16 @@ const ContactUsSection = () => {
                   className="textarea-autosize"
                   value={formValues.projectDescription}
                   onChange={(e) => setFormValues({ ...formValues, projectDescription: e.target.value })}
-                  style={{
-                    width: '100%',
-                    padding: '10px',
-                    borderRadius: '4px',
-                    borderColor: '#c4c4c4',
-                    outlineColor: '#fb8122',
-                    fontFamily: 'Roboto, sans-serif',
-                    fontSize: '14px',
-                  }}
-                />
+                  // style={{
+                  //   width: '100%',
+                  //   padding: '10px',
+                  //   borderRadius: '4px',
+                  //   borderColor: '#c4c4c4',
+                  //   outlineColor: '#fb8122',
+                  //   fontFamily: 'Roboto, sans-serif',
+                  //   fontSize: '14px',
+                  // }}
+                /> */}
               </Grid>
 
               <Grid item xs={12} sx={{ textAlign: { xs: 'left', md: 'right' } }}>
@@ -353,7 +353,7 @@ const ContactUsSection = () => {
               <Typography
                 variant='h1'
                 sx={{
-                  fontSize: { xs: '2rem', sm: '2.2rem', md: '2.5rem' },
+                  fontSize: { xs: '1.7rem', sm: '2rem', md: '2.4rem' },
                   fontWeight: '700',
                   mb: 2,
                   lineHeight: 1.7,
@@ -365,7 +365,7 @@ const ContactUsSection = () => {
               <Typography
                 variant="body2"
                 sx={{
-                  fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1.1rem' },
+                  fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
                   fontWeight: '400',
                   mb: 2,
                   lineHeight: 1.7,
