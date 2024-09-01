@@ -190,7 +190,7 @@ export default function Contact() {
           </Typography>
           <Typography variant="body2">
             <Link
-              href="/privacy-policy"
+              href="/privacy"
               sx={{
                 textDecoration: 'none',
                 color: '#b0b0b0',

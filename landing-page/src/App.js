@@ -7,6 +7,7 @@ import Aboutus from "./pages/aboutus/Aboutus.jsx";
 import TopNavbar from "./components/Nav/TopNavbar";
 import ScrollToTop from "./components/Elements/ScrollToTop.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
+import PrivacyTerms from "./pages/Privacy/Privacy.jsx";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/home" element={<Landing />} />
         <Route path="/about" element={<Aboutus />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy" element={<PrivacyTerms />} />
       </Routes>
     </Router>
   );
