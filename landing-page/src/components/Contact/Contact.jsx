@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Grid, Typography, Box, Container, TextField, Alert, Button } from '@mui/material';
-import TextareaAutosize from '@mui/material/TextareaAutosize';
+import { Grid, Typography, Box, Container, TextField, Alert, Button, CircularProgress } from '@mui/material';
 import { MuiTelInput } from 'mui-tel-input';
+import Swal from 'sweetalert2';
+import emailjs from '@emailjs/browser';
 import './contact.css';
 
 import { contactBg2 } from '../../assets';
@@ -18,6 +19,8 @@ const initialValues = {
 const ContactUsSection = () => {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
 
   const validate = (values) => {
     const errors = {};
@@ -63,36 +66,78 @@ const ContactUsSection = () => {
     if (formErrors.phone) formErrors.phone = '';
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const isValid = validate(formValues);
+
     if (isValid) {
-      console.log("Form submitted successfully", formValues);
-    } else {
-      console.log("Validation failed", formErrors);
+      try {
+        setIsSubmitting(true);
+
+        const serviceId = process.env.REACT_APP_SERVICE_ID;
+        const templateId = process.env.REACT_APP_TEMPLATE_ID;
+        const publicKey = process.env.REACT_APP_PUBLIC_KEY;
+
+        const templateParams = {
+          recipient_name: 'Nexa Addis',
+          from_email: formValues.email,
+          first_name: formValues.firstName,
+          last_name: formValues.lastName,
+          company_name: formValues.companyName,
+          phone_number: formValues.phone,
+          message: formValues.projectDescription,
+        };
+
+        // Sending the email
+        const response = await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
+        // Display success message
+        Swal.fire({
+          title: 'Good job!',
+          text: 'Thank you for reaching out! We will contact you soon.',
+          icon: 'success',
+          confirmButtonColor: '#fb8122',
+          background: '#f7f7f7',
+        });
+        setFormValues(initialValues);
+        console.log('Email successfully sent:', response);
+      } catch (error) {
+        console.error('Error occurred while submitting the form:', error);
+
+        // Display error message
+        Swal.fire({
+          title: 'Error!',
+          text: 'Something went wrong, please try again later.',
+          icon: 'error',
+          confirmButtonColor: '#fb8122',
+        });
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
+
 
   return (
     <Box id="contact" sx={{ backgroundColor: '#fff', p: "8rem 0", position: 'relative' }}>
       <Container>
-        <Grid container spacing={4}>
-          <Grid item xs={12} md={12}>
-            {/* Left Image Section */}
-            <Box
-              position="absolute"
-              top="20%"
-              right="50%"
-              component="img"
-              src={contactBg2}
-              alt="Contact Us"
-              sx={{
-                width: '40%',
-                height: 'auto',
-                display: { xs: 'none', md: 'block' },
-                filter: 'grayscale(100%)',
-              }}
-            />
+        {/* BG Img */}
+        <Box
+          position="absolute"
+          top="15%"
+          right="40%"
+          component="img"
+          src={contactBg2}
+          alt="Contact Us"
+          sx={{
+            width: '45%',
+            height: 'auto',
+            display: { xs: 'none', md: 'block' },
+            filter: 'grayscale(100%)',
+          }}
+        />
+        <Grid container spacing={12}>
+          <Grid item xs={12}>
             <Box sx={{ textAlign: { xs: 'center', md: 'left' }, mb: 4 }}>
               <Typography
                 variant="h5"
@@ -113,7 +158,7 @@ const ContactUsSection = () => {
             <Grid container spacing={3} component="form" onSubmit={handleSubmit}>
               <Grid item xs={12}>
                 <TextField
-                  label="First Name"
+                  label="First Name*"
                   id="firstName"
                   name="firstName"
                   type="text"
@@ -138,7 +183,7 @@ const ContactUsSection = () => {
 
               <Grid item xs={12}>
                 <TextField
-                  label="Last Name"
+                  label="Last Name*"
                   id="lastName"
                   name="lastName"
                   type="text"
@@ -163,7 +208,7 @@ const ContactUsSection = () => {
 
               <Grid item xs={12}>
                 <TextField
-                  label="Business Email"
+                  label="Business Email*"
                   id="email"
                   name="email"
                   type="email"
@@ -189,7 +234,7 @@ const ContactUsSection = () => {
 
               <Grid item xs={12}>
                 <TextField
-                  label="Company Name"
+                  label="Company Name*"
                   id="companyName"
                   name="companyName"
                   type="text"
@@ -214,7 +259,7 @@ const ContactUsSection = () => {
 
               <Grid item xs={12}>
                 <MuiTelInput
-                  label="Phone Number"
+                  label="Phone Number*"
                   id="phone"
                   name="phone"
                   placeholder="Enter phone number"
@@ -243,43 +288,42 @@ const ContactUsSection = () => {
                 )}
               </Grid>
 
-
               <Grid item xs={12}>
-                <TextareaAutosize
+                <TextField
                   id="projectDescription"
-                  name="projectDescription"
+                  label="Describe your project..."
+                  multiline
                   minRows={4}
-                  placeholder="Describe your project..."
-                  className="textarea-autosize"
+                  sx={{ width: '100%' }}
+                  name="projectDescription"
+                  placeholder="my project is about..."
                   value={formValues.projectDescription}
                   onChange={(e) => setFormValues({ ...formValues, projectDescription: e.target.value })}
-                  style={{
-                    width: '100%',
-                    padding: '10px',
-                    borderRadius: '4px',
-                    borderColor: '#c4c4c4',
-                    outlineColor: '#fb8122',
-                    fontFamily: 'Roboto, sans-serif',
-                    fontSize: '14px',
-                  }}
                 />
               </Grid>
 
-              <Grid item xs={12} textAlign="left">
+              <Grid item xs={12}>
                 <Button
                   type="submit"
                   variant="contained"
                   sx={{
+                    fontWeight: 600,
+                    fontSize: {xs: ".9rem", sm: "1rem"},
                     mt: 2,
                     py: 1,
                     px: 4,
                     backgroundColor: '#fb8122',
                     '&:hover': { backgroundColor: '#f77b2e' },
-                    borderRadius: '25px',
+                    borderRadius: '12px',
                     textTransform: 'none',
                   }}
+                  disabled={isSubmitting}
                 >
-                  Submit
+                  {isSubmitting ? (
+                    <CircularProgress size={24} color="inherit" />
+                  ) : (
+                    'Submit'
+                  )}
                 </Button>
               </Grid>
             </Grid>

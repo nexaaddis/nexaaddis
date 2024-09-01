@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Grid, Typography, Box, Container, TextField, Alert, Button, CircularProgress } from '@mui/material';
-import TextareaAutosize from '@mui/material/TextareaAutosize';
 import { MuiTelInput } from 'mui-tel-input';
 import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser';
@@ -91,6 +90,7 @@ const ContactUsSection = () => {
 
         // Sending the email
         const response = await emailjs.send(serviceId, templateId, templateParams, publicKey);
+        setFormValues(initialValues);
 
         // Display success message
         Swal.fire({
@@ -152,7 +152,7 @@ const ContactUsSection = () => {
             <Grid container spacing={3} component="form" onSubmit={handleSubmit}>
               <Grid item xs={12} md={6}>
                 <TextField
-                  label="First Name"
+                  label="First Name*"
                   id="firstName"
                   name="firstName"
                   type="text"
@@ -177,7 +177,7 @@ const ContactUsSection = () => {
 
               <Grid item xs={12} md={6}>
                 <TextField
-                  label="Last Name"
+                  label="Last Name*"
                   id="lastName"
                   name="lastName"
                   type="text"
@@ -202,7 +202,7 @@ const ContactUsSection = () => {
 
               <Grid item xs={12} md={6}>
                 <TextField
-                  label="Business Email"
+                  label="Business Email*"
                   id="email"
                   name="email"
                   type="email"
@@ -228,7 +228,7 @@ const ContactUsSection = () => {
 
               <Grid item xs={12} md={6}>
                 <TextField
-                  label="Company Name"
+                  label="Company Name*"
                   id="companyName"
                   name="companyName"
                   type="text"
@@ -253,7 +253,7 @@ const ContactUsSection = () => {
 
               <Grid item xs={12}>
                 <MuiTelInput
-                  label="Phone Number"
+                  label="Phone Number*"
                   id="phone"
                   name="phone"
                   placeholder="Enter phone number"
@@ -283,24 +283,17 @@ const ContactUsSection = () => {
               </Grid>
 
               <Grid item xs={12}>
-                {/* <TextareaAutosize
+                <TextField
                   id="projectDescription"
-                  name="projectDescription"
+                  label="Describe your project..."
+                  multiline
                   minRows={4}
-                  placeholder="Describe your project..."
-                  className="textarea-autosize"
+                  sx={{ width: '100%' }}
+                  name="projectDescription"
+                  placeholder="my project is about..."
                   value={formValues.projectDescription}
                   onChange={(e) => setFormValues({ ...formValues, projectDescription: e.target.value })}
-                  // style={{
-                  //   width: '100%',
-                  //   padding: '10px',
-                  //   borderRadius: '4px',
-                  //   borderColor: '#c4c4c4',
-                  //   outlineColor: '#fb8122',
-                  //   fontFamily: 'Roboto, sans-serif',
-                  //   fontSize: '14px',
-                  // }}
-                /> */}
+                />
               </Grid>
 
               <Grid item xs={12} sx={{ textAlign: { xs: 'left', md: 'right' } }}>

@@ -61,7 +61,7 @@ export default function Contact() {
               <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>About</Typography>
             </Link>
             <Link
-              href="/contact"
+              href="/about"
               sx={{
                 textDecoration: 'none',
                 color: 'white',
@@ -71,27 +71,42 @@ export default function Contact() {
                 scrollBehavior: 'smooth',
               }}
             >
-              <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Contact Us</Typography>
+              <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Contact</Typography>
+            </Link>
+            <Link
+              href="/#blog"
+              sx={{
+                textDecoration: 'none',
+                color: 'white',
+                '&:hover': {
+                  color: '#fb8122',
+                },
+                scrollBehavior: 'smooth',
+              }}
+            >
+              <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Blogs</Typography>
+            </Link>
+
+            <Link
+              href="/#testimonial"
+              sx={{
+                textDecoration: 'none',
+                color: 'white',
+                '&:hover': {
+                  color: '#fb8122',
+                },
+                scrollBehavior: 'smooth',
+              }}
+            >
+              <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Testimonial</Typography>
             </Link>
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" sx={{ mb: 1, fontWeight: 'bold', fontSize: { xs: '1rem', sm: '1.2rem' } }}>
-              What We Do
+              Our Services
             </Typography>
-            <Link
-              href="/services/mobile-development"
-              sx={{
-                textDecoration: 'none',
-                color: 'white',
-                '&:hover': {
-                  color: '#fb8122',
-                },
-                scrollBehavior: 'smooth',
-              }}
-            >
-              <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Mobile Development</Typography>
-            </Link>
+
             <Link
               href="/services/website-development"
               sx={{
@@ -104,6 +119,34 @@ export default function Contact() {
               }}
             >
               <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Website Development</Typography>
+            </Link>
+
+            <Link
+              href="/services/mobile-development"
+              sx={{
+                textDecoration: 'none',
+                color: 'white',
+                '&:hover': {
+                  color: '#fb8122',
+                },
+                scrollBehavior: 'smooth',
+              }}
+            >
+              <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Mobile Appk Development</Typography>
+            </Link>
+
+            <Link
+              href="/services/designing"
+              sx={{
+                textDecoration: 'none',
+                color: 'white',
+                '&:hover': {
+                  color: '#fb8122',
+                },
+                scrollBehavior: 'smooth',
+              }}
+            >
+              <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Logo Designing</Typography>
             </Link>
             <Link
               href="/services/designing"
@@ -122,7 +165,7 @@ export default function Contact() {
 
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" sx={{ mb: 1, fontWeight: 'bold', fontSize: { xs: '1rem', sm: '1.2rem' } }}>
-              Contact Us
+              Find Us
             </Typography>
             <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Phone: (+251) 953-431-572</Typography>
             <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Email: nexaaddis@gmail.com</Typography>

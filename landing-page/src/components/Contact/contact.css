@@ -1,16 +1,6 @@
-.textarea-autosize {
-  padding: 10px;
-  border-radius: 4px;
-  border: 1px solid #c4c4c4;
-  outline: none;
-  resize: vertical;
-  font-family: Roboto, sans-serif;
-  font-size: 14px;
-  width: 100%;
-}
-
-.textarea-autosize:focus {
-  border-color: #fb8122;
+.MuiInputBase-root {
+  /* background-color: rgba(255, 255, 255, 0.1) !important; */
+  height: "80px !important";
 }
 
 
@@ -23,3 +13,4 @@
 .MuiAlert-icon.css-1ytlwq5-MuiAlert-icon {
   margin-right: 5px !important;
 }
+
