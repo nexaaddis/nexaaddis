@@ -26,10 +26,11 @@ import contactBg from './bg/contactBg.jpg'
 
 // svg
 import lockIcon from './svg/lockIcon.svg'
+import padlock from "./gif/padlock.gif"
 import contactBg2 from './svg/contactBg2.svg'
 
-// svg
-import padlock from './gif/padlock.gif'
+// website designing
+import websiteBG from './img/web-designing/websiteBG.png'
 
 export {
     workImgOne,
@@ -64,4 +65,7 @@ export {
 
     // gif
     padlock,
+
+    // website img
+    websiteBG,
 };
