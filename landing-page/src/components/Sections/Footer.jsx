@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Typography, Grid, Link, Divider, IconButton } from "@mui/material";
+import { Box, Container, Typography, Grid, Link, Divider } from "@mui/material";
 // import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 // Assets
 import LogoImg from "../../assets/svg/Logo";
@@ -16,7 +16,7 @@ export default function Contact() {
         width: "100%",
         bgcolor: '#1c2229',
         color: '#e1e2e2',
-        py: { xs: 4, sm: 6, md: 8 },
+        p: { xs: '4 0', sm: '5 0', md: "8 0 4 0" },
         position: 'relative',
       }}
     >
@@ -108,7 +108,7 @@ export default function Contact() {
             </Typography>
 
             <Link
-              href="/website"
+              href="/websitedevelopment"
               sx={{
                 textDecoration: 'none',
                 color: 'white',
@@ -118,11 +118,11 @@ export default function Contact() {
                 scrollBehavior: 'smooth',
               }}
             >
-              <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Website Development</Typography>
+              <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Website Design & Development</Typography>
             </Link>
 
             <Link
-              href="/services/mobile-development"
+              href="/appdevelopment"
               sx={{
                 textDecoration: 'none',
                 color: 'white',
@@ -132,11 +132,11 @@ export default function Contact() {
                 scrollBehavior: 'smooth',
               }}
             >
-              <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Mobile Appk Development</Typography>
+              <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Mobile Appk Design & Development</Typography>
             </Link>
 
             <Link
-              href="/services/designing"
+              href="/logodesigning"
               sx={{
                 textDecoration: 'none',
                 color: 'white',
@@ -147,19 +147,6 @@ export default function Contact() {
               }}
             >
               <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Logo Designing</Typography>
-            </Link>
-            <Link
-              href="/services/designing"
-              sx={{
-                textDecoration: 'none',
-                color: 'white',
-                '&:hover': {
-                  color: '#fb8122',
-                },
-                scrollBehavior: 'smooth',
-              }}
-            >
-              <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Designing</Typography>
             </Link>
           </Grid>
 
@@ -182,7 +169,7 @@ export default function Contact() {
             alignItems: 'center',
             justifyContent: 'flex-start',
             gap: 1,
-            mt: 4,
+            p: "1rem 0",
           }}
         >
           <Typography variant="body2">
@@ -193,10 +180,10 @@ export default function Contact() {
               href="/privacy"
               sx={{
                 textDecoration: 'none',
-                color: '#b0b0b0',
+                color: '#ca6314',
                 fontSize: { xs: '0.9rem', sm: '.9rem' },
                 '&:hover': {
-                  color: '#ca6314',
+                  color: '#cb6314',
                 },
                 scrollBehavior: 'smooth',
               }}

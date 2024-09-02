@@ -10,6 +10,8 @@ import Contact from "./pages/Contact/Contact.jsx";
 import PrivacyTerms from "./pages/Privacy/Privacy.jsx";
 import WebsiteDesignPage from "./pages/WebsiteDesigning.jsx/WebsiteDesigning.jsx";
 import MobileAppDesigning from "./pages/MobileAppDesigning/MobileAppDesinging.jsx";
+import LogoDesignPage from "./pages/LogoDesigning/LogoDesigning.jsx"
+
 
 export default function App() {
   return (
@@ -27,8 +29,9 @@ export default function App() {
         <Route path="/about" element={<Aboutus />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<PrivacyTerms />} />
-        <Route path="/website" element={<WebsiteDesignPage />} />
-        <Route path="/mobileapp" element={<MobileAppDesigning />} />
+        <Route path="/websitedevelopment" element={<WebsiteDesignPage />} />
+        <Route path="/appdevelopment" element={<MobileAppDesigning />} />
+        <Route path="/logodesigning" element={<LogoDesignPage />} />
       </Routes>
     </Router>
   );
