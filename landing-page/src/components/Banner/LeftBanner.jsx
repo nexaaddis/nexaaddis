@@ -30,7 +30,7 @@ const LeftBanner = () => {
         padding: { xs: 2, md: 4 },
         color: 'var(--text-color)',
         textAlign: 'center',
-        mt: {xs: 6, md: 2},
+        mt: {xs: 6, md: 4},
         fontFamily: 'Arial, sans-serif',
       }}
     >

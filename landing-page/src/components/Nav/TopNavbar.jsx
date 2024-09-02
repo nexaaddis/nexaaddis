@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 import styled from "styled-components";
-import { HashLink as Link } from "react-router-hash-link"; // Use HashLink for smooth scrolling between routes
+import { HashLink as Link } from "react-router-hash-link";
 import Sidebar from "./Sidebar";
 import Backdrop from "../Elements/Backdrop";
 import LogoIcon from "../../assets/svg/Logo";
@@ -36,7 +36,7 @@ export default function TopNavbar() {
             <BurgerIcon />
           </BurderWrapper>
           <UlWrapper className="flexNullCenter">
-            {["home", "services", "about", "projects", "blog", "testimonial"].map((section) => (
+            {["home", "services", "about", "projects", "testimonial"].map((section) => (
               <li key={section} className="semiBold font15 pointer nav-link">
                 <StyledLink
                   smooth

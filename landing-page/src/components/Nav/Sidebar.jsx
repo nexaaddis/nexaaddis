@@ -1,6 +1,5 @@
 import React from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
-import { Link as ScrollLink } from "react-scroll"; // Use ScrollLink from react-scroll
 import { Box, Typography, Button, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import LogoIcon from "../../assets/svg/Logo";
@@ -10,13 +9,11 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
 
   const handleNavigation = (route, section) => {
     toggleSidebar(!sidebarOpen);
-    navigate(route); // Navigate to the route
+    navigate(route);
 
-    // Delay to ensure the route change has been applied
     setTimeout(() => {
       const element = document.getElementById(section);
       if (element) {
-        // Only scroll if the element exists
         element.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }, 100);
@@ -94,7 +91,6 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
             { label: "About", route: "/about", section: "about" },
             { label: "Services", route: "/home", section: "services" },
             { label: "Projects", route: "/home", section: "projects" },
-            { label: "Blog", route: "/home", section: "blog" },
             { label: "Testimonials", route: "/home", section: "testimonial" },
           ].map(({ label, route, section }) => (
             <Button
