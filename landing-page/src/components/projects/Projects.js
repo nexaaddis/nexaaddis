@@ -42,7 +42,7 @@ const Projects = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#f1f1f1', display: 'flex', justifyContent: 'center' }}>
+    <div style={{ backgroundColor: '#fdfdfd', display: 'flex', justifyContent: 'center' }}>
       <Container
         id="projects"
         sx={{ color: '#f0f0f0', width: "99%", margin: '5rem auto', m: '3rem 0' }}
@@ -88,17 +88,19 @@ const Projects = () => {
           <Button
             onClick={handleToggle}
             sx={{
-              borderRadius: '12px',
-              padding: '8px 16px',
-              borderColor: '#fb8122',
-              color: isExpanded ? '#dc3545' : '#fb8122',
-              '&:hover': {
-                borderColor: isExpanded ? "#dc3545" : "#fb8122",
-                color: isExpanded ? "#dc3545" : "#fb8122",
-                boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 0.6)',
+              border: "1px solid #fb8122",
+              backgroundColor: "transparent",
+              borderRadius: '10px',
+              color: "#fb8122",
+              fontWeight: "600",
+              "&:hover": {
+                backgroundColor: "#eee",
+                border: "1px solid #fb8122",
+                color: "#fd8122",
               },
-              backgroundColor: '#2a2a2a',
-              transition: 'all 0.3s ease',
+              mt: 3,
+              px: 4,
+              py: 1,
             }}
           >
             {isExpanded ? 'Show Less' : 'Show More'}

@@ -12,29 +12,31 @@ const ProjectsCard = ({ image, title, category }) => {
     <Card
       sx={{
         width: '100%',
-        backgroundColor: '#ffffff', // White background
-        border: '1px solid #ddd', // Light gray border
+        height: { xs: 'auto', sm: '280px', md: '260px' },
+        backgroundColor: '#ffffff',
+        border: '1px solid #ddd',
         borderRadius: '8px',
         transition: 'transform 0.3s, box-shadow 0.3s',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Soft shadow for contrast
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
         '&:hover': {
           transform: 'scale(1.03)',
-          boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)', // Darker shadow on hover
-          backgroundColor: '#f7f7f7', // Slightly darker on hover
+          boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
+          backgroundColor: '#f7f7f7',
         },
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
       }}
     >
-      <Box sx={{ position: 'relative' }}>
+      <Box sx={{ position: 'relative', height: '50%' }}>
         <CardMedia
           component="img"
           alt={title}
-          height="140"
           image={image}
           sx={{
-            transition: 'opacity 0.3s',
-            '&:hover': { opacity: 0.8 },
+            height: '100%',
             objectFit: 'cover',
-            height: { xs: '140px', sm: '180px', md: '200px' }
+            width: '100%',
           }}
         />
         <Box
@@ -44,14 +46,14 @@ const ProjectsCard = ({ image, title, category }) => {
             right: 8,
             display: 'flex',
             flexDirection: 'column',
-            gap: 1
+            gap: 1,
           }}
         >
           <IconButton
             sx={{
-              color: '#fb8122', // Icon color for theme consistency
+              color: '#fb8122',
               transition: 'color 0.3s',
-              '&:hover': { color: '#ff6347' } // Different hover color for better UX
+              '&:hover': { color: '#ff6347' },
             }}
             aria-label="Live Preview"
           >
@@ -59,18 +61,25 @@ const ProjectsCard = ({ image, title, category }) => {
           </IconButton>
         </Box>
       </Box>
-      <CardContent>
+      <CardContent sx={{ height: '50%', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: { xs: '16px', sm: '20px', md: '24px' } }}>
         <Typography
           gutterBottom
           variant="h6"
           component="div"
-          sx={{ fontWeight: 'bold', color: '#333333' }} // Dark text for contrast
+          sx={{
+            fontWeight: 'bold',
+            color: '#333333',
+            fontSize: { xs: '1rem', sm: '1.2rem', md: '1.3rem' },
+          }}
         >
           {title}
         </Typography>
         <Typography
           variant="body2"
-          sx={{ color: '#666666' }} // Gray text for secondary info
+          sx={{
+            color: '#666666',
+            fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem' },
+          }}
         >
           {category}
         </Typography>
