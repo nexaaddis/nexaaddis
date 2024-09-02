@@ -30,7 +30,7 @@ const LeftBanner = () => {
         padding: { xs: 2, md: 4 },
         color: 'var(--text-color)',
         textAlign: 'center',
-        mt: 2,
+        mt: {xs: 6, md: 2},
         fontFamily: 'Arial, sans-serif',
       }}
     >
@@ -51,15 +51,14 @@ const LeftBanner = () => {
         variant="h3"
         sx={{
           fontWeight: '900',
-          fontSize: { xs: '1.6rem', sm: '2.2rem', md: '3rem', lg: '3.5rem' },
+          fontSize: { xs: '1.5rem', sm: '2.2rem', md: '3rem', lg: '3.5rem' },
           color: 'var(--text-color)',
           lineHeight: 1.2,
           fontFamily: 'Roboto, sans-serif',
           position: 'relative',
         }}
       > 
-        Shaping the Future{' '}<br></br>
-        <span style={{ color: 'var(--text-muted-color)' }}>with Innovative Solutions</span>
+        Maximizing Business Potential{' '}<br></br>through Smart Digital Solutions
       </Typography>
 
       <Box
