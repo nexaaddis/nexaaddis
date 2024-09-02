@@ -124,6 +124,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
           }}
         >
           <Button
+            href="/contact"
             variant="contained"
             sx={{
               backgroundColor: "#fb8122",
@@ -144,6 +145,6 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
           </Button>
         </Box>
       </Box>
-    </Box>
+    </Box >
   );
 }

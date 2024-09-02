@@ -61,7 +61,7 @@ export default function Contact() {
               <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>About</Typography>
             </Link>
             <Link
-              href="/about"
+              href="/contact"
               sx={{
                 textDecoration: 'none',
                 color: 'white',
@@ -74,7 +74,7 @@ export default function Contact() {
               <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Contact</Typography>
             </Link>
             <Link
-              href="/#blog"
+              href="#services"
               sx={{
                 textDecoration: 'none',
                 color: 'white',
@@ -84,9 +84,8 @@ export default function Contact() {
                 scrollBehavior: 'smooth',
               }}
             >
-              <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Blogs</Typography>
+              <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Services</Typography>
             </Link>
-
             <Link
               href="/#testimonial"
               sx={{

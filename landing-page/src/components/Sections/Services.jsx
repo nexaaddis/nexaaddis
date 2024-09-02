@@ -17,36 +17,21 @@ export default function Services() {
           left: 0,
           width: '100%',
           height: '100%',
-          bgcolor: '#eee',
+          bgcolor: '#f1f1f1',
           zIndex: -1,
         }}
       />
 
       {/* Service Section */}
-      <Section sx={{ p: '4rem 1rem 15rem 1rem', position: 'relative' }}>
-        {/* Slider */}
-        <Container
-          maxWidth="lg"
-          sx={{
-            position: 'absolute',
-            bottom: '2rem',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            zIndex: 1000,
-          }}
-        >
-          <ClientSlider />
-        </Container>
-
-        {/* Services */}
+      <Section sx={{ p: '5rem 0' }}>
         <Container maxWidth="lg">
           <Box sx={{ mb: '2rem', textAlign: { xs: "center", md: "center", lg: 'left' } }}>
             <Typography
               variant="body1"
               fontWeight="bold"
-              letterSpacing="1.5"
+              // letterSpacing="1.5"
               sx={{
-                fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1.2rem' },
+                fontSize: { xs: '0.9rem', sm: '1.1rem', md: '1.2rem' },
                 mb: '0.5rem',
                 color: 'var(--primary-color)',
                 textTransform: 'uppercase',
@@ -58,7 +43,7 @@ export default function Services() {
               variant="h4"
               component="h1"
               gutterBottom
-              sx={{ fontWeight: '800', color: '#1c2229' }}
+              sx={{ fontWeight: '700', fontSize: {xs: '1.6rem', sm: '2rem', md: '2.5rem'}, color: '#1c2229' }}
             >
               Turning Ideas into Reality
             </Typography>
@@ -92,6 +77,11 @@ export default function Services() {
           </Grid>
         </Container>
       </Section>
+
+      {/* Slider */}
+      <Section bgcolor="#fff">
+        <ClientSlider />
+      </Section>
     </Wrapper>
   );
 }
@@ -100,7 +90,6 @@ const Wrapper = styled(Box)`
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 4rem 0;
 `;
 
 const Section = styled(Box)`

@@ -51,14 +51,14 @@ const LeftBanner = () => {
         variant="h3"
         sx={{
           fontWeight: '900',
-          fontSize: { xs: '1.5rem', sm: '2.2rem', md: '3rem', lg: '3.5rem' },
+          fontSize: { xs: '1.4rem', sm: '2.2rem', md: '2.8rem', lg: '3rem' },
           color: 'var(--text-color)',
           lineHeight: 1.2,
           fontFamily: 'Roboto, sans-serif',
           position: 'relative',
         }}
       > 
-        Maximizing Business Potential{' '}<br></br>through Smart Digital Solutions
+        Boosting Business with Digital Innovation
       </Typography>
 
       <Box
@@ -111,10 +111,10 @@ const LeftBanner = () => {
       <Button
         sx={{
           mt: '1rem',
-          borderRadius: '20px',
+          borderRadius: '12px',
           backgroundColor: 'var(--primary-color)',
           outline: 'none',
-          width: { xs: '120px', sm: '150px', lg: '170px' },
+          width: { xs: '120px', sm: '150px', lg: '150px' },
           padding: { xs: '7px 14px', sm: '8px 16px', lg: '8px auto' },
           fontWeight: 'bold',
           fontSize: { xs: '1rem', sm: '1rem', lg: '1.2rem' },
