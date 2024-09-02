@@ -52,7 +52,7 @@ const LeftBanner = () => {
         sx={{
           fontWeight: '900',
           fontSize: { xs: '1.4rem', sm: '2.2rem', md: '2.8rem', lg: '3rem' },
-          color: 'var(--text-color)',
+          color: '#f1f1f1',
           lineHeight: 1.2,
           fontFamily: 'Roboto, sans-serif',
           position: 'relative',
