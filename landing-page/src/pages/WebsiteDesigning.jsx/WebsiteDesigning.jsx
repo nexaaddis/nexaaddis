@@ -23,8 +23,8 @@ const cardData = [
   },
   {
     image: webCard2,
-    title: "Blog",
-    description: "Create a simple and engaging blog. Share stories, news, and tips that keep your audience coming back for more.",
+    title: "Restaurant & Café",
+    description: "Build an inviting online presence for your restaurant or café. Share your menu, daily specials, and keep them coming back for more.",
   },
   {
     image: webCard3,
@@ -306,7 +306,7 @@ const WebsiteDesignPage = () => {
 
           <Box style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
             {cardData.map((card, index) => (
-              <Card key={index} sx={{ maxWidth: 345 }}>
+              <Card key={index} sx={{ maxWidth: 345, position: 'relative' }}>
                 <CardMedia
                   sx={{ height: "180px" }}
                   image={card.image}
@@ -320,14 +320,17 @@ const WebsiteDesignPage = () => {
                     {card.description}
                   </Typography>
                 </CardContent>
-                <CardActions>
+                <CardActions sx={{ paddingTop: '2rem' }}>
                   <Link
                     to="/#projects"
                     smooth
                     style={{
+                      position: 'absolute',
+                      bottom: '5%',
+                      left: '3%',
                       textDecoration: "none",
                       color: "white",
-                      mb: 1,
+                      mt: 1,
                     }}
                   >
                     <Button
