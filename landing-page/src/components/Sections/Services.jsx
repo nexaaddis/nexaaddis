@@ -43,7 +43,7 @@ export default function Services() {
               variant="h4"
               component="h1"
               gutterBottom
-              sx={{ fontWeight: '700', fontSize: {xs: '1.6rem', sm: '2rem', md: '2.5rem'}, color: '#1c2229' }}
+              sx={{ fontWeight: '700', fontSize: { xs: '1.6rem', sm: '2rem', md: '2.5rem' }, color: '#1c2229' }}
             >
               Turning Ideas into Reality
             </Typography>
@@ -58,6 +58,7 @@ export default function Services() {
                 icon="roller"
                 title="Designing"
                 subtitle="We create impactful visual designs that clearly communicate your brand’s message and connect with your target audience."
+                route="/logodesigning"
               />
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
@@ -65,6 +66,7 @@ export default function Services() {
                 icon="monitor"
                 title="Web Development"
                 subtitle="Our team builds responsive and user-friendly websites that enhance your online presence and effectively showcase your business."
+                route="/websitedevelopment"
               />
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
@@ -72,6 +74,7 @@ export default function Services() {
                 icon="browser"
                 title="Mobile Development"
                 subtitle="We develop robust mobile applications that bring your services to your customers' fingertips, ensuring a seamless experience."
+                route="/appdevelopment"
               />
             </Grid>
           </Grid>

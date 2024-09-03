@@ -8,7 +8,7 @@ import designerPen from "../../assets/svg/Services/designerPen.svg";
 import mobile from "../../assets/svg/Services/mobile.svg";
 import website from "../../assets/svg/Services/website.svg";
 
-export default function ServiceBox({ icon, title, subtitle }) {
+export default function ServiceBox({ route, icon, title, subtitle }) {
   let getIcon;
 
   switch (icon) {
@@ -79,7 +79,7 @@ export default function ServiceBox({ icon, title, subtitle }) {
       </Typography>
       <Box sx={{ mt: 4, position: 'relative', width: '100%' }}>
         <Link
-          to="/#projects"
+          to={route}
           style={{
             position: 'absolute',
             bottom: '5%',
