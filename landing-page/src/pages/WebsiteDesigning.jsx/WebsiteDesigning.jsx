@@ -79,10 +79,10 @@ const WebsiteDesignPage = () => {
             variant="h4"
             sx={{
               fontWeight: "bold",
-              fontSize: { xs: "1.5rem", md: "2.5rem" },
+              fontSize: { xs: "1.6rem", md: "2.5rem" },
               color: "#e1e2e2",
               fontFamily: "Roboto, sans-serif",
-              mb: 1,
+              mb: {xs: 4, md: 2}
             }}
           >
             Empowering Your Business with Stunning Websites
