@@ -33,7 +33,7 @@ export default function ServiceBox({ icon, title, subtitle }) {
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
-        backgroundColor: '#f5f5f5',
+        backgroundColor: '#f8f8f8',
         borderRadius: 2,
         p: 2.5,
         mt: 2.5,

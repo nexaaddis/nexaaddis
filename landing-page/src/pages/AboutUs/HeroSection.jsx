@@ -70,10 +70,11 @@ const HeroSection = () => {
             border: "1px solid #fb8122",
             fontWeight: "bold",
             mt: {xs: "2rem"},
-            p: { xs: "0.5rem 1rem", sm: "0.75rem 1.5rem", md: "0.75rem 1.5rem" },
+            px: 3,
+            py: 1,
             fontSize: { xs: "0.75rem", sm: "0.875rem", md: "1rem" },
             backgroundColor: "#fb8122",
-            color: "#e1e2e2",
+            color: "#fdfdfd",
             textDecoration: "none",
             transition: "all 0.3s ease",
             "&:hover": {

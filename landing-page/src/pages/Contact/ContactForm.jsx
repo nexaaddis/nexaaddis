@@ -306,7 +306,7 @@ const ContactUsSection = () => {
                     px: 4,
                     backgroundColor: '#fb8122',
                     '&:hover': { backgroundColor: '#f77b2e' },
-                    borderRadius: '25px',
+                    borderRadius: '12px',
                     textTransform: 'none',
                   }}
                   disabled={isSubmitting}

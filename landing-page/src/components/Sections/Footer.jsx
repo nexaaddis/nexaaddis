@@ -1,5 +1,7 @@
 import React from "react";
-import { Box, Container, Typography, Grid, Link, Divider } from "@mui/material";
+import { Box, Container, Typography, Grid, Divider } from "@mui/material";
+import { HashLink as Link } from "react-router-hash-link";
+
 // import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 // Assets
 import LogoImg from "../../assets/svg/Logo";
@@ -74,7 +76,7 @@ export default function Contact() {
               <Typography variant="body2" sx={{ mb: 1, fontSize: { xs: '0.875rem', sm: '.8rem' } }}>Contact</Typography>
             </Link>
             <Link
-              href="#services"
+              href="/#services"
               sx={{
                 textDecoration: 'none',
                 color: 'white',

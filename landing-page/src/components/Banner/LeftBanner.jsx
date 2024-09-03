@@ -30,7 +30,7 @@ const LeftBanner = () => {
         padding: { xs: 2, md: 4 },
         color: 'var(--text-color)',
         textAlign: 'center',
-        mt: {xs: 6, md: 4},
+        mt: { xs: 6, md: 4 },
         fontFamily: 'Arial, sans-serif',
       }}
     >
@@ -50,14 +50,14 @@ const LeftBanner = () => {
       <Typography
         variant="h3"
         sx={{
-          fontWeight: '900',
+          fontWeight: '800',
           fontSize: { xs: '1.4rem', sm: '2.2rem', md: '2.8rem', lg: '3rem' },
           color: '#f1f1f1',
           lineHeight: 1.2,
           fontFamily: 'Roboto, sans-serif',
           position: 'relative',
         }}
-      > 
+      >
         Boosting Business with Digital Innovation
       </Typography>
 
@@ -110,21 +110,21 @@ const LeftBanner = () => {
       {/* Unique Button */}
       <Button
         sx={{
-          mt: '1rem',
-          borderRadius: '12px',
-          backgroundColor: 'var(--primary-color)',
-          outline: 'none',
-          width: { xs: '120px', sm: '150px', lg: '150px' },
-          padding: { xs: '7px 14px', sm: '8px 16px', lg: '8px auto' },
-          fontWeight: 'bold',
-          fontSize: { xs: '1rem', sm: '1rem', lg: '1.2rem' },
-          color: '#ffffff',
-          textTransform: 'capitalize',
+          textTransform: "uppercase",
+          border: "1px solid var(--primary-color)",
+          borderRadius: "12px",
+          fontWeight: "bold",
+          px: 3,
+          py: "0.75rem",
+          mt: "2rem",
+          backgroundColor: "var(--primary-color)",
+          color: "white",
           "&:hover": {
-            backgroundColor: '#25282c',
-            color: 'var(--accent-color)',
-          }
+            backgroundColor: "transparent",
+            color: "var(--primary-color)",
+          },
         }}
+        href='#contact'
       >
         Contact Us
       </Button>

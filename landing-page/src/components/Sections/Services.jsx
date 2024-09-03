@@ -17,7 +17,7 @@ export default function Services() {
           left: 0,
           width: '100%',
           height: '100%',
-          bgcolor: '#f1f1f1',
+          bgcolor: '#f5f5f5',
           zIndex: -1,
         }}
       />
@@ -79,7 +79,7 @@ export default function Services() {
       </Section>
 
       {/* Slider */}
-      <Section bgcolor="#fff">
+      <Section bgcolor="#fafafa">
         <ClientSlider />
       </Section>
     </Wrapper>

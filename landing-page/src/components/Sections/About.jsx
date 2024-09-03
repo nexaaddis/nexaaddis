@@ -7,7 +7,7 @@ const AboutUsSection = () => {
   const navigate = useNavigate();
 
   return (
-    <Box component="section" id="about" sx={{ py: { xs: "4rem", md: "5rem" }, bgcolor: '#e7e7e7', width: '100%' }}>
+    <Box component="section" id="about" sx={{ py: { xs: "4rem", md: "5rem" }, bgcolor: '#f4f4f4', width: '100%' }}>
       <Container maxWidth="lg">
         <Grid container spacing={4} alignItems="center">
           {/* Left Content */}
@@ -42,7 +42,7 @@ const AboutUsSection = () => {
                 sx={{
                   fontSize: { xs: "0.8rem", sm: ".9rem", md: "1rem" },
                   color: "var(--bg-muted-color)",
-                  mb: { xs: 3, md: 4 },
+                  mb: { xs: 4, md: 5 },
                 }}
               >
                 We are a team of creative professionals committed to delivering high-quality software and design solutions. Our mission is to empower businesses through innovative technology and exceptional design, turning your ideas into reality.
@@ -58,6 +58,7 @@ const AboutUsSection = () => {
                   sx={{
                     textTransform: "uppercase",
                     border: "1px solid var(--primary-color)",
+                    borderRadius: "12px",
                     fontWeight: "bold",
                     px: 3,
                     py: 1,

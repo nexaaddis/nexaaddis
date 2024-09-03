@@ -17,7 +17,7 @@ import {
 // Styled Components using MUI's system
 const StyledSliderContainer = styled(Box)(({ theme }) => ({
   overflow: 'hidden',
-  backgroundColor: '#fff',
+  backgroundColor: '#fafafa',
   padding: '20px 0',
   borderRadius: '10px',
   marginTop: '20px',
