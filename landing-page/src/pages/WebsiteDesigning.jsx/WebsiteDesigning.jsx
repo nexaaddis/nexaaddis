@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Typography, Box, Button } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Card from '@mui/material/Card';
@@ -35,6 +35,10 @@ const cardData = [
 
 
 const WebsiteDesignPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Box bgcolor="#f1f1f1">
       {/* Hero Section */}

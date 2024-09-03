@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Typography, Box, Grid, Button } from "@mui/material";
 import { ArrowForward } from "@mui/icons-material";
 import { HashLink as Link } from "react-router-hash-link";
@@ -7,6 +7,10 @@ import Contact from '../../components/Contact/Contact'
 import { websiteBG } from "../../assets";
 
 const MobileAppDesigning = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Box bgcolor="#f3f3f3">
       {/* Hero Section */}

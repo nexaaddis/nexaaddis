@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Typography, Box, Grid, Button } from "@mui/material";
 import Footer from "../../components/Sections/Footer";
 import Contact from "../../components/Contact/Contact";
@@ -9,6 +9,10 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { logoBG, websiteBG } from "../../assets";
 
 const LogoDesignPage = () => {
+    useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Box bgcolor="#f9f9f9">
       {/* Hero Section */}
