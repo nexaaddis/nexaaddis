@@ -45,7 +45,7 @@ const WebsiteDesignPage = () => {
       <Box
         sx={{
           position: "relative",
-          height: { xs: "60vh", md: "80vh" },
+          height: { xs: "90vh", md: "75vh" },
           backgroundImage: `url(${websiteBG})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -54,8 +54,8 @@ const WebsiteDesignPage = () => {
           justifyContent: "center",
           color: "#e1e2e2",
           textAlign: "center",
-          padding: 2,
-          mt: "5rem",
+          px: 2,
+          pt: {xs: "5rem", md: "6rem"},
           backgroundColor: "rgba(255, 255, 255, .8)",
         }}
       >

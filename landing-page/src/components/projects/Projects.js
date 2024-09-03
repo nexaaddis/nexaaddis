@@ -47,13 +47,13 @@ const Projects = () => {
         id="projects"
         sx={{ color: '#f0f0f0', width: "99%", margin: '5rem auto', m: '3rem 0' }}
       >
-        <Box sx={{ mb: 4, textAlign: { xs: "center", md: "left" } }}>
+        <Box sx={{ mb: '2rem', textAlign: { xs: "center", md: "center", lg: 'left' } }}>
           <Typography
             variant="body1"
             fontWeight="bold"
-            letterSpacing="1.5"
+            // letterSpacing="1.5"
             sx={{
-              fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1.2rem' },
+              fontSize: { xs: '0.9rem', sm: '1.1rem', md: '1.2rem' },
               mb: '0.5rem',
               color: 'var(--primary-color)',
               textTransform: 'uppercase',
@@ -65,14 +65,15 @@ const Projects = () => {
             variant="h4"
             component="h1"
             gutterBottom
-            sx={{ fontWeight: '800', color: '#1c2229' }}
+            sx={{ fontWeight: '700', fontSize: { xs: '1.6rem', sm: '2rem', md: '2.5rem' }, color: '#1c2229' }}
           >
-            Our Awesome Recent Projects
+            Our Recent Projects
           </Typography>
           <Typography variant="body1" mt={1} color="#3a3f45">
             Discover our recent work, showcasing solutions that elevate business success and innovation.
           </Typography>
         </Box>
+
         <Grid container spacing={4}>
           {projectsData.slice(0, itemsToShow).map((project, index) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={index}>

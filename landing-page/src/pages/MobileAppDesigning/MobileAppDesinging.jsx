@@ -17,7 +17,7 @@ const MobileAppDesigning = () => {
       <Box
         sx={{
           position: "relative",
-          height: { xs: "60vh", md: "80vh" },
+          height: { xs: "90vh", md: "75vh" },
           backgroundImage: `url(${websiteBG})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -26,9 +26,9 @@ const MobileAppDesigning = () => {
           justifyContent: "center",
           color: "#e1e2e2",
           textAlign: "center",
-          padding: { xs: 2, md: 4 },
-          mt: { xs: "2rem", md: "4rem" },
-          mb: { xs: "2rem", md: "4rem" },
+          px: 2,
+          pt: {xs: "5rem", md: "6rem"},
+          backgroundColor: "rgba(255, 255, 255, .8)",
         }}
       >
         <Box
@@ -52,7 +52,7 @@ const MobileAppDesigning = () => {
             variant="h3"
             sx={{
               fontWeight: "bold",
-              fontSize: { xs: "1.7rem", md: "2.7rem" },
+              fontSize: { xs: "1.7rem", md: "2.4rem" },
               color: "#e1e2e2",
               fontFamily: "Roboto, sans-serif",
               mb: 2,
@@ -72,7 +72,6 @@ const MobileAppDesigning = () => {
             Crafting responsive and intuitive mobile applications that empower your business.
           </Typography>
           <Button
-            variant="contained"
             sx={{
               backgroundColor: "#fb8122",
               border: "1px solid #fb8122",

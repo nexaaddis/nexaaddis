@@ -18,7 +18,6 @@ const HeroSection = () => {
         alignItems: "center",
         textAlign: "center",
         padding: { xs: '1rem', sm: '2rem' },
-        // marginBottom: "40px",
       }}
     >
       <Box

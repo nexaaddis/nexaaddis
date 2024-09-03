@@ -19,7 +19,7 @@ const LogoDesignPage = () => {
       <Box
         sx={{
           position: "relative",
-          height: { xs: "60vh", md: "90vh" },
+          height: { xs: "90vh", md: "75vh" },
           backgroundImage: `url(${websiteBG})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -28,9 +28,9 @@ const LogoDesignPage = () => {
           justifyContent: "center",
           color: "#e1e2e2",
           textAlign: "center",
-          padding: { xs: 2, md: 4 },
-          mt: "5rem",
-          backgroundColor: "rgba(255, 255, 255, 0.8)",
+          px: 2,
+          pt: "6rem",
+          backgroundColor: "rgba(255, 255, 255, .8)",
         }}
       >
         <Box
@@ -182,7 +182,7 @@ const LogoDesignPage = () => {
                       boxShadow: "0 8px 16px rgba(0, 0, 0, 0.3)",
                     },
                     "&:hover .arrow-btn": {
-                      opacity: 1, // Show the button on hover
+                      opacity: 1,
                       transition: "opacity 0.3s",
                     },
                   }}

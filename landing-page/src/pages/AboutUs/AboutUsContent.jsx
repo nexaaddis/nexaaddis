@@ -48,16 +48,6 @@ const AboutUsContent = () => {
               >
                 Our Story
               </Typography>
-              {/* <Typography
-                variant="body1"
-                mt={1}
-                color="#3a3f45"
-                sx={{
-                  fontSize: { xs: "0.875rem", md: "1rem" }, // Responsive font size
-                }}
-              >
-                Discover our recent work, showcasing solutions that elevate business success and innovation.
-              </Typography> */}
             </Box>
           </Grid>
           <Grid item xs={12}>

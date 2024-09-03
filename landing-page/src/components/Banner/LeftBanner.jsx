@@ -115,7 +115,7 @@ const LeftBanner = () => {
           borderRadius: "12px",
           fontWeight: "bold",
           px: 3,
-          py: "0.75rem",
+          py: "0.6rem",
           mt: "2rem",
           backgroundColor: "var(--primary-color)",
           color: "white",

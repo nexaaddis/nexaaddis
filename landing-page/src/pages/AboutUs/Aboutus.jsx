@@ -16,6 +16,5 @@ export default function AboutUs() {
       <Contact />
       <Footer />
     </div>
-
   );
 }
