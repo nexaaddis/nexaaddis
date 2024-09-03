@@ -36,6 +36,9 @@ const webCard1 = "https://cdn.dribbble.com/users/907791/screenshots/4411178/shop
 const webCard2 = "https://themewagon.com/wp-content/uploads/2021/10/feane-1.png"
 const webCard3 = "https://s.tmimgcdn.com/scr/62200/website-vorlage-namens-construction-construction-company-responsive-multipage-62269_62269-original.jpg?width=1024&height=950"
 
+// mobile development
+import mobileAppBg from './img/mobileDev/mobileAppBg.svg'
+import mobileBg from './img/mobileDev/mobileBg.jpg'
 
 export {
   // web development
@@ -43,6 +46,10 @@ export {
   webCard1,
   webCard2,
   webCard3,
+
+  // mobile Dev
+  mobileAppBg,
+  mobileBg,
 
   // work
   workImgOne,
@@ -80,4 +87,5 @@ export {
 
   // website img
   websiteBG,
+  
 };

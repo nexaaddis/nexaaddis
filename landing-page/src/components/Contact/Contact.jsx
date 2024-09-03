@@ -138,11 +138,17 @@ const ContactUsSection = () => {
         />
         <Grid container spacing={12}>
           <Grid item xs={12}>
-            <Box sx={{ textAlign: { xs: 'center', md: 'left' }, mb: 4 }}>
+            <Box sx={{ mb: '2rem', textAlign: { xs: "center", md: "center", lg: 'left' } }}>
               <Typography
-                variant="h5"
-                gutterBottom
-                sx={{ fontWeight: '700', color: '#666' }}
+                variant="body1"
+                fontWeight="bold"
+                // letterSpacing="1.5"
+                sx={{
+                  fontSize: { xs: '0.9rem', sm: '1.1rem', md: '1.2rem' },
+                  mb: '0.5rem',
+                  color: 'var(--primary-color)',
+                  textTransform: 'uppercase',
+                }}
               >
                 REACH OUT TO US
               </Typography>
@@ -150,7 +156,7 @@ const ContactUsSection = () => {
                 variant="h4"
                 component="h1"
                 gutterBottom
-                sx={{ fontWeight: '800', color: '#1c2229' }}
+                sx={{ fontWeight: '700', fontSize: { xs: '1.6rem', sm: '2rem', md: '2.5rem' }, color: '#1c2229' }}
               >
                 Let's get <span style={{ color: '#fb8122' }}>in touch!</span>
               </Typography>
@@ -308,7 +314,7 @@ const ContactUsSection = () => {
                   variant="contained"
                   sx={{
                     fontWeight: 600,
-                    fontSize: {xs: ".9rem", sm: "1rem"},
+                    fontSize: { xs: ".9rem", sm: "1rem" },
                     mt: 2,
                     py: 1,
                     px: 4,

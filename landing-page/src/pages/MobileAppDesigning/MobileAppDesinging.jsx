@@ -4,7 +4,7 @@ import { ArrowForward } from "@mui/icons-material";
 import { HashLink as Link } from "react-router-hash-link";
 import Footer from '../../components/Sections/Footer'
 import Contact from '../../components/Contact/Contact'
-import { websiteBG } from "../../assets";
+import { mobileAppBg, mobileBg } from "../../assets";
 
 const MobileAppDesigning = () => {
   useEffect(() => {
@@ -18,7 +18,7 @@ const MobileAppDesigning = () => {
         sx={{
           position: "relative",
           height: { xs: "90vh", md: "75vh" },
-          backgroundImage: `url(${websiteBG})`,
+          backgroundImage: `url(${mobileBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           display: "flex",
@@ -27,7 +27,7 @@ const MobileAppDesigning = () => {
           color: "#e1e2e2",
           textAlign: "center",
           px: 2,
-          pt: {xs: "5rem", md: "6rem"},
+          pt: { xs: "5rem", md: "6rem" },
         }}
       >
         <Box
@@ -55,7 +55,7 @@ const MobileAppDesigning = () => {
               fontSize: { xs: "1.7rem", md: "2.4rem" },
               color: "#e1e2e2",
               fontFamily: "Roboto, sans-serif",
-              mb: 2,
+              mb: {xs: 5, md: 2},
             }}
           >
             Drive Engagement with Exceptional Mobile Experiences
@@ -105,26 +105,35 @@ const MobileAppDesigning = () => {
           color: "#333",
         }}
       >
-        <Typography
-          variant="h5"
-          sx={{
-            fontWeight: "bold",
-            fontSize: { xs: "1.4rem", md: "2rem" },
-            mb: 4,
-            fontFamily: "Roboto, sans-serif",
-            color: "#333",
-            textAlign: "center",
-          }}
-        >
-          Why Mobile Apps are Essential for Your Business
-        </Typography>
-
         <Grid container spacing={4}>
-          <Grid item xs={12} md={6}>
-            <Typography variant="body1" paragraph sx={{ mb: 3 }}>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexDirection: 'column',
+            }}
+          >
+            <Typography
+              variant="h5"
+              sx={{
+                fontWeight: "bold",
+                fontSize: { xs: "1.4rem", md: "2rem" },
+                mb: 4,
+                fontFamily: "Roboto, sans-serif",
+                color: "#333",
+                textAlign: { xs: "center", sm: "left" },
+              }}
+            >
+              Why Mobile Apps are Essential for Your Business?
+            </Typography>
+            <Typography variant="body1" paragraph sx={{ mb: 5, lineHeight: '1.8rem' }}>
               In today's fast-paced digital world, a mobile app is not just a tool, but a necessity. With a large and growing number of smartphone users in Ethiopia, having a mobile app can significantly boost your customer engagement and streamline your business processes. We specialize in creating apps that are not only visually appealing but also functional and user-friendly.
             </Typography>
-            <Typography variant="body1" paragraph sx={{ mb: 3 }}>
+            <Typography variant="body1" paragraph sx={{ mb: 0 }}>
               <Typography
                 variant="h6"
                 sx={{
@@ -135,17 +144,17 @@ const MobileAppDesigning = () => {
               >
                 Key Benefits of Mobile Apps:
               </Typography>
-              <ul>
-                <li>
+              <ul style={{ lineHeight: '1.5rem' }}>
+                <li style={{ marginBottom:"1rem" }} >
                   <strong>Increased Accessibility:</strong> Your services are just a tap away, providing convenience and ease to your customers.
                 </li>
-                <li>
+                <li style={{ marginBottom:"1rem" }}>
                   <strong>Better User Engagement:</strong> Mobile apps foster better communication and customer loyalty through personalized content.
                 </li>
-                <li>
+                <li style={{ marginBottom:"1rem" }}>
                   <strong>Efficiency:</strong> Streamline operations with features that cater directly to your business needs.
                 </li>
-                <li>
+                <li style={{ marginBottom:"1rem" }}>
                   <strong>Revenue Growth:</strong> With the right strategies, mobile apps can open up new revenue streams.
                 </li>
               </ul>
@@ -156,12 +165,12 @@ const MobileAppDesigning = () => {
           <Grid item xs={12} md={6}>
             <Box
               sx={{
-                height: { xs: 200, md: 250 },
-                backgroundImage: `url(${websiteBG})`,
+                height: { xs: 500, md: 700 },
+                backgroundImage: `url(${mobileAppBg})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 borderRadius: "8px",
-                mb: 4,
+                mb: 2,
               }}
             />
           </Grid>
@@ -179,22 +188,22 @@ const MobileAppDesigning = () => {
           >
             Our Mobile Development Services
           </Typography>
-          <Typography variant="body1" paragraph sx={{ mb: 3 }}>
+          <Typography variant="body1" paragraph sx={{ mb: 3, lineHeight: "1.7rem" }}>
             Our team provides end-to-end mobile app development services that cover the full project lifecycle, from initial concept to deployment and ongoing support. Our services include:
           </Typography>
-          <Typography variant="body1" paragraph sx={{ mb: 2 }}>
+          <Typography variant="body1" paragraph sx={{ mb: 2, lineHeight: "1.7rem" }}>
             <strong>1. Strategy and Consulting:</strong> We work with you to understand your goals and define the right strategy for your mobile presence.
           </Typography>
-          <Typography variant="body1" paragraph sx={{ mb: 2 }}>
+          <Typography variant="body1" paragraph sx={{ mb: 2, lineHeight: "1.7rem" }}>
             <strong>2. UI/UX Design:</strong> Our designers create visually appealing and intuitive interfaces that provide a seamless user experience.
           </Typography>
-          <Typography variant="body1" paragraph sx={{ mb: 2 }}>
+          <Typography variant="body1" paragraph sx={{ mb: 2, lineHeight: "1.7rem" }}>
             <strong>3. Cross-Platform Development:</strong> We build apps for both Android and iOS platforms, ensuring a broad reach.
           </Typography>
-          <Typography variant="body1" paragraph sx={{ mb: 2 }}>
+          <Typography variant="body1" paragraph sx={{ mb: 2, lineHeight: "1.7rem" }}>
             <strong>4. Testing and QA:</strong> Rigorous testing is conducted to ensure your app runs smoothly on all devices.
           </Typography>
-          <Typography variant="body1" paragraph sx={{ mb: 2 }}>
+          <Typography variant="body1" paragraph sx={{ mb: 2, lineHeight: "1.7rem" }}>
             <strong>5. Launch and Support:</strong> We help you launch your app and provide ongoing support to keep it updated and relevant.
           </Typography>
         </Box>
