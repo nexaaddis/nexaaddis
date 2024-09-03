@@ -28,7 +28,6 @@ const MobileAppDesigning = () => {
           textAlign: "center",
           px: 2,
           pt: {xs: "5rem", md: "6rem"},
-          backgroundColor: "rgba(255, 255, 255, .8)",
         }}
       >
         <Box
@@ -38,6 +37,7 @@ const MobileAppDesigning = () => {
             left: 0,
             right: 0,
             bottom: 0,
+            backgroundColor: "rgba(1, 1, 1, .7)",
           }}
         />
         <Box

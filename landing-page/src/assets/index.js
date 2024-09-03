@@ -19,7 +19,7 @@ import mechanic from "./logos/mechanic.png"
 
 // bg
 import bg1 from './bg/bg1.jpg'
-import designSvg from  './bg/designSvg.svg'
+import designSvg from './bg/designSvg.svg'
 import aboutusBg from './bg/aboutusBg.jpg'
 import aboutusBg2 from './bg/aboutusBg2.jpg'
 import contactBg from './bg/contactBg.jpg'
@@ -29,43 +29,55 @@ import lockIcon from './svg/lockIcon.svg'
 import padlock from "./gif/padlock.gif"
 import contactBg2 from './svg/contactBg2.svg'
 
-// website designing
-import websiteBG from './img/web-designing/websiteBG.png'
+// website development
+import webBg1 from './img/webDev/webBg1.jpeg'
+import websiteBG from './img/webDev/websiteBG.png'
+const webCard1 = "https://cdn.dribbble.com/users/907791/screenshots/4411178/shopology.png"
+const webCard2 = "https://themewagon.com/wp-content/uploads/2021/10/feane-1.png"
+const webCard3 = "https://s.tmimgcdn.com/scr/62200/website-vorlage-namens-construction-construction-company-responsive-multipage-62269_62269-original.jpg?width=1024&height=950"
+
 
 export {
-    workImgOne,
-    workImgTwo,
-    workImgFour,
-    workImgFive,
-    workImgSix,
-    workImgSeven,
-    workImgEight,
+  // web development
+  webBg1,
+  webCard1,
+  webCard2,
+  webCard3,
 
-    // logos
-    blackEagle,
-    freeFoodDelivery,
-    greenFactory,
-    moon,
-    realEstate,
-    sLetter,
-    vFLetter,
-    xLetter,
-    mechanic,
+  // work
+  workImgOne,
+  workImgTwo,
+  workImgFour,
+  workImgFive,
+  workImgSix,
+  workImgSeven,
+  workImgEight,
 
-    // bg
-    bg1,
-    designSvg,
-    aboutusBg,
-    aboutusBg2,
-    contactBg,
+  // logos
+  blackEagle,
+  freeFoodDelivery,
+  greenFactory,
+  moon,
+  realEstate,
+  sLetter,
+  vFLetter,
+  xLetter,
+  mechanic,
 
-    // svg
-    lockIcon,
-    contactBg2,
+  // bg
+  bg1,
+  designSvg,
+  aboutusBg,
+  aboutusBg2,
+  contactBg,
 
-    // gif
-    padlock,
+  // svg
+  lockIcon,
+  contactBg2,
 
-    // website img
-    websiteBG,
+  // gif
+  padlock,
+
+  // website img
+  websiteBG,
 };

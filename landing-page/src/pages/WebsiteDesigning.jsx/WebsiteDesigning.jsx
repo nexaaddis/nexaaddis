@@ -12,22 +12,22 @@ import Footer from "../../components/Sections/Footer";
 import Contact from "../../components/Contact/Contact";
 
 // Assets
-import { websiteBG } from "../../assets";
+import { webCard3, webBg1, webCard1, webCard2 } from "../../assets";
 
 // Img data
 const cardData = [
   {
-    image: websiteBG,
+    image: webCard1,
     title: "E-commerce",
     description: "Build a secure and easy-to-use online shop. Perfect for small and big businesses to sell products and reach more customers.",
   },
   {
-    image: websiteBG,
+    image: webCard2,
     title: "Blog",
     description: "Create a simple and engaging blog. Share stories, news, and tips that keep your audience coming back for more.",
   },
   {
-    image: websiteBG,
+    image: webCard3,
     title: "Company Website",
     description: "Develop a clean and professional company website. Show your brand, services, and values to connect with your audience.",
   },
@@ -46,7 +46,7 @@ const WebsiteDesignPage = () => {
         sx={{
           position: "relative",
           height: { xs: "90vh", md: "75vh" },
-          backgroundImage: `url(${websiteBG})`,
+          backgroundImage: `url(${webBg1})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           display: "flex",
@@ -55,8 +55,7 @@ const WebsiteDesignPage = () => {
           color: "#e1e2e2",
           textAlign: "center",
           px: 2,
-          pt: {xs: "5rem", md: "6rem"},
-          backgroundColor: "rgba(255, 255, 255, .8)",
+          pt: { xs: "5rem", md: "6rem" },
         }}
       >
         <Box
@@ -66,6 +65,7 @@ const WebsiteDesignPage = () => {
             left: 0,
             right: 0,
             bottom: 0,
+            backgroundColor: "rgba(1, 1, 1, .7)",
           }}
         />
         <Box
@@ -321,13 +321,22 @@ const WebsiteDesignPage = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button
-                    size="small"
-                    endIcon={<ArrowForwardIcon />}
-                    sx={{ color: "#fb8122" }}
+                  <Link
+                    to="/#projects"
+                    smooth
+                    style={{
+                      textDecoration: "none",
+                      color: "white",
+                      mb: 1,
+                    }}
                   >
-                    View Project
-                  </Button>
+                    <Button
+                      size="small"
+                      sx={{ color: "#fb8122" }}
+                    >
+                      see our projects
+                    </Button>
+                  </Link>
                 </CardActions>
               </Card>
             ))}
