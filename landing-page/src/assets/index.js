@@ -1,10 +1,16 @@
-import workImgOne from "./work/workImgOne.jpg"
 import workImgTwo from "./work/workImgTwo.jpg"
 import workImgFour from "./work/workImgFour.jpg"
 import workImgFive from "./work/workImgFive.jpg"
 import workImgSix from "./work/workImgSix.jpg"
 import workImgSeven from "./work/workImgSeven.jpg"
 import workImgEight from "./work/workImgEight.jpg"
+
+// Testimonial photos
+import men1 from './img/testimonials/men1.jpg'
+import men2 from './img/testimonials/men2.jpg'
+import men3 from './img/testimonials/men3.jpg'
+import men4 from './img/testimonials/men4.jpg'
+import men5 from './img/testimonials/men5.jpeg'
 
 // bg
 import bg1 from './bg/bg1.jpg'
@@ -50,20 +56,40 @@ import nodejs2 from './img/developer-icons/nodejs.png'
 import python2 from './img/developer-icons/python.png'
 import react2 from './img/developer-icons/react.png'
 
+// Logo Designing page
+import logoCard1 from './img/logDesign/logoCard1.jpg'
+import logoCard2 from './img/logDesign/logoCard2.jpg'
+import logoCard3 from './img/logDesign/logoCard3.jpg'
+import logoBg from './img/logDesign/logoBg.jpg'
+import logoSvg from './img/logDesign/logoSvg.svg'
+
 
 export {
+  // testimonial photos
+  men1,
+  men2,
+  men3,
+  men4,
+  men5,
+
   // web development
   webBg1,
   webCard1,
   webCard2,
   webCard3,
 
+  // logo Designing
+  logoCard1,
+  logoCard2,
+  logoCard3,
+  logoBg,
+  logoSvg,
+
   // mobile Dev
   mobileAppBg,
   mobileBg,
 
   // work
-  workImgOne,
   workImgTwo,
   workImgFour,
   workImgFive,

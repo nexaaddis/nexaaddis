@@ -2,19 +2,17 @@ import React, { useState } from "react";
 import { Grid, Container, Typography, Button, Box } from "@mui/material";
 import ProjectsCard from "./ProjectsCard";
 import {
-  workImgOne,
   workImgTwo,
   workImgFour,
   workImgFive,
   workImgSix,
   workImgSeven,
-  workImgEight,
 } from "../../assets";
 
 // Array of project data
 const projectsData = [
   { title: "Blog Website", category: "Website", image: workImgTwo },
-  { title: "Business Card Design", category: "Design", image: workImgOne },
+  { title: "Business Card Design", category: "Design", image: workImgSeven },
   { title: "Infinity Logo", category: "Logo", image: workImgTwo },
   { title: "Mobile Application", category: "Shopping", image: workImgFive },
   { title: "Responsive Website", category: "E-commerce", image: workImgFour },

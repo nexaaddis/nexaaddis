@@ -5,7 +5,13 @@ import Contact from "../../components/Contact/Contact";
 import { HashLink as HashLink } from "react-router-hash-link";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-import { logoBG, websiteBG, additionalImage } from "../../assets"; // Import your images
+import {
+  logoCard1,
+  logoCard2,
+  logoCard3,
+  logoBg,
+  logoSvg,
+} from "../../assets";
 
 const LogoDesignPage = () => {
   useEffect(() => {
@@ -19,7 +25,7 @@ const LogoDesignPage = () => {
         sx={{
           position: "relative",
           height: { xs: "90vh", md: "75vh" },
-          backgroundImage: `url(${websiteBG})`,
+          backgroundImage: `url(${logoBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           display: "flex",
@@ -39,7 +45,7 @@ const LogoDesignPage = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: "rgba(1, 1, 1, .7)",
+            backgroundColor: "rgba(0, 0, 0, .8)",
           }}
         />
         <Box
@@ -54,10 +60,10 @@ const LogoDesignPage = () => {
             variant="h4"
             sx={{
               fontWeight: "bold",
-              fontSize: { xs: "1.5rem", md: "2.3rem" },
+              fontSize: { xs: "1.7rem", md: "2.4rem" },
               color: "#e1e2e2",
               fontFamily: "Roboto, sans-serif",
-              mb: 2,
+              mb: { xs: 4, md: 2 },
               maxWidth: "99%",
               mx: "auto",
             }}
@@ -71,7 +77,7 @@ const LogoDesignPage = () => {
               color: "#e1e2e2",
               mb: 4,
               fontFamily: "Roboto, sans-serif",
-              maxWidth: "70%",
+              maxWidth: "85%",
               mx: "auto",
               textAlign: "center",
             }}
@@ -118,7 +124,7 @@ const LogoDesignPage = () => {
           sx={{
             fontWeight: "bold",
             fontSize: { xs: "1.5rem", md: "2rem" },
-            mb: 2,
+            mb: 4,
             color: "#333",
           }}
         >
@@ -138,16 +144,16 @@ const LogoDesignPage = () => {
             sx={{
               fontWeight: "bold",
               fontSize: { xs: "1.5rem", md: "1.8rem" },
-              mb: 2,
+              mb: 4,
               color: "#333",
             }}
           >
             Our Unique Approach
           </Typography>
-          <Typography variant="body1" paragraph sx={{ lineHeight: 1.8 }}>
+          <Typography variant="body1" paragraph sx={{ lineHeight: 2 }}>
             At our company, we believe that a logo should not only be visually appealing but also meaningful. We draw inspiration from Ethiopia’s rich heritage—its colors, patterns, and history—and fuse it with contemporary design trends. Whether it's the vibrant hues of the Ethiopian flag or the intricate patterns of traditional textiles, every logo we create is a tribute to the beauty of Ethiopia.
           </Typography>
-          <Typography variant="body1" paragraph sx={{ lineHeight: 1.8 }}>
+          <Typography variant="body1" paragraph sx={{ lineHeight: 2 }}>
             Our process includes:
             <ul>
               <li><strong>Discovery and Research:</strong> We start by understanding your business, your vision, and your audience.</li>
@@ -159,26 +165,26 @@ const LogoDesignPage = () => {
         </Box>
 
         {/* Showcase Section */}
-        <Box sx={{ mt: 4 }}>
+        <Box sx={{ mt: 6 }}>
           <Typography
             variant="h6"
             sx={{
               fontWeight: "bold",
               fontSize: { xs: "1.5rem", md: "1.8rem" },
               mb: 2,
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "Roboto, sans-serif",
               color: "#333",
             }}
           >
             Showcase of Our Work
           </Typography>
           <Grid container spacing={4}>
-            {["path_to_logo_image_1", "path_to_logo_image_2", "path_to_logo_image_3"].map((src, index) => (
+            {[logoCard1, logoCard2, logoCard3].map((src, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
                 <Box
                   sx={{
                     overflow: "hidden",
-                    height: 220,
+                    height: 230,
                     borderRadius: "12px",
                     display: "flex",
                     alignItems: "center",
@@ -187,8 +193,8 @@ const LogoDesignPage = () => {
                     transition: "transform 0.3s, box-shadow 0.3s",
                     position: "relative",
                     "&:hover": {
-                      transform: "scale(1.05)",
-                      boxShadow: "0 8px 16px rgba(0, 0, 0, 0.3)",
+                      transform: "scale(1.03)",
+                      boxShadow: "0 8px 20px rgba(0, 0, 0, 0.2)",
                     },
                     "&:hover .arrow-btn": {
                       opacity: 1,
@@ -228,7 +234,7 @@ const LogoDesignPage = () => {
         </Box>
 
         {/* Additional Content Section */}
-        <Divider sx={{ my: 5 }} />
+        <Divider sx={{ my: 8 }} />
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6}>
             <Typography
@@ -242,13 +248,13 @@ const LogoDesignPage = () => {
             >
               Build Trust and Recognition
             </Typography>
-            <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
+            <Typography variant="body1" sx={{ lineHeight: 2 }}>
               A well-designed logo fosters trust and recognition. It serves as the face of your business, appearing on your signage, website, and marketing materials. A unique logo not only grabs attention but also makes a powerful first impression, helping you stand out from competitors.
             </Typography>
             <Button
               variant="contained"
               sx={{
-                mt: 3,
+                mt: 4,
                 backgroundColor: "#fb8122",
                 border: "1px solid #fb8122",
                 borderRadius: '12px',
@@ -259,30 +265,26 @@ const LogoDesignPage = () => {
                   border: "1px solid #fb8122",
                   color: "#fb8122",
                 },
-                px: 4,
+                px: 2,
                 py: 1,
               }}
               component={HashLink}
               to="#contact"
             >
-              Start Your Logo Journey
+              Get Your Logo Now
             </Button>
           </Grid>
           <Grid item xs={12} md={6}>
             <Box
               sx={{
+                height: 500,
                 borderRadius: "12px",
                 overflow: "hidden",
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-                transition: "transform 0.3s, box-shadow 0.3s",
-                "&:hover": {
-                  transform: "scale(1.05)",
-                  boxShadow: "0 8px 16px rgba(0, 0, 0, 0.3)",
-                },
               }}
             >
               <img
-                src={websiteBG} // Add your additional image here
+                src={logoSvg}
                 alt="Build Trust and Recognition"
                 style={{
                   width: "100%",

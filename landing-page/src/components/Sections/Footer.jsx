@@ -4,7 +4,8 @@ import { HashLink as Link } from "react-router-hash-link";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 // Assets
-import LogoImg from "../../assets/svg/Logo";
+import { mainLogo } from "../../assets";
+
 
 export default function Contact() {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -60,13 +61,16 @@ export default function Contact() {
                 color: "white",
               }}
             >
-              <LogoImg />
-              <Typography
-                variant="h6"
-                sx={{ ml: 1, fontWeight: "bold", fontSize: { xs: "1rem", sm: "1.2rem" } }}
-              >
-                NEXADDIS
-              </Typography>
+              <Box
+                component="img"
+                src={mainLogo}
+                alt="Nexaddis"
+                sx={{
+                  width: { xs: "100px", md: "120px" },
+                  height: "auto",
+                  filter: "invert(1)",
+                }}
+              />
             </Link>
           </Grid>
 

@@ -44,7 +44,7 @@ const MobileAppDesigning = () => {
           sx={{
             position: "relative",
             zIndex: 1,
-            px: { xs: 2, md: 4 },
+            px: { xs: 1, md: 4 },
             textAlign: "center",
           }}
         >
@@ -65,7 +65,7 @@ const MobileAppDesigning = () => {
             sx={{
               fontSize: { xs: "1rem", md: "1.2rem" },
               color: "#e1e2e2",
-              mb: 3,
+              mb: {xs: 6, md: 3},
               fontFamily: "'Roboto', sans-serif",
             }}
           >

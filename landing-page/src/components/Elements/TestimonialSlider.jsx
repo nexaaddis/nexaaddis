@@ -3,15 +3,17 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import { Container, Box, Typography, IconButton } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
+
 // Components
 import TestimonialBox from "./TestimonialBox";
+
+// Assets
 import {
-  workImgOne,
-  workImgTwo,
-  workImgFour,
-  workImgFive,
-  workImgSix,
-  workImgEight,
+  men1,
+  men2,
+  men3,
+  men4,
+  men5,
 } from "../../assets";
 
 export default function TestimonialSlider() {
@@ -38,41 +40,32 @@ export default function TestimonialSlider() {
 
   const testimonials = [
     {
-      text: "Friends, such as we desire, are dreams and fables. Friendship demands the ability to do without it.",
-      author: "Ralph Waldo Emerson",
-      imgSrc: workImgOne,
+      text: "I am truly impressed with the website they built for my business. It’s clean, modern, and exactly what I needed. This will help me reach more customers. Thank you so much!",
+      author: "Abdulrahman Yasin",
+      imgSrc: men1,
     },
     {
-      text: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
-      author: "Ralph Waldo Emerson",
-      imgSrc: workImgTwo,
+      text: "The mobile app they developed for my shop is amazing! Now my customers can easily order from their phones. I am very satisfied with the quality and the service.",
+      author: "Samuel Bekele",
+      imgSrc: men2,
     },
     {
-      text: "Do not go where the path may lead, go instead where there is no path and leave a trail.",
-      author: "Ralph Waldo Emerson",
-      imgSrc: workImgTwo,
+      text: "I needed a professional logo that represented my brand, and they delivered beyond my expectations. The logo looks great and has brought a fresh look to my business.",
+      author: "Ahmed Mohammed",
+      imgSrc: men3,
     },
     {
-      text: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
-      author: "Ralph Waldo Emerson",
-      imgSrc: workImgFour,
+      text: "I’m so happy with the website they created for my small business. It’s user-friendly and visually appealing. My customers are also loving it. Highly recommended!",
+      author: "Mulugeta Tekle",
+      imgSrc: men4,
     },
     {
-      text: "Do not go where the path may lead, go instead where there is no path and leave a trail.",
-      author: "Ralph Waldo Emerson",
-      imgSrc: workImgFive,
-    },
-    {
-      text: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
-      author: "Ralph Waldo Emerson",
-      imgSrc: workImgEight,
-    },
-    {
-      text: "Do not go where the path may lead, go instead where there is no path and leave a trail.",
-      author: "Ralph Waldo Emerson",
-      imgSrc: workImgSix,
+      text: "Their team designed a mobile app for my café, and it has made managing orders so much easier. I love the design and functionality. It's a great investment for my business!",
+      author: "Jemal Ahmed",
+      imgSrc: men5,
     },
   ];
+
 
   return (
     <div id="testimonial" style={{ padding: '4rem 0 4rem 0', width: "100%", backgroundColor: '#fff7f1' }}>

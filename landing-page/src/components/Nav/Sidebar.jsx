@@ -53,7 +53,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
         <Box
           component="img"
           src={mainLogo}
-          alt="NexaAddis"
+          alt="Nexaddis photo"
           sx={{
             width: { xs: "100px", md: "120px" },
             height: "auto",
