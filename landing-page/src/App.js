@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 // Screens
 import Landing from "./pages/Home/Landing.jsx";
-import Aboutus from "./pages/aboutus/Aboutus.jsx";
+import AboutUs from "./pages/AboutUs/Aboutus.jsx";
 import TopNavbar from "./components/Nav/TopNavbar";
 import Contact from "./pages/Contact/Contact.jsx";
 import PrivacyTerms from "./pages/Privacy/Privacy.jsx";
@@ -24,7 +24,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Landing />} />
-        <Route path="/about" element={<Aboutus />} />
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<PrivacyTerms />} />
         <Route path="/websitedevelopment" element={<WebsiteDesignPage />} />
