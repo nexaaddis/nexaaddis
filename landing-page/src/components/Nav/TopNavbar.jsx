@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "@mui/material";
+import { Button, Box } from "@mui/material";
 import styled from "styled-components";
 import { HashLink as Link } from "react-router-hash-link";
 import Sidebar from "./Sidebar";
 import Backdrop from "../Elements/Backdrop";
-import LogoIcon from "../../assets/svg/Logo";
 import BurgerIcon from "../../assets/svg/BurgerIcon";
 import { useNavigate } from "react-router-dom";
 
 // assets
-import { Logo, mainLogo } from "../../assets";
+import { logo, mainLogo } from "../../assets";
 
 export default function TopNavbar() {
   const [y, setY] = useState(window.scrollY);
@@ -30,10 +29,15 @@ export default function TopNavbar() {
       <Wrapper className="flexCenter animate lightBg" style={y > 100 ? { height: "65px" } : { height: "75px" }}>
         <NavInner className="container flexSpaceCenter">
           <LinkWrapper to="/#home" smooth onClick={() => navigate('/#home')}>
-            <img src={mainLogo} alt="NexaAddis" style={{ width: "140px", height: "auto" }} />
-            {/* <h1 style={{ marginLeft: "15px" }} className="font20 extraBold darkColor">
-              NexaAddis
-            </h1> */}
+            <Box
+              component="img"
+              src={mainLogo}
+              alt="Nexaddis"
+              sx={{
+                width: { xs: "100px", md: "120px" },
+                height: "auto",
+              }}
+            />
           </LinkWrapper>
           <BurderWrapper className="pointer" onClick={() => toggleSidebar(!sidebarOpen)}>
             <BurgerIcon />
@@ -43,7 +47,7 @@ export default function TopNavbar() {
               <li key={section} className="semiBold font15 pointer nav-link">
                 <StyledLink
                   smooth
-                  to= { section === "about" ? `/${section}` : `/#${section}`}
+                  to={section === "about" ? `/${section}` : `/#${section}`}
                   spy={true}
                   offset={-80}
                   duration={500}

@@ -12,7 +12,7 @@ const ProjectsCard = ({ image, title, category }) => {
     <Card
       sx={{
         width: '100%',
-        height: { xs: 'auto', sm: '280px', md: '260px' },
+        height: { xs: '400px', sm: '300px', md: '350px' },
         backgroundColor: '#ffffff',
         border: '1px solid #ddd',
         borderRadius: '8px',
@@ -28,7 +28,7 @@ const ProjectsCard = ({ image, title, category }) => {
         justifyContent: 'space-between',
       }}
     >
-      <Box sx={{ position: 'relative', height: '50%' }}>
+      <Box sx={{ position: 'relative', height: '70%' }}>
         <CardMedia
           component="img"
           alt={title}

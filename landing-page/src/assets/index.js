@@ -31,8 +31,11 @@ const webCard3 = "https://s.tmimgcdn.com/scr/62200/website-vorlage-namens-constr
 import mobileAppBg from './img/mobileDev/mobileAppBg.svg'
 import mobileBg from './img/mobileDev/mobileBg.jpg'
 
-// developer logo
+// logo
 import mainLogo from './img/logo/mainLogo.png'
+import logoBlack from './img/logo/logoBlack.svg'
+
+// slider logo
 import git from './img/developer-icons/git.svg'
 import mui from './img/developer-icons/mui.svg'
 import mysql from './img/developer-icons/mysql.svg'
@@ -68,7 +71,7 @@ export {
   workImgSeven,
   workImgEight,
 
-  // logos
+  // slider logos
   git,
   mui,
   mysql,
@@ -102,5 +105,6 @@ export {
 
   // logo main
   mainLogo,
+  logoBlack,
 
 };

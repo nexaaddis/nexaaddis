@@ -1,8 +1,10 @@
 import React from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
-import { Box, Typography, Button, IconButton } from "@mui/material";
+import { Box, Button, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import LogoIcon from "../../assets/svg/Logo";
+
+// assets
+import { Logo, mainLogo } from "../../assets";
 
 export default function Sidebar({ sidebarOpen, toggleSidebar }) {
   const navigate = useNavigate();
@@ -48,19 +50,16 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
           mb: 3,
         }}
       >
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          <LogoIcon />
-          <Typography
-            variant="h6"
-            sx={{
-              fontSize: { xs: "1rem", sm: "1.1rem", md: "1.3rem" },
-              ml: 2,
-              display: { xs: "block", sm: "block" },
-            }}
-          >
-            NexaAddis
-          </Typography>
-        </Box>
+        <Box
+          component="img"
+          src={mainLogo}
+          alt="NexaAddis"
+          sx={{
+            width: { xs: "100px", md: "120px" },
+            height: "auto",
+            filter: "invert(1)",
+          }}
+        />
         <IconButton
           onClick={() => toggleSidebar(!sidebarOpen)}
           sx={{ color: "#f1f1f1" }}

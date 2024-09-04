@@ -19,16 +19,16 @@ const projectsData = [
   { title: "Mobile Application", category: "Shopping", image: workImgFive },
   { title: "Responsive Website", category: "E-commerce", image: workImgFour },
   { title: "Graphic Design", category: "Design", image: workImgSix },
-  { title: "Ideas & Blog", category: "Website", image: workImgEight },
-  { title: "ZOSS Logo", category: "Logo", image: workImgSeven },
-  { title: "Blog Website", category: "Website", image: workImgEight },
-  { title: "Business Card Design", category: "Design", image: workImgOne },
-  { title: "Infinity Logo", category: "Logo", image: workImgTwo },
-  { title: "Mobile Application", category: "Shopping", image: workImgFive },
-  { title: "Responsive Website", category: "E-commerce", image: workImgFour },
-  { title: "Graphic Design", category: "Design", image: workImgSix },
-  { title: "Ideas & Blog", category: "Website", image: workImgEight },
-  { title: "ZOSS Logo", category: "Logo", image: workImgSeven },
+  // { title: "Ideas & Blog", category: "Website", image: workImgEight },
+  // { title: "ZOSS Logo", category: "Logo", image: workImgSeven },
+  // { title: "Blog Website", category: "Website", image: workImgEight },
+  // { title: "Business Card Design", category: "Design", image: workImgOne },
+  // { title: "Infinity Logo", category: "Logo", image: workImgTwo },
+  // { title: "Mobile Application", category: "Shopping", image: workImgFive },
+  // { title: "Responsive Website", category: "E-commerce", image: workImgFour },
+  // { title: "Graphic Design", category: "Design", image: workImgSix },
+  // { title: "Ideas & Blog", category: "Website", image: workImgEight },
+  // { title: "ZOSS Logo", category: "Logo", image: workImgSeven },
 ];
 
 const Projects = () => {
@@ -76,7 +76,7 @@ const Projects = () => {
 
         <Grid container spacing={4}>
           {projectsData.slice(0, itemsToShow).map((project, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+            <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
               <ProjectsCard
                 title={project.title}
                 category={project.category}
@@ -85,7 +85,7 @@ const Projects = () => {
             </Grid>
           ))}
         </Grid>
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+        {/* <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
           <Button
             onClick={handleToggle}
             sx={{
@@ -106,7 +106,7 @@ const Projects = () => {
           >
             {isExpanded ? 'Show Less' : 'Show More'}
           </Button>
-        </Box>
+        </Box> */}
       </Container>
     </div>
   );
