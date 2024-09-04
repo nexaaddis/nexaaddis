@@ -7,11 +7,12 @@ import {
   mui,
   mysql,
   nodejs,
-  react,
   nextjs,
   netlify,
   vercel,
   python,
+  github,
+  react2,
 } from '../../assets';
 
 // Styled Components using MUI's system
@@ -161,11 +162,12 @@ export default function ClientSlider() {
             mui,
             mysql,
             nodejs,
-            react,
             nextjs,
             netlify,
             vercel,
             python,
+            github,
+            react2,
           ].map((logo, index) => (
             <LogoWrapper key={index}>
               <ImgStyle src={logo} alt={`client logo ${index + 1}`} />
