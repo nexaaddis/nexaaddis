@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import { Container, Typography, Box, Grid, Button } from "@mui/material";
+import { Container, Typography, Box, Grid, Button, Divider } from "@mui/material";
 import Footer from "../../components/Sections/Footer";
 import Contact from "../../components/Contact/Contact";
 import { HashLink as HashLink } from "react-router-hash-link";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-
-import { logoBG, websiteBG } from "../../assets";
+import { logoBG, websiteBG, additionalImage } from "../../assets"; // Import your images
 
 const LogoDesignPage = () => {
   useEffect(() => {
@@ -14,7 +13,7 @@ const LogoDesignPage = () => {
   }, []);
 
   return (
-    <Box bgcolor="#f9f9f9">
+    <Box bgcolor="#f9f9f9" fontFamily="Roboto, sans-serif">
       {/* Hero Section */}
       <Box
         sx={{
@@ -68,11 +67,11 @@ const LogoDesignPage = () => {
           <Typography
             variant="subtitle1"
             sx={{
-              fontSize: { xs: "1rem", md: "1.2rem" },
+              fontSize: { xs: "1rem", md: "1.1rem" },
               color: "#e1e2e2",
               mb: 4,
               fontFamily: "Roboto, sans-serif",
-              maxWidth: "80%",
+              maxWidth: "70%",
               mx: "auto",
               textAlign: "center",
             }}
@@ -128,7 +127,7 @@ const LogoDesignPage = () => {
         <Typography
           variant="body1"
           paragraph
-          sx={{ lineHeight: 1.6, px: { xs: 1, md: 3 } }}
+          sx={{ lineHeight: 1.8, px: { xs: 1, md: 3 } }}
         >
           In the bustling market of Ethiopia, a logo is more than just a symbol—it's your brand's identity, a unique blend of your values, culture, and vision. A compelling logo can set you apart, make your brand memorable, and instantly connect with your target audience.
         </Typography>
@@ -145,10 +144,10 @@ const LogoDesignPage = () => {
           >
             Our Unique Approach
           </Typography>
-          <Typography variant="body1" paragraph sx={{ lineHeight: 1.6 }}>
+          <Typography variant="body1" paragraph sx={{ lineHeight: 1.8 }}>
             At our company, we believe that a logo should not only be visually appealing but also meaningful. We draw inspiration from Ethiopia’s rich heritage—its colors, patterns, and history—and fuse it with contemporary design trends. Whether it's the vibrant hues of the Ethiopian flag or the intricate patterns of traditional textiles, every logo we create is a tribute to the beauty of Ethiopia.
           </Typography>
-          <Typography variant="body1" paragraph sx={{ lineHeight: 1.6 }}>
+          <Typography variant="body1" paragraph sx={{ lineHeight: 1.8 }}>
             Our process includes:
             <ul>
               <li><strong>Discovery and Research:</strong> We start by understanding your business, your vision, and your audience.</li>
@@ -188,7 +187,7 @@ const LogoDesignPage = () => {
                     transition: "transform 0.3s, box-shadow 0.3s",
                     position: "relative",
                     "&:hover": {
-                      transform: "scale(1.1) rotate(3deg)",
+                      transform: "scale(1.05)",
                       boxShadow: "0 8px 16px rgba(0, 0, 0, 0.3)",
                     },
                     "&:hover .arrow-btn": {
@@ -203,7 +202,7 @@ const LogoDesignPage = () => {
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "contain",
+                      objectFit: "cover",
                     }}
                   />
                   <Box
@@ -224,16 +223,80 @@ const LogoDesignPage = () => {
                   </Box>
                 </Box>
               </Grid>
-
             ))}
           </Grid>
         </Box>
+
+        {/* Additional Content Section */}
+        <Divider sx={{ my: 5 }} />
+        <Grid container spacing={4} alignItems="center">
+          <Grid item xs={12} md={6}>
+            <Typography
+              variant="h5"
+              sx={{
+                fontWeight: "bold",
+                fontSize: { xs: "1.5rem", md: "2rem" },
+                mb: 2,
+                color: "#333",
+              }}
+            >
+              Build Trust and Recognition
+            </Typography>
+            <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
+              A well-designed logo fosters trust and recognition. It serves as the face of your business, appearing on your signage, website, and marketing materials. A unique logo not only grabs attention but also makes a powerful first impression, helping you stand out from competitors.
+            </Typography>
+            <Button
+              variant="contained"
+              sx={{
+                mt: 3,
+                backgroundColor: "#fb8122",
+                border: "1px solid #fb8122",
+                borderRadius: '12px',
+                color: "#fff",
+                fontWeight: "600",
+                "&:hover": {
+                  backgroundColor: "transparent",
+                  border: "1px solid #fb8122",
+                  color: "#fb8122",
+                },
+                px: 4,
+                py: 1,
+              }}
+              component={HashLink}
+              to="#contact"
+            >
+              Start Your Logo Journey
+            </Button>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Box
+              sx={{
+                borderRadius: "12px",
+                overflow: "hidden",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+                transition: "transform 0.3s, box-shadow 0.3s",
+                "&:hover": {
+                  transform: "scale(1.05)",
+                  boxShadow: "0 8px 16px rgba(0, 0, 0, 0.3)",
+                },
+              }}
+            >
+              <img
+                src={websiteBG} // Add your additional image here
+                alt="Build Trust and Recognition"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              />
+            </Box>
+          </Grid>
+        </Grid>
       </Container>
 
       {/* Contact Section */}
-      <Contact />
-
-      {/* Footer */}
+      <Contact id="contact" />
       <Footer />
     </Box>
   );

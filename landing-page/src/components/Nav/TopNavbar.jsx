@@ -8,6 +8,9 @@ import LogoIcon from "../../assets/svg/Logo";
 import BurgerIcon from "../../assets/svg/BurgerIcon";
 import { useNavigate } from "react-router-dom";
 
+// assets
+import { Logo, mainLogo } from "../../assets";
+
 export default function TopNavbar() {
   const [y, setY] = useState(window.scrollY);
   const [sidebarOpen, toggleSidebar] = useState(false);
@@ -27,10 +30,10 @@ export default function TopNavbar() {
       <Wrapper className="flexCenter animate lightBg" style={y > 100 ? { height: "65px" } : { height: "75px" }}>
         <NavInner className="container flexSpaceCenter">
           <LinkWrapper to="/#home" smooth onClick={() => navigate('/#home')}>
-            <LogoIcon />
-            <h1 style={{ marginLeft: "15px" }} className="font20 extraBold darkColor">
+            <img src={mainLogo} alt="NexaAddis" style={{ width: "140px", height: "auto" }} />
+            {/* <h1 style={{ marginLeft: "15px" }} className="font20 extraBold darkColor">
               NexaAddis
-            </h1>
+            </h1> */}
           </LinkWrapper>
           <BurderWrapper className="pointer" onClick={() => toggleSidebar(!sidebarOpen)}>
             <BurgerIcon />

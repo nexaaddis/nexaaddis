@@ -3,15 +3,15 @@ import Slider from 'react-slick';
 import { Box, Typography, Container, useTheme } from '@mui/material';
 import { styled } from '@mui/system';
 import {
-  blackEagle,
-  freeFoodDelivery,
-  greenFactory,
-  moon,
-  realEstate,
-  sLetter,
-  vFLetter,
-  xLetter,
-  mechanic,
+  git,
+  mui,
+  mysql,
+  nodejs,
+  react,
+  nextjs,
+  netlify,
+  vercel,
+  python,
 } from '../../assets';
 
 // Styled Components using MUI's system
@@ -35,23 +35,24 @@ const LogoWrapper = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'center',
   padding: '0 10px',
-  height: '80px',
+  width: '100px',
+  height: '60px',
   transition: 'transform 0.3s ease-in-out',
   cursor: 'pointer',
-  '&:hover': {
-    transform: 'scale(1.1)',
-  },
   [theme.breakpoints.down('md')]: {
-    height: '70px',
+    width: '80px',
+    height: '50px',
   },
   [theme.breakpoints.down('sm')]: {
-    height: '60px',
+    width: '70px',
+    height: '40px',
   },
 }));
 
 const ImgStyle = styled('img')({
-  width: 'auto',
-  maxHeight: '100%',
+  width: '100%',
+  height: '100%',
+  objectFit: 'contain',
   filter: 'grayscale(100%)',
   transition: 'filter 0.3s ease-in-out',
   '&:hover': {
@@ -67,7 +68,7 @@ export default function ClientSlider() {
 
   const settings = {
     infinite: true,
-    speed: 3000,
+    speed: 5000,
     slidesToShow: 7,
     slidesToScroll: 2,
     arrows: false,
@@ -129,7 +130,6 @@ export default function ClientSlider() {
         <Typography
           variant="body1"
           fontWeight="bold"
-          // letterSpacing="1.5"
           sx={{
             fontSize: { xs: '0.9rem', sm: '1.1rem', md: '1.2rem' },
             mb: '0.5rem',
@@ -143,7 +143,8 @@ export default function ClientSlider() {
           variant="h4"
           sx={{
             mb: 2,
-            fontWeight: '700', fontSize: { xs: '1.6rem', sm: '2rem', md: '2.5rem' }
+            fontWeight: '700',
+            fontSize: { xs: '1.6rem', sm: '2rem', md: '2.5rem' }
           }}
         >
           Technologies We Use
@@ -155,7 +156,17 @@ export default function ClientSlider() {
 
       <StyledSliderContainer>
         <Slider {...settings} ref={sliderRef}>
-          {[blackEagle, greenFactory, freeFoodDelivery, vFLetter, mechanic, xLetter, moon, sLetter, realEstate].map((logo, index) => (
+          {[
+            git,
+            mui,
+            mysql,
+            nodejs,
+            react,
+            nextjs,
+            netlify,
+            vercel,
+            python,
+          ].map((logo, index) => (
             <LogoWrapper key={index}>
               <ImgStyle src={logo} alt={`client logo ${index + 1}`} />
             </LogoWrapper>

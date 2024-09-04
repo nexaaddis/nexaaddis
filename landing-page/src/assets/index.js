@@ -25,7 +25,7 @@ import aboutusBg2 from './bg/aboutusBg2.jpg'
 import contactBg from './bg/contactBg.jpg'
 
 // svg
-import lockIcon from './svg/lockIcon.svg'
+import Logo from './svg/logo.svg'
 import padlock from "./gif/padlock.gif"
 import contactBg2 from './svg/contactBg2.svg'
 
@@ -39,6 +39,19 @@ const webCard3 = "https://s.tmimgcdn.com/scr/62200/website-vorlage-namens-constr
 // mobile development
 import mobileAppBg from './img/mobileDev/mobileAppBg.svg'
 import mobileBg from './img/mobileDev/mobileBg.jpg'
+
+// developer logo
+import mainLogo from './img/logo/mainLogo.png'
+import git from './img/developer-icons/git.svg'
+import mui from './img/developer-icons/mui.svg'
+import mysql from './img/developer-icons/mysql.svg'
+import nodejs from './img/developer-icons/nodejs.svg'
+import react from './img/developer-icons/react.svg'
+import nextjs from './img/developer-icons/nextjs.svg'
+import netlify from './img/developer-icons/netlify.svg'
+import vercel from './img/developer-icons/vercel.svg'
+import python from './img/developer-icons/python.svg'
+
 
 export {
   // web development
@@ -61,15 +74,15 @@ export {
   workImgEight,
 
   // logos
-  blackEagle,
-  freeFoodDelivery,
-  greenFactory,
-  moon,
-  realEstate,
-  sLetter,
-  vFLetter,
-  xLetter,
-  mechanic,
+  git,
+  mui,
+  mysql,
+  nodejs,
+  react,
+  nextjs,
+  netlify,
+  vercel,
+  python,
 
   // bg
   bg1,
@@ -79,13 +92,16 @@ export {
   contactBg,
 
   // svg
-  lockIcon,
   contactBg2,
+  Logo,
 
   // gif
   padlock,
 
   // website img
   websiteBG,
-  
+
+  // logo main
+  mainLogo,
+
 };
