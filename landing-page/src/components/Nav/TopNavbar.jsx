@@ -48,7 +48,7 @@ export default function TopNavbar() {
                 <StyledLink
                   smooth
                   to={section === "about" ? `/${section}` : `/#${section}`}
-                  spy={true}
+                  spy="true"
                   offset={-80}
                   duration={500}
                 >
