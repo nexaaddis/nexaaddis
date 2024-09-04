@@ -44,14 +44,14 @@ const LeftBanner = () => {
           fontFamily: 'Roboto, sans-serif',
         }}
       >
-        NEXAADDIS
+        NEXADDIS
       </Typography>
 
       <Typography
         variant="h3"
         sx={{
           fontWeight: '800',
-          fontSize: { xs: '1.4rem', sm: '2.2rem', md: '2.8rem', lg: '3rem' },
+          fontSize: { xs: '1.5rem', sm: '2.2rem', md: '2.8rem', lg: '3.2rem' },
           color: '#f1f1f1',
           lineHeight: 1.2,
           fontFamily: 'Roboto, sans-serif',
@@ -113,9 +113,9 @@ const LeftBanner = () => {
           textTransform: "uppercase",
           border: "1px solid var(--primary-color)",
           borderRadius: "12px",
-          fontWeight: "bold",
-          px: 3,
-          py: "0.6rem",
+          fontWeight: "600",
+          px: 2,
+          py: "0.5rem",
           mt: "2rem",
           backgroundColor: "var(--primary-color)",
           color: "white",
