@@ -86,9 +86,11 @@ const AboutUsSection = () => {
                 alt="Large Office"
                 sx={{
                   width: { xs: "100%", sm: "80%", md: "100%" },
-                  maxHeight: { xs: "auto", md: "500px" },
+                  maxHeight: { xs: "auto", md: "auto" },
                   borderRadius: "8px",
                   boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
+                  objectFit: "cover",
+                  maxWidth: '600px', maxHeight: '600px'
                 }}
               />
             </Box>

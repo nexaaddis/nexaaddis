@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Container, Box, Typography, Grid } from "@mui/material";
+
 // Components
 import ClientSlider from "../Elements/ClientSlider";
 import ServiceBox from "../Elements/ServiceBox";
@@ -29,7 +30,6 @@ export default function Services() {
             <Typography
               variant="body1"
               fontWeight="bold"
-              // letterSpacing="1.5"
               sx={{
                 fontSize: { xs: '0.9rem', sm: '1.1rem', md: '1.2rem' },
                 mb: '0.5rem',
