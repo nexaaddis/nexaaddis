@@ -5,7 +5,6 @@ import { Helmet } from "react-helmet";
 import Landing from "./pages/Home/Landing.jsx";
 import Aboutus from "./pages/aboutus/Aboutus.jsx";
 import TopNavbar from "./components/Nav/TopNavbar";
-import ScrollToTop from "./components/Elements/ScrollToTop.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
 import PrivacyTerms from "./pages/Privacy/Privacy.jsx";
 import WebsiteDesignPage from "./pages/WebsiteDesigning.jsx/WebsiteDesigning.jsx";
@@ -21,7 +20,6 @@ export default function App() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Khula:wght@400;600;800&display=swap" rel="stylesheet" />
       </Helmet>
-      {/* <ScrollToTop /> */}
       <TopNavbar />
       <Routes>
         <Route path="/" element={<Landing />} />

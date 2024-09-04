@@ -20,7 +20,6 @@ import aboutusBg2 from './bg/aboutusBg2.jpg'
 import contactBg from './bg/contactBg.jpg'
 
 // svg
-import Logo from './svg/logo.svg'
 import padlock from "./gif/padlock.gif"
 import contactBg2 from './svg/contactBg2.svg'
 
@@ -121,7 +120,6 @@ export {
 
   // svg
   contactBg2,
-  Logo,
 
   // gif
   padlock,

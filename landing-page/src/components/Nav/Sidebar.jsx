@@ -4,7 +4,7 @@ import { Box, Button, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 // assets
-import { Logo, mainLogo } from "../../assets";
+import { mainLogo } from "../../assets";
 
 export default function Sidebar({ sidebarOpen, toggleSidebar }) {
   const navigate = useNavigate();
