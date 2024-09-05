@@ -131,6 +131,7 @@ const ContactUsSection = () => {
               alt="Contact Us"
               sx={{
                 width: '100%',
+                maxWidth: {xs: '500px', md: '600px'},
                 height: 'auto',
               }}
             />

@@ -25,7 +25,7 @@ const NotFound = () => {
       <Typography
         variant="h1"
         sx={{
-          fontSize: '6rem',
+          fontSize: { xs: '3rem', md: '6rem' }, // Responsive font size
           fontWeight: 'bold',
           color: '#333',
           marginBottom: '20px',
@@ -36,7 +36,7 @@ const NotFound = () => {
       <Typography
         variant="h4"
         sx={{
-          fontSize: '1.5rem',
+          fontSize: { xs: '1.2rem', md: '1.5rem' }, // Responsive font size
           color: '#555',
           marginBottom: '20px',
         }}
@@ -46,7 +46,7 @@ const NotFound = () => {
       <Typography
         variant="body1"
         sx={{
-          fontSize: '1rem',
+          fontSize: { xs: '0.9rem', md: '1rem' }, // Responsive font size
           color: '#777',
           marginBottom: '30px',
         }}
@@ -55,9 +55,15 @@ const NotFound = () => {
       </Typography>
       <Button
         variant="contained"
-        color="primary"
         onClick={handleGoHome}
-        sx={{ padding: '10px 20px' }}
+        sx={{
+          padding: '10px 20px',
+          backgroundColor: '#fb8122',
+          color: '#fff',
+          '&:hover': {
+            backgroundColor: '#e76a18',
+          },
+        }}
       >
         Go to Homepage
       </Button>
